@@ -1,0 +1,3459 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7e354531419fa8046715d950f3bb3f7a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 80.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+           bottom: 50px; left: 50px; width: 250px; height: auto; 
+           background-color: white; border:2px solid grey; z-index:9999; 
+           font-size:12px; padding: 10px; border-radius: 5px;
+           box-shadow: 0 0 10px rgba(0,0,0,0.3); overflow-y: auto; max-height: 400px;">
+<h4 style="margin-top:0; margin-bottom:10px; text-align:center; color: #333;">
+🗺️ 清代女性作家分布 (100位)
+</h4>
+<b>📖 文学流派图例:</b><br>
+<i style="background:red; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 满洲贵族文学<br><i style="background:blue; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 江南闺秀诗派<br><i style="background:green; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 性灵派<br><i style="background:purple; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 综合各派<br><i style="background:orange; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 遗民文学<br><i style="background:darkred; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 江南词派<br><i style="background:lightred; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 个性派<br><i style="background:beige; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 民间词人<br><i style="background:darkblue; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 扬州画派<br><i style="background:pink; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 弹词文学<br><i style="background:darkgreen; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 常州词派<br><i style="background:lightblue; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 岭南诗派<br><i style="background:brown; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 湖湘诗派<br><i style="background:gray; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 综合派<br><i style="background:cadetblue; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 革新派<br><i style="background:lightgreen; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 旅行文学<br><i style="background:black; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 南社诗风<br><i style="background:darkpurple; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 革命文学<br><i style="background:orange; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 维新派<br><i style="background:pink; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 革命艺术<br><i style="background:lightgray; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 实践派<br><i style="background:darkred; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 文人书法<br><i style="background:blue; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 实用派<br><i style="background:red; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 政治文学<br><i style="background:green; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 现代派<br><i style="background:purple; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 新月派<br><i style="background:orange; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 学者文学<br><i style="background:darkred; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 文学研究会<br><i style="background:lightred; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 左翼文学<br><i style="background:beige; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 东北作家群<br><i style="background:darkblue; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 海派文学<br><i style="background:pink; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 军旅文学<br><i style="background:darkgreen; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 乡土文学<br><i style="background:lightblue; width:12px; height:12px; display:inline-block; margin-right:5px; border-radius:50%;"></i> 戏剧文学<br>
+<hr style="margin:8px 0;">
+<p style="font-size:11px; margin:0; color: #666;">
+💡 点击标记查看详细信息<br>
+📍 共标记了 100 位作家
+</p>
+</div>
+    
+            <div class="folium-map" id="map_7e354531419fa8046715d950f3bb3f7a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7e354531419fa8046715d950f3bb3f7a = L.map(
+                "map_7e354531419fa8046715d950f3bb3f7a",
+                {
+                    center: [30.063138000000002, 117.850054],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bc97970247f3065fc6328fdb21d8a282 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_bc97970247f3065fc6328fdb21d8a282.addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+            var circle_marker_b4834980656312eee28cd443370f56ae = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.98, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_007d92959a1750e6b52a4b434f13ff2b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e3ec682f1d43f15d2df17f0b2c674f1 = $(`<div id="html_4e3ec682f1d43f15d2df17f0b2c674f1" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: red; margin-bottom: 10px; border-bottom: 2px solid red; padding-bottom: 5px;">             顾大清         </h4>         <p><b>📅 生卒:</b> 1799-1877 (享年79岁)</p>         <p><b>📍 出生地:</b> 北京</p>         <p><b>🎯 活动地:</b> 北京</p>         <p><b>📚 文学流派:</b> 满洲贵族文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 满族</p>     </div>     </div>`)[0];
+                popup_007d92959a1750e6b52a4b434f13ff2b.setContent(html_4e3ec682f1d43f15d2df17f0b2c674f1);
+            
+        
+
+        circle_marker_b4834980656312eee28cd443370f56ae.bindPopup(popup_007d92959a1750e6b52a4b434f13ff2b)
+        ;
+
+        
+    
+    
+            circle_marker_b4834980656312eee28cd443370f56ae.bindTooltip(
+                `<div>
+                     顾大清 (满洲贵族文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40977c95908087422e94ba2d42db18c4 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.96, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_e9247689b282b4110bbeecb370f2bffb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1f2b341384f84134ac85cf961dda4327 = $(`<div id="html_1f2b341384f84134ac85cf961dda4327" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             汪端         </h4>         <p><b>📅 生卒:</b> 1793-1839 (享年47岁)</p>         <p><b>📍 出生地:</b> 杭州</p>         <p><b>🎯 活动地:</b> 杭州</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_e9247689b282b4110bbeecb370f2bffb.setContent(html_1f2b341384f84134ac85cf961dda4327);
+            
+        
+
+        circle_marker_40977c95908087422e94ba2d42db18c4.bindPopup(popup_e9247689b282b4110bbeecb370f2bffb)
+        ;
+
+        
+    
+    
+            circle_marker_40977c95908087422e94ba2d42db18c4.bindTooltip(
+                `<div>
+                     汪端 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e75c790e3c500bb78f8600c08b539b13 = L.circleMarker(
+                [32.0603, 118.7969],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.9399999999999995, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_371b32ed47be4d48670dcba11000edc3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7e065ba4785297007e6e6875cd47e14f = $(`<div id="html_7e065ba4785297007e6e6875cd47e14f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             骆绮兰         </h4>         <p><b>📅 生卒:</b> 1756-1815 (享年60岁)</p>         <p><b>📍 出生地:</b> 南京</p>         <p><b>🎯 活动地:</b> 南京</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_371b32ed47be4d48670dcba11000edc3.setContent(html_7e065ba4785297007e6e6875cd47e14f);
+            
+        
+
+        circle_marker_e75c790e3c500bb78f8600c08b539b13.bindPopup(popup_371b32ed47be4d48670dcba11000edc3)
+        ;
+
+        
+    
+    
+            circle_marker_e75c790e3c500bb78f8600c08b539b13.bindTooltip(
+                `<div>
+                     骆绮兰 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e0b64085bca89dea64ee4d70cfacb41 = L.circleMarker(
+                [31.6461, 120.7523],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.92, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_a2dc54209252f6e09748bf264292d2c6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8e6dec82994189bbd1697629cd6ab849 = $(`<div id="html_8e6dec82994189bbd1697629cd6ab849" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             归慰仪         </h4>         <p><b>📅 生卒:</b> 1762-1832 (享年71岁)</p>         <p><b>📍 出生地:</b> 常熟</p>         <p><b>🎯 活动地:</b> 苏州</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_a2dc54209252f6e09748bf264292d2c6.setContent(html_8e6dec82994189bbd1697629cd6ab849);
+            
+        
+
+        circle_marker_0e0b64085bca89dea64ee4d70cfacb41.bindPopup(popup_a2dc54209252f6e09748bf264292d2c6)
+        ;
+
+        
+    
+    
+            circle_marker_0e0b64085bca89dea64ee4d70cfacb41.bindTooltip(
+                `<div>
+                     归慰仪 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e66b6baff944dd66eee96c00addb9c6f = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.9, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_e2395ee7329d2d050a90cbd9ab6a2416 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2b2ea8a97ea578739bf6d53075dc918b = $(`<div id="html_2b2ea8a97ea578739bf6d53075dc918b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: purple; margin-bottom: 10px; border-bottom: 2px solid purple; padding-bottom: 5px;">             沈善宝         </h4>         <p><b>📅 生卒:</b> 1808-1862 (享年55岁)</p>         <p><b>📍 出生地:</b> 杭州</p>         <p><b>🎯 活动地:</b> 杭州</p>         <p><b>📚 文学流派:</b> 综合各派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_e2395ee7329d2d050a90cbd9ab6a2416.setContent(html_2b2ea8a97ea578739bf6d53075dc918b);
+            
+        
+
+        circle_marker_e66b6baff944dd66eee96c00addb9c6f.bindPopup(popup_e2395ee7329d2d050a90cbd9ab6a2416)
+        ;
+
+        
+    
+    
+            circle_marker_e66b6baff944dd66eee96c00addb9c6f.bindTooltip(
+                `<div>
+                     沈善宝 (综合各派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_061fcc5ce8a7d0c1774c2c042f2f8c2d = L.circleMarker(
+                [30.0303, 120.5829],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.88, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_e7802fffd008c5d7f76aeca2a0922b29 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5444e2f3fa39df32536562ccf9fa411e = $(`<div id="html_5444e2f3fa39df32536562ccf9fa411e" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             王端         </h4>         <p><b>📅 生卒:</b> 1621-1706 (享年86岁)</p>         <p><b>📍 出生地:</b> 绍兴</p>         <p><b>🎯 活动地:</b> 绍兴</p>         <p><b>📚 文学流派:</b> 遗民文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_e7802fffd008c5d7f76aeca2a0922b29.setContent(html_5444e2f3fa39df32536562ccf9fa411e);
+            
+        
+
+        circle_marker_061fcc5ce8a7d0c1774c2c042f2f8c2d.bindPopup(popup_e7802fffd008c5d7f76aeca2a0922b29)
+        ;
+
+        
+    
+    
+            circle_marker_061fcc5ce8a7d0c1774c2c042f2f8c2d.bindTooltip(
+                `<div>
+                     王端 (遗民文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_658242a8dc5cd0ca2e97052afe44253e = L.circleMarker(
+                [31.299, 120.5853],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.86, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_ec3addc747df1fde6c1698ff0800c15a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2a30b4b843c928ef1af2e1d7f0ee488a = $(`<div id="html_2a30b4b843c928ef1af2e1d7f0ee488a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkred; margin-bottom: 10px; border-bottom: 2px solid darkred; padding-bottom: 5px;">             徐灿         </h4>         <p><b>📅 生卒:</b> 1610-1698 (享年89岁)</p>         <p><b>📍 出生地:</b> 苏州</p>         <p><b>🎯 活动地:</b> 苏州</p>         <p><b>📚 文学流派:</b> 江南词派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_ec3addc747df1fde6c1698ff0800c15a.setContent(html_2a30b4b843c928ef1af2e1d7f0ee488a);
+            
+        
+
+        circle_marker_658242a8dc5cd0ca2e97052afe44253e.bindPopup(popup_ec3addc747df1fde6c1698ff0800c15a)
+        ;
+
+        
+    
+    
+            circle_marker_658242a8dc5cd0ca2e97052afe44253e.bindTooltip(
+                `<div>
+                     徐灿 (江南词派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2dbf6f6cda868e5b5335c0fe93b09590 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "lightred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.84, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_507d06d323718ff4d11201b097ba7b11 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5719f900213babd8431a1c0a61adfab2 = $(`<div id="html_5719f900213babd8431a1c0a61adfab2" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: lightred; margin-bottom: 10px; border-bottom: 2px solid lightred; padding-bottom: 5px;">             吴藻         </h4>         <p><b>📅 生卒:</b> 1799-1862 (享年64岁)</p>         <p><b>📍 出生地:</b> 杭州</p>         <p><b>🎯 活动地:</b> 杭州</p>         <p><b>📚 文学流派:</b> 个性派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_507d06d323718ff4d11201b097ba7b11.setContent(html_5719f900213babd8431a1c0a61adfab2);
+            
+        
+
+        circle_marker_2dbf6f6cda868e5b5335c0fe93b09590.bindPopup(popup_507d06d323718ff4d11201b097ba7b11)
+        ;
+
+        
+    
+    
+            circle_marker_2dbf6f6cda868e5b5335c0fe93b09590.bindTooltip(
+                `<div>
+                     吴藻 (个性派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e54345859d71640fe813804f615ed4b1 = L.circleMarker(
+                [32.0101, 119.6067],
+                {"bubblingMouseEvents": true, "color": "beige", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "beige", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.82, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_0b50f2714d4a496f5ddb6725b7e9f0eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fac5a5bbaf6fcb134cc6504f327f1097 = $(`<div id="html_fac5a5bbaf6fcb134cc6504f327f1097" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: beige; margin-bottom: 10px; border-bottom: 2px solid beige; padding-bottom: 5px;">             贺双卿         </h4>         <p><b>📅 生卒:</b> 1715-1735 (享年21岁)</p>         <p><b>📍 出生地:</b> 丹阳</p>         <p><b>🎯 活动地:</b> 丹阳</p>         <p><b>📚 文学流派:</b> 民间词人</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_0b50f2714d4a496f5ddb6725b7e9f0eb.setContent(html_fac5a5bbaf6fcb134cc6504f327f1097);
+            
+        
+
+        circle_marker_e54345859d71640fe813804f615ed4b1.bindPopup(popup_0b50f2714d4a496f5ddb6725b7e9f0eb)
+        ;
+
+        
+    
+    
+            circle_marker_e54345859d71640fe813804f615ed4b1.bindTooltip(
+                `<div>
+                     贺双卿 (民间词人)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db9bf9f91c585a70be09ab71a8f544f9 = L.circleMarker(
+                [31.6461, 120.7523],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.8, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_1a5d5fbfb7a98144ac0bd9cd2ff6713f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac06d30312735e8a57261c2f26e03d07 = $(`<div id="html_ac06d30312735e8a57261c2f26e03d07" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             席佩兰         </h4>         <p><b>📅 生卒:</b> 1760-1825 (享年66岁)</p>         <p><b>📍 出生地:</b> 常熟</p>         <p><b>🎯 活动地:</b> 常熟</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_1a5d5fbfb7a98144ac0bd9cd2ff6713f.setContent(html_ac06d30312735e8a57261c2f26e03d07);
+            
+        
+
+        circle_marker_db9bf9f91c585a70be09ab71a8f544f9.bindPopup(popup_1a5d5fbfb7a98144ac0bd9cd2ff6713f)
+        ;
+
+        
+    
+    
+            circle_marker_db9bf9f91c585a70be09ab71a8f544f9.bindTooltip(
+                `<div>
+                     席佩兰 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8964a019d38fb23d8f25f4d031f559c4 = L.circleMarker(
+                [30.0303, 120.5829],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.78, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_365c9e643dcda3e7fdd1040c93672230 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_42c5b556aa0a0166cd34c43f7c278116 = $(`<div id="html_42c5b556aa0a0166cd34c43f7c278116" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             商景兰         </h4>         <p><b>📅 生卒:</b> 1700-1750 (享年50岁)</p>         <p><b>📍 出生地:</b> 出生地0</p>         <p><b>🎯 活动地:</b> 活动地0</p>         <p><b>📚 文学流派:</b> 遗民文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_365c9e643dcda3e7fdd1040c93672230.setContent(html_42c5b556aa0a0166cd34c43f7c278116);
+            
+        
+
+        circle_marker_8964a019d38fb23d8f25f4d031f559c4.bindPopup(popup_365c9e643dcda3e7fdd1040c93672230)
+        ;
+
+        
+    
+    
+            circle_marker_8964a019d38fb23d8f25f4d031f559c4.bindTooltip(
+                `<div>
+                     商景兰 (遗民文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e46add19504f7d6cf896c9533eae6e0e = L.circleMarker(
+                [30.746, 120.7555],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.76, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_89cdf3c0a2075fd02fac163e231d5405 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e2480f98ed3fb675ed49c78ef92d83c = $(`<div id="html_3e2480f98ed3fb675ed49c78ef92d83c" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             黄媛介         </h4>         <p><b>📅 生卒:</b> 1701-1751 (享年51岁)</p>         <p><b>📍 出生地:</b> 出生地1</p>         <p><b>🎯 活动地:</b> 活动地1</p>         <p><b>📚 文学流派:</b> 遗民文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_89cdf3c0a2075fd02fac163e231d5405.setContent(html_3e2480f98ed3fb675ed49c78ef92d83c);
+            
+        
+
+        circle_marker_e46add19504f7d6cf896c9533eae6e0e.bindPopup(popup_89cdf3c0a2075fd02fac163e231d5405)
+        ;
+
+        
+    
+    
+            circle_marker_e46add19504f7d6cf896c9533eae6e0e.bindTooltip(
+                `<div>
+                     黄媛介 (遗民文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc25ecd2ed57d3bf8ca05c81744ca42e = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.74, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_efea5392832361c225c018e62892ebf2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3ebb1497b63ca60452bc92eb0518116f = $(`<div id="html_3ebb1497b63ca60452bc92eb0518116f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             方维仪         </h4>         <p><b>📅 生卒:</b> 1702-1752 (享年52岁)</p>         <p><b>📍 出生地:</b> 出生地2</p>         <p><b>🎯 活动地:</b> 活动地2</p>         <p><b>📚 文学流派:</b> 遗民文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_efea5392832361c225c018e62892ebf2.setContent(html_3ebb1497b63ca60452bc92eb0518116f);
+            
+        
+
+        circle_marker_fc25ecd2ed57d3bf8ca05c81744ca42e.bindPopup(popup_efea5392832361c225c018e62892ebf2)
+        ;
+
+        
+    
+    
+            circle_marker_fc25ecd2ed57d3bf8ca05c81744ca42e.bindTooltip(
+                `<div>
+                     方维仪 (遗民文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_456b832ffdfd1448dd7d077c364407e1 = L.circleMarker(
+                [29.8608, 118.4325],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.72, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_34b08d6120d32f168210148f2fbeac4d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce583d22386ea7223679f24a2a76bfd6 = $(`<div id="html_ce583d22386ea7223679f24a2a76bfd6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkblue; margin-bottom: 10px; border-bottom: 2px solid darkblue; padding-bottom: 5px;">             方婉仪         </h4>         <p><b>📅 生卒:</b> 1703-1753 (享年53岁)</p>         <p><b>📍 出生地:</b> 出生地3</p>         <p><b>🎯 活动地:</b> 活动地3</p>         <p><b>📚 文学流派:</b> 扬州画派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_34b08d6120d32f168210148f2fbeac4d.setContent(html_ce583d22386ea7223679f24a2a76bfd6);
+            
+        
+
+        circle_marker_456b832ffdfd1448dd7d077c364407e1.bindPopup(popup_34b08d6120d32f168210148f2fbeac4d)
+        ;
+
+        
+    
+    
+            circle_marker_456b832ffdfd1448dd7d077c364407e1.bindTooltip(
+                `<div>
+                     方婉仪 (扬州画派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6e97ca7e40f34cbd6b274b134d9df89 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "pink", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.7, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_10da791be1d6e262f6bcaf4a81e0765c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2dc2f64f8c41c26fab4bc42e21479b2a = $(`<div id="html_2dc2f64f8c41c26fab4bc42e21479b2a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: pink; margin-bottom: 10px; border-bottom: 2px solid pink; padding-bottom: 5px;">             陈端生         </h4>         <p><b>📅 生卒:</b> 1704-1754 (享年54岁)</p>         <p><b>📍 出生地:</b> 出生地4</p>         <p><b>🎯 活动地:</b> 活动地4</p>         <p><b>📚 文学流派:</b> 弹词文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_10da791be1d6e262f6bcaf4a81e0765c.setContent(html_2dc2f64f8c41c26fab4bc42e21479b2a);
+            
+        
+
+        circle_marker_c6e97ca7e40f34cbd6b274b134d9df89.bindPopup(popup_10da791be1d6e262f6bcaf4a81e0765c)
+        ;
+
+        
+    
+    
+            circle_marker_c6e97ca7e40f34cbd6b274b134d9df89.bindTooltip(
+                `<div>
+                     陈端生 (弹词文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76f1be6ede9de2a748b0e39e14b64c86 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.68, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_fd18e6f3c580d54ced7f3f94f646eb42 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d0b4f22b982fa0e70b159c72448ddff2 = $(`<div id="html_d0b4f22b982fa0e70b159c72448ddff2" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             梁德绳         </h4>         <p><b>📅 生卒:</b> 1705-1755 (享年55岁)</p>         <p><b>📍 出生地:</b> 出生地5</p>         <p><b>🎯 活动地:</b> 活动地5</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_fd18e6f3c580d54ced7f3f94f646eb42.setContent(html_d0b4f22b982fa0e70b159c72448ddff2);
+            
+        
+
+        circle_marker_76f1be6ede9de2a748b0e39e14b64c86.bindPopup(popup_fd18e6f3c580d54ced7f3f94f646eb42)
+        ;
+
+        
+    
+    
+            circle_marker_76f1be6ede9de2a748b0e39e14b64c86.bindTooltip(
+                `<div>
+                     梁德绳 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c20698f6a735711962abf2b15ee4481 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.66, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_5e891226e057bde750c1d9bcede31e9b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_049859fe28982c2cea22b44d5738dabe = $(`<div id="html_049859fe28982c2cea22b44d5738dabe" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             孙云凤         </h4>         <p><b>📅 生卒:</b> 1706-1756 (享年56岁)</p>         <p><b>📍 出生地:</b> 出生地6</p>         <p><b>🎯 活动地:</b> 活动地6</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_5e891226e057bde750c1d9bcede31e9b.setContent(html_049859fe28982c2cea22b44d5738dabe);
+            
+        
+
+        circle_marker_7c20698f6a735711962abf2b15ee4481.bindPopup(popup_5e891226e057bde750c1d9bcede31e9b)
+        ;
+
+        
+    
+    
+            circle_marker_7c20698f6a735711962abf2b15ee4481.bindTooltip(
+                `<div>
+                     孙云凤 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9e944bfa97453ab8401a700de331ad5 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.640000000000001, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_8d9d830b00f9d80fd6474c207cc82254 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f469fe871a0be519943971663ce1685b = $(`<div id="html_f469fe871a0be519943971663ce1685b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             孙云鹤         </h4>         <p><b>📅 生卒:</b> 1707-1757 (享年57岁)</p>         <p><b>📍 出生地:</b> 出生地7</p>         <p><b>🎯 活动地:</b> 活动地7</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_8d9d830b00f9d80fd6474c207cc82254.setContent(html_f469fe871a0be519943971663ce1685b);
+            
+        
+
+        circle_marker_d9e944bfa97453ab8401a700de331ad5.bindPopup(popup_8d9d830b00f9d80fd6474c207cc82254)
+        ;
+
+        
+    
+    
+            circle_marker_d9e944bfa97453ab8401a700de331ad5.bindTooltip(
+                `<div>
+                     孙云鹤 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d94a3e5166cc30a552462d9174131d6 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.62, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_3e1fa7ff1b8274deeab085374f7a726b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_58027b633a089253b48d501b13d40288 = $(`<div id="html_58027b633a089253b48d501b13d40288" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             钱孟祖         </h4>         <p><b>📅 生卒:</b> 1708-1758 (享年58岁)</p>         <p><b>📍 出生地:</b> 出生地8</p>         <p><b>🎯 活动地:</b> 活动地8</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_3e1fa7ff1b8274deeab085374f7a726b.setContent(html_58027b633a089253b48d501b13d40288);
+            
+        
+
+        circle_marker_0d94a3e5166cc30a552462d9174131d6.bindPopup(popup_3e1fa7ff1b8274deeab085374f7a726b)
+        ;
+
+        
+    
+    
+            circle_marker_0d94a3e5166cc30a552462d9174131d6.bindTooltip(
+                `<div>
+                     钱孟祖 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6600086280d97fd61474312d81b1b75 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.6, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_799526b6eb0bd71d69fd9119fc6c56b5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fc7dbabb003c928731f7a20df7b9fc03 = $(`<div id="html_fc7dbabb003c928731f7a20df7b9fc03" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             袁媛         </h4>         <p><b>📅 生卒:</b> 1709-1759 (享年59岁)</p>         <p><b>📍 出生地:</b> 出生地9</p>         <p><b>🎯 活动地:</b> 活动地9</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_799526b6eb0bd71d69fd9119fc6c56b5.setContent(html_fc7dbabb003c928731f7a20df7b9fc03);
+            
+        
+
+        circle_marker_d6600086280d97fd61474312d81b1b75.bindPopup(popup_799526b6eb0bd71d69fd9119fc6c56b5)
+        ;
+
+        
+    
+    
+            circle_marker_d6600086280d97fd61474312d81b1b75.bindTooltip(
+                `<div>
+                     袁媛 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d8e8cc4e86cc2ba52c56e0bf9ad70398 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.58, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_e280d531b422788a6b6eb92c630e047a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_89e334711393f78432d14fcdbf745e23 = $(`<div id="html_89e334711393f78432d14fcdbf745e23" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             袁机         </h4>         <p><b>📅 生卒:</b> 1710-1760 (享年60岁)</p>         <p><b>📍 出生地:</b> 出生地10</p>         <p><b>🎯 活动地:</b> 活动地10</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_e280d531b422788a6b6eb92c630e047a.setContent(html_89e334711393f78432d14fcdbf745e23);
+            
+        
+
+        circle_marker_d8e8cc4e86cc2ba52c56e0bf9ad70398.bindPopup(popup_e280d531b422788a6b6eb92c630e047a)
+        ;
+
+        
+    
+    
+            circle_marker_d8e8cc4e86cc2ba52c56e0bf9ad70398.bindTooltip(
+                `<div>
+                     袁机 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_028b65f7e2a1c18be97f032e94d34b70 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5600000000000005, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_c02816852493f3178376d651f398c001 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a0b7bc30b02b5459864a33fb8f292458 = $(`<div id="html_a0b7bc30b02b5459864a33fb8f292458" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             袁枳         </h4>         <p><b>📅 生卒:</b> 1711-1761 (享年61岁)</p>         <p><b>📍 出生地:</b> 出生地11</p>         <p><b>🎯 活动地:</b> 活动地11</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_c02816852493f3178376d651f398c001.setContent(html_a0b7bc30b02b5459864a33fb8f292458);
+            
+        
+
+        circle_marker_028b65f7e2a1c18be97f032e94d34b70.bindPopup(popup_c02816852493f3178376d651f398c001)
+        ;
+
+        
+    
+    
+            circle_marker_028b65f7e2a1c18be97f032e94d34b70.bindTooltip(
+                `<div>
+                     袁枳 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb52ecb545b2b94ea40b371ed161bdf3 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.54, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_14aa6c5ad1f54d2873cddd737861f7b7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b7242c7557dd2fe2349d2b8c7f4051c2 = $(`<div id="html_b7242c7557dd2fe2349d2b8c7f4051c2" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkgreen; margin-bottom: 10px; border-bottom: 2px solid darkgreen; padding-bottom: 5px;">             张纪英         </h4>         <p><b>📅 生卒:</b> 1712-1762 (享年62岁)</p>         <p><b>📍 出生地:</b> 出生地12</p>         <p><b>🎯 活动地:</b> 活动地12</p>         <p><b>📚 文学流派:</b> 常州词派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_14aa6c5ad1f54d2873cddd737861f7b7.setContent(html_b7242c7557dd2fe2349d2b8c7f4051c2);
+            
+        
+
+        circle_marker_fb52ecb545b2b94ea40b371ed161bdf3.bindPopup(popup_14aa6c5ad1f54d2873cddd737861f7b7)
+        ;
+
+        
+    
+    
+            circle_marker_fb52ecb545b2b94ea40b371ed161bdf3.bindTooltip(
+                `<div>
+                     张纪英 (常州词派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2615769078eb4332cc4b7254d65f4f8 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.52, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_597d9698d9b189b9cb14b88f98797eac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b2144b5f2d6a18377031ac9941fde97b = $(`<div id="html_b2144b5f2d6a18377031ac9941fde97b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkgreen; margin-bottom: 10px; border-bottom: 2px solid darkgreen; padding-bottom: 5px;">             张幼英         </h4>         <p><b>📅 生卒:</b> 1713-1763 (享年63岁)</p>         <p><b>📍 出生地:</b> 出生地13</p>         <p><b>🎯 活动地:</b> 活动地13</p>         <p><b>📚 文学流派:</b> 常州词派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_597d9698d9b189b9cb14b88f98797eac.setContent(html_b2144b5f2d6a18377031ac9941fde97b);
+            
+        
+
+        circle_marker_a2615769078eb4332cc4b7254d65f4f8.bindPopup(popup_597d9698d9b189b9cb14b88f98797eac)
+        ;
+
+        
+    
+    
+            circle_marker_a2615769078eb4332cc4b7254d65f4f8.bindTooltip(
+                `<div>
+                     张幼英 (常州词派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b30747dd96b93c84d1163d6330779ec3 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_2ac486906e839973c228f8913ad949f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e4adf804dc7029a739314cdc90d0e1b0 = $(`<div id="html_e4adf804dc7029a739314cdc90d0e1b0" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             王采薇         </h4>         <p><b>📅 生卒:</b> 1714-1764 (享年64岁)</p>         <p><b>📍 出生地:</b> 出生地14</p>         <p><b>🎯 活动地:</b> 活动地14</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_2ac486906e839973c228f8913ad949f5.setContent(html_e4adf804dc7029a739314cdc90d0e1b0);
+            
+        
+
+        circle_marker_b30747dd96b93c84d1163d6330779ec3.bindPopup(popup_2ac486906e839973c228f8913ad949f5)
+        ;
+
+        
+    
+    
+            circle_marker_b30747dd96b93c84d1163d6330779ec3.bindTooltip(
+                `<div>
+                     王采薇 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ffd0ab436505b52ccafc46687025e937 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.48, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_552401a482b8f729f045bc54443dda8d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2fe7e3a94d1f3c1d4caf9e3b2d0b6c7b = $(`<div id="html_2fe7e3a94d1f3c1d4caf9e3b2d0b6c7b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkgreen; margin-bottom: 10px; border-bottom: 2px solid darkgreen; padding-bottom: 5px;">             庄盛珠         </h4>         <p><b>📅 生卒:</b> 1715-1765 (享年65岁)</p>         <p><b>📍 出生地:</b> 出生地15</p>         <p><b>🎯 活动地:</b> 活动地15</p>         <p><b>📚 文学流派:</b> 常州词派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_552401a482b8f729f045bc54443dda8d.setContent(html_2fe7e3a94d1f3c1d4caf9e3b2d0b6c7b);
+            
+        
+
+        circle_marker_ffd0ab436505b52ccafc46687025e937.bindPopup(popup_552401a482b8f729f045bc54443dda8d)
+        ;
+
+        
+    
+    
+            circle_marker_ffd0ab436505b52ccafc46687025e937.bindTooltip(
+                `<div>
+                     庄盛珠 (常州词派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5d9bd1b8566dd4615aeec65fdd198862 = L.circleMarker(
+                [31.299, 120.5853],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.46, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_79374abfd0d29934eb14f60573b6e76c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a0ce3e5d1555edcb6ec7c2470d516dc = $(`<div id="html_0a0ce3e5d1555edcb6ec7c2470d516dc" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             吴规臣         </h4>         <p><b>📅 生卒:</b> 1716-1766 (享年66岁)</p>         <p><b>📍 出生地:</b> 出生地16</p>         <p><b>🎯 活动地:</b> 活动地16</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_79374abfd0d29934eb14f60573b6e76c.setContent(html_0a0ce3e5d1555edcb6ec7c2470d516dc);
+            
+        
+
+        circle_marker_5d9bd1b8566dd4615aeec65fdd198862.bindPopup(popup_79374abfd0d29934eb14f60573b6e76c)
+        ;
+
+        
+    
+    
+            circle_marker_5d9bd1b8566dd4615aeec65fdd198862.bindTooltip(
+                `<div>
+                     吴规臣 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17087f03f04a0e820f7439a686987602 = L.circleMarker(
+                [32.3942, 119.4128],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4399999999999995, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_e066753c7c9fcf03b730b6de61bfbc77 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_53bac587567f6d7988b59a2a36980aed = $(`<div id="html_53bac587567f6d7988b59a2a36980aed" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             张凤         </h4>         <p><b>📅 生卒:</b> 1717-1767 (享年67岁)</p>         <p><b>📍 出生地:</b> 出生地17</p>         <p><b>🎯 活动地:</b> 活动地17</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_e066753c7c9fcf03b730b6de61bfbc77.setContent(html_53bac587567f6d7988b59a2a36980aed);
+            
+        
+
+        circle_marker_17087f03f04a0e820f7439a686987602.bindPopup(popup_e066753c7c9fcf03b730b6de61bfbc77)
+        ;
+
+        
+    
+    
+            circle_marker_17087f03f04a0e820f7439a686987602.bindTooltip(
+                `<div>
+                     张凤 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_25dd66110d4277be2d2d77101a537913 = L.circleMarker(
+                [31.6461, 120.7523],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.42, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_475482de30214481aa01724cfef009bd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cfd63b858d8ead7c93ef6c82c5222171 = $(`<div id="html_cfd63b858d8ead7c93ef6c82c5222171" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             屈秉钧         </h4>         <p><b>📅 生卒:</b> 1718-1768 (享年68岁)</p>         <p><b>📍 出生地:</b> 出生地18</p>         <p><b>🎯 活动地:</b> 活动地18</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_475482de30214481aa01724cfef009bd.setContent(html_cfd63b858d8ead7c93ef6c82c5222171);
+            
+        
+
+        circle_marker_25dd66110d4277be2d2d77101a537913.bindPopup(popup_475482de30214481aa01724cfef009bd)
+        ;
+
+        
+    
+    
+            circle_marker_25dd66110d4277be2d2d77101a537913.bindTooltip(
+                `<div>
+                     屈秉钧 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_87cffabf55c5383e53e5ddd5265e5471 = L.circleMarker(
+                [32.1878, 119.425],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_6dcc49086f8efa2c6ec3533c1778e90f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e21c5f276d5e9ec0dacfe9153972fdcf = $(`<div id="html_e21c5f276d5e9ec0dacfe9153972fdcf" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             鲍之慧         </h4>         <p><b>📅 生卒:</b> 1719-1769 (享年69岁)</p>         <p><b>📍 出生地:</b> 出生地19</p>         <p><b>🎯 活动地:</b> 活动地19</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_6dcc49086f8efa2c6ec3533c1778e90f.setContent(html_e21c5f276d5e9ec0dacfe9153972fdcf);
+            
+        
+
+        circle_marker_87cffabf55c5383e53e5ddd5265e5471.bindPopup(popup_6dcc49086f8efa2c6ec3533c1778e90f)
+        ;
+
+        
+    
+    
+            circle_marker_87cffabf55c5383e53e5ddd5265e5471.bindTooltip(
+                `<div>
+                     鲍之慧 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2471a688012bb24d61c7be5f8b25c733 = L.circleMarker(
+                [30.0303, 120.5829],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.38, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_70bd796cc4b113bbcc8b171843c53f9d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_92942b3fd4e01c00334ee65687adb3b0 = $(`<div id="html_92942b3fd4e01c00334ee65687adb3b0" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             潘素心         </h4>         <p><b>📅 生卒:</b> 1720-1770 (享年70岁)</p>         <p><b>📍 出生地:</b> 出生地20</p>         <p><b>🎯 活动地:</b> 活动地20</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_70bd796cc4b113bbcc8b171843c53f9d.setContent(html_92942b3fd4e01c00334ee65687adb3b0);
+            
+        
+
+        circle_marker_2471a688012bb24d61c7be5f8b25c733.bindPopup(popup_70bd796cc4b113bbcc8b171843c53f9d)
+        ;
+
+        
+    
+    
+            circle_marker_2471a688012bb24d61c7be5f8b25c733.bindTooltip(
+                `<div>
+                     潘素心 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_289fe987bb02c84bb88ccc6da76439ec = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.36, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_44b4838f9dcad46ed7cba01a9181ed2c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1196757a42341fb634b072183fc72186 = $(`<div id="html_1196757a42341fb634b072183fc72186" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             陈长生         </h4>         <p><b>📅 生卒:</b> 1721-1771 (享年71岁)</p>         <p><b>📍 出生地:</b> 出生地21</p>         <p><b>🎯 活动地:</b> 活动地21</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_44b4838f9dcad46ed7cba01a9181ed2c.setContent(html_1196757a42341fb634b072183fc72186);
+            
+        
+
+        circle_marker_289fe987bb02c84bb88ccc6da76439ec.bindPopup(popup_44b4838f9dcad46ed7cba01a9181ed2c)
+        ;
+
+        
+    
+    
+            circle_marker_289fe987bb02c84bb88ccc6da76439ec.bindTooltip(
+                `<div>
+                     陈长生 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4fbeea7b6f026826d8c01a038ab6e04e = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.34, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_370a7a248e117b3d405e599c3db9a18e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_47f08b1b258aead6993c6438edf82f52 = $(`<div id="html_47f08b1b258aead6993c6438edf82f52" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             廖云锦         </h4>         <p><b>📅 生卒:</b> 1722-1772 (享年72岁)</p>         <p><b>📍 出生地:</b> 出生地22</p>         <p><b>🎯 活动地:</b> 活动地22</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_370a7a248e117b3d405e599c3db9a18e.setContent(html_47f08b1b258aead6993c6438edf82f52);
+            
+        
+
+        circle_marker_4fbeea7b6f026826d8c01a038ab6e04e.bindPopup(popup_370a7a248e117b3d405e599c3db9a18e)
+        ;
+
+        
+    
+    
+            circle_marker_4fbeea7b6f026826d8c01a038ab6e04e.bindTooltip(
+                `<div>
+                     廖云锦 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b63011a0abf7d8a13328e1dd770399ff = L.circleMarker(
+                [31.299, 120.5853],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.32, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_295314f50d910b31b37fe9af0150b42b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dd820cbb6723431f0b2a8b527c8af458 = $(`<div id="html_dd820cbb6723431f0b2a8b527c8af458" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             金逸         </h4>         <p><b>📅 生卒:</b> 1723-1773 (享年73岁)</p>         <p><b>📍 出生地:</b> 出生地23</p>         <p><b>🎯 活动地:</b> 活动地23</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_295314f50d910b31b37fe9af0150b42b.setContent(html_dd820cbb6723431f0b2a8b527c8af458);
+            
+        
+
+        circle_marker_b63011a0abf7d8a13328e1dd770399ff.bindPopup(popup_295314f50d910b31b37fe9af0150b42b)
+        ;
+
+        
+    
+    
+            circle_marker_b63011a0abf7d8a13328e1dd770399ff.bindTooltip(
+                `<div>
+                     金逸 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d01099143060a5ee7e99009d2f187b1a = L.circleMarker(
+                [30.0303, 120.5829],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.3, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_f4ec3da695fb4c079b7ac7eec2d434ec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bdffdf4ebf498a20e3e4277d0a82ab0f = $(`<div id="html_bdffdf4ebf498a20e3e4277d0a82ab0f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             王倩         </h4>         <p><b>📅 生卒:</b> 1724-1774 (享年74岁)</p>         <p><b>📍 出生地:</b> 出生地24</p>         <p><b>🎯 活动地:</b> 活动地24</p>         <p><b>📚 文学流派:</b> 性灵派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_f4ec3da695fb4c079b7ac7eec2d434ec.setContent(html_bdffdf4ebf498a20e3e4277d0a82ab0f);
+            
+        
+
+        circle_marker_d01099143060a5ee7e99009d2f187b1a.bindPopup(popup_f4ec3da695fb4c079b7ac7eec2d434ec)
+        ;
+
+        
+    
+    
+            circle_marker_d01099143060a5ee7e99009d2f187b1a.bindTooltip(
+                `<div>
+                     王倩 (性灵派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f6b3ef4eca221b3610fa4644120e006 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.28, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_c32db61549ccef212d62a04a02014fbc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_acfac6685a4a995513a462795c9a6eeb = $(`<div id="html_acfac6685a4a995513a462795c9a6eeb" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             钱惠尊         </h4>         <p><b>📅 生卒:</b> 1725-1775 (享年75岁)</p>         <p><b>📍 出生地:</b> 出生地25</p>         <p><b>🎯 活动地:</b> 活动地25</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_c32db61549ccef212d62a04a02014fbc.setContent(html_acfac6685a4a995513a462795c9a6eeb);
+            
+        
+
+        circle_marker_0f6b3ef4eca221b3610fa4644120e006.bindPopup(popup_c32db61549ccef212d62a04a02014fbc)
+        ;
+
+        
+    
+    
+            circle_marker_0f6b3ef4eca221b3610fa4644120e006.bindTooltip(
+                `<div>
+                     钱惠尊 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_59a2f4c35edf81d98780081958aec943 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.26, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_408838b46a0be32337995f20389c11c0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5dbe92e7ae2efc8a762c51679e119a4a = $(`<div id="html_5dbe92e7ae2efc8a762c51679e119a4a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             沈允慎         </h4>         <p><b>📅 生卒:</b> 1726-1776 (享年76岁)</p>         <p><b>📍 出生地:</b> 出生地26</p>         <p><b>🎯 活动地:</b> 活动地26</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_408838b46a0be32337995f20389c11c0.setContent(html_5dbe92e7ae2efc8a762c51679e119a4a);
+            
+        
+
+        circle_marker_59a2f4c35edf81d98780081958aec943.bindPopup(popup_408838b46a0be32337995f20389c11c0)
+        ;
+
+        
+    
+    
+            circle_marker_59a2f4c35edf81d98780081958aec943.bindTooltip(
+                `<div>
+                     沈允慎 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f4ae3ebe75287be32bc80e616e50ee4 = L.circleMarker(
+                [28.8925, 120.0361],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.24, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_6f5e541720ecba70b05101d8e24eb960 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4c7699a91a887293161223df73523837 = $(`<div id="html_4c7699a91a887293161223df73523837" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             吴宗爱         </h4>         <p><b>📅 生卒:</b> 1727-1777 (享年77岁)</p>         <p><b>📍 出生地:</b> 出生地27</p>         <p><b>🎯 活动地:</b> 活动地27</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_6f5e541720ecba70b05101d8e24eb960.setContent(html_4c7699a91a887293161223df73523837);
+            
+        
+
+        circle_marker_7f4ae3ebe75287be32bc80e616e50ee4.bindPopup(popup_6f5e541720ecba70b05101d8e24eb960)
+        ;
+
+        
+    
+    
+            circle_marker_7f4ae3ebe75287be32bc80e616e50ee4.bindTooltip(
+                `<div>
+                     吴宗爱 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72846fc1fdd1e1402e1a8853529164a8 = L.circleMarker(
+                [32.0603, 118.7969],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.22, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_8474c7ea4cd376919bf522ddb11fd7b9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45ab77453d3827782c12e8c53b1be03f = $(`<div id="html_45ab77453d3827782c12e8c53b1be03f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             纪映淮         </h4>         <p><b>📅 生卒:</b> 1728-1778 (享年78岁)</p>         <p><b>📍 出生地:</b> 出生地28</p>         <p><b>🎯 活动地:</b> 活动地28</p>         <p><b>📚 文学流派:</b> 遗民文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_8474c7ea4cd376919bf522ddb11fd7b9.setContent(html_45ab77453d3827782c12e8c53b1be03f);
+            
+        
+
+        circle_marker_72846fc1fdd1e1402e1a8853529164a8.bindPopup(popup_8474c7ea4cd376919bf522ddb11fd7b9)
+        ;
+
+        
+    
+    
+            circle_marker_72846fc1fdd1e1402e1a8853529164a8.bindTooltip(
+                `<div>
+                     纪映淮 (遗民文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_16807b8c2c2a42e3b8ff2f3a4c2105d0 = L.circleMarker(
+                [33.963, 118.2752],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.2, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_a82dbb72896328f0c7d41bd831022581 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_939051f8fde2bf0b170dabe9c533ca2f = $(`<div id="html_939051f8fde2bf0b170dabe9c533ca2f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             倪瑞璇         </h4>         <p><b>📅 生卒:</b> 1729-1779 (享年79岁)</p>         <p><b>📍 出生地:</b> 出生地29</p>         <p><b>🎯 活动地:</b> 活动地29</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_a82dbb72896328f0c7d41bd831022581.setContent(html_939051f8fde2bf0b170dabe9c533ca2f);
+            
+        
+
+        circle_marker_16807b8c2c2a42e3b8ff2f3a4c2105d0.bindPopup(popup_a82dbb72896328f0c7d41bd831022581)
+        ;
+
+        
+    
+    
+            circle_marker_16807b8c2c2a42e3b8ff2f3a4c2105d0.bindTooltip(
+                `<div>
+                     倪瑞璇 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d4a214f5110d2f9d22bdb4bb2d7279d4 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.18, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_ab5b81cb615d70e84e615d05f04016c4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_47575c681e73eed204d91949008b4cf7 = $(`<div id="html_47575c681e73eed204d91949008b4cf7" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             方曜         </h4>         <p><b>📅 生卒:</b> 1730-1780 (享年80岁)</p>         <p><b>📍 出生地:</b> 出生地30</p>         <p><b>🎯 活动地:</b> 活动地30</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_ab5b81cb615d70e84e615d05f04016c4.setContent(html_47575c681e73eed204d91949008b4cf7);
+            
+        
+
+        circle_marker_d4a214f5110d2f9d22bdb4bb2d7279d4.bindPopup(popup_ab5b81cb615d70e84e615d05f04016c4)
+        ;
+
+        
+    
+    
+            circle_marker_d4a214f5110d2f9d22bdb4bb2d7279d4.bindTooltip(
+                `<div>
+                     方曜 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4cc29421aef3a74ad08fb50f10dac461 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.16, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_832513948413c07c32b1ff95c6f95545 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_53b607f799f042d29f7f58dd39b176fe = $(`<div id="html_53b607f799f042d29f7f58dd39b176fe" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             方静         </h4>         <p><b>📅 生卒:</b> 1731-1781 (享年81岁)</p>         <p><b>📍 出生地:</b> 出生地31</p>         <p><b>🎯 活动地:</b> 活动地31</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_832513948413c07c32b1ff95c6f95545.setContent(html_53b607f799f042d29f7f58dd39b176fe);
+            
+        
+
+        circle_marker_4cc29421aef3a74ad08fb50f10dac461.bindPopup(popup_832513948413c07c32b1ff95c6f95545)
+        ;
+
+        
+    
+    
+            circle_marker_4cc29421aef3a74ad08fb50f10dac461.bindTooltip(
+                `<div>
+                     方静 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dda9028f19fc9676f3f7450bd987421a = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.140000000000001, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_9148652867f17fc3efce5b71450c086e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3b2c4cad42f34e71c6d2cc7ada52ba59 = $(`<div id="html_3b2c4cad42f34e71c6d2cc7ada52ba59" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             方婉         </h4>         <p><b>📅 生卒:</b> 1732-1782 (享年82岁)</p>         <p><b>📍 出生地:</b> 出生地32</p>         <p><b>🎯 活动地:</b> 活动地32</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_9148652867f17fc3efce5b71450c086e.setContent(html_3b2c4cad42f34e71c6d2cc7ada52ba59);
+            
+        
+
+        circle_marker_dda9028f19fc9676f3f7450bd987421a.bindPopup(popup_9148652867f17fc3efce5b71450c086e)
+        ;
+
+        
+    
+    
+            circle_marker_dda9028f19fc9676f3f7450bd987421a.bindTooltip(
+                `<div>
+                     方婉 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_019a6b73268957593c07e5570b93da65 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.12, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_9b1519d73f9cdf41c1303d35e4d125d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_92fb2538dd84f8d07db9ed2e05bc45a7 = $(`<div id="html_92fb2538dd84f8d07db9ed2e05bc45a7" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             方熙         </h4>         <p><b>📅 生卒:</b> 1733-1783 (享年83岁)</p>         <p><b>📍 出生地:</b> 出生地33</p>         <p><b>🎯 活动地:</b> 活动地33</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_9b1519d73f9cdf41c1303d35e4d125d9.setContent(html_92fb2538dd84f8d07db9ed2e05bc45a7);
+            
+        
+
+        circle_marker_019a6b73268957593c07e5570b93da65.bindPopup(popup_9b1519d73f9cdf41c1303d35e4d125d9)
+        ;
+
+        
+    
+    
+            circle_marker_019a6b73268957593c07e5570b93da65.bindTooltip(
+                `<div>
+                     方熙 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb805eb41d9598f7bf4b50c63d85605c = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.1, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_648d23e9242c3cefea7a9972329ad31d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b47e55eea8e21ab040ec541c721c26cf = $(`<div id="html_b47e55eea8e21ab040ec541c721c26cf" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             方灿         </h4>         <p><b>📅 生卒:</b> 1734-1784 (享年84岁)</p>         <p><b>📍 出生地:</b> 出生地34</p>         <p><b>🎯 活动地:</b> 活动地34</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_648d23e9242c3cefea7a9972329ad31d.setContent(html_b47e55eea8e21ab040ec541c721c26cf);
+            
+        
+
+        circle_marker_fb805eb41d9598f7bf4b50c63d85605c.bindPopup(popup_648d23e9242c3cefea7a9972329ad31d)
+        ;
+
+        
+    
+    
+            circle_marker_fb805eb41d9598f7bf4b50c63d85605c.bindTooltip(
+                `<div>
+                     方灿 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66c11343c139ab4f41202f156e6e42d2 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.08, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_3d4d810f293540d9ebf05e919b5483e5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7e1bd90a58f791b4beeedfe67a056ae4 = $(`<div id="html_7e1bd90a58f791b4beeedfe67a056ae4" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             方灿         </h4>         <p><b>📅 生卒:</b> 1735-1785 (享年85岁)</p>         <p><b>📍 出生地:</b> 出生地35</p>         <p><b>🎯 活动地:</b> 活动地35</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_3d4d810f293540d9ebf05e919b5483e5.setContent(html_7e1bd90a58f791b4beeedfe67a056ae4);
+            
+        
+
+        circle_marker_66c11343c139ab4f41202f156e6e42d2.bindPopup(popup_3d4d810f293540d9ebf05e919b5483e5)
+        ;
+
+        
+    
+    
+            circle_marker_66c11343c139ab4f41202f156e6e42d2.bindTooltip(
+                `<div>
+                     方灿 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76f8ab07d9e5129e59d482b2d8445f7a = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0600000000000005, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_8398335fe30ce84653e6ef31c36ec640 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7ff7ee0c14dc2f0f6b7b807fb3e53281 = $(`<div id="html_7ff7ee0c14dc2f0f6b7b807fb3e53281" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             方焰         </h4>         <p><b>📅 生卒:</b> 1736-1786 (享年86岁)</p>         <p><b>📍 出生地:</b> 出生地36</p>         <p><b>🎯 活动地:</b> 活动地36</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_8398335fe30ce84653e6ef31c36ec640.setContent(html_7ff7ee0c14dc2f0f6b7b807fb3e53281);
+            
+        
+
+        circle_marker_76f8ab07d9e5129e59d482b2d8445f7a.bindPopup(popup_8398335fe30ce84653e6ef31c36ec640)
+        ;
+
+        
+    
+    
+            circle_marker_76f8ab07d9e5129e59d482b2d8445f7a.bindTooltip(
+                `<div>
+                     方焰 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_07c192f5757b51de44f251bc840db3cc = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.04, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_b829b9c6f46b91b323c54b6ff6f98646 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dd5869d07b11ab390f97e56ed47929f0 = $(`<div id="html_dd5869d07b11ab390f97e56ed47929f0" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             方烨         </h4>         <p><b>📅 生卒:</b> 1737-1787 (享年87岁)</p>         <p><b>📍 出生地:</b> 出生地37</p>         <p><b>🎯 活动地:</b> 活动地37</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_b829b9c6f46b91b323c54b6ff6f98646.setContent(html_dd5869d07b11ab390f97e56ed47929f0);
+            
+        
+
+        circle_marker_07c192f5757b51de44f251bc840db3cc.bindPopup(popup_b829b9c6f46b91b323c54b6ff6f98646)
+        ;
+
+        
+    
+    
+            circle_marker_07c192f5757b51de44f251bc840db3cc.bindTooltip(
+                `<div>
+                     方烨 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6616366dde044859b67edd5fba374d98 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.02, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_afcd0db3a7a5e51272d86b1054e8ed24 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9b740f757bbebf2ad28867aafa4ecaa3 = $(`<div id="html_9b740f757bbebf2ad28867aafa4ecaa3" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             方焰         </h4>         <p><b>📅 生卒:</b> 1738-1788 (享年88岁)</p>         <p><b>📍 出生地:</b> 出生地38</p>         <p><b>🎯 活动地:</b> 活动地38</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_afcd0db3a7a5e51272d86b1054e8ed24.setContent(html_9b740f757bbebf2ad28867aafa4ecaa3);
+            
+        
+
+        circle_marker_6616366dde044859b67edd5fba374d98.bindPopup(popup_afcd0db3a7a5e51272d86b1054e8ed24)
+        ;
+
+        
+    
+    
+            circle_marker_6616366dde044859b67edd5fba374d98.bindTooltip(
+                `<div>
+                     方焰 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f45a0660c099df519b0da4d7ee282a85 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_b6484bcb7a37b69221c9c5c17e564bf8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd15a1c3146bb142785782d622064f32 = $(`<div id="html_cd15a1c3146bb142785782d622064f32" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             方焰         </h4>         <p><b>📅 生卒:</b> 1739-1789 (享年89岁)</p>         <p><b>📍 出生地:</b> 出生地39</p>         <p><b>🎯 活动地:</b> 活动地39</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_b6484bcb7a37b69221c9c5c17e564bf8.setContent(html_cd15a1c3146bb142785782d622064f32);
+            
+        
+
+        circle_marker_f45a0660c099df519b0da4d7ee282a85.bindPopup(popup_b6484bcb7a37b69221c9c5c17e564bf8)
+        ;
+
+        
+    
+    
+            circle_marker_f45a0660c099df519b0da4d7ee282a85.bindTooltip(
+                `<div>
+                     方焰 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f78a3dbd914b7f38dcd78bf91357aa4c = L.circleMarker(
+                [30.5254, 120.9458],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.98, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_0c7671cb549da59fcfefe6693fd7e67a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_503be6ff762ccd688a34366b43eefc1f = $(`<div id="html_503be6ff762ccd688a34366b43eefc1f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             朱景素         </h4>         <p><b>📅 生卒:</b> 1740-1790 (享年90岁)</p>         <p><b>📍 出生地:</b> 出生地40</p>         <p><b>🎯 活动地:</b> 活动地40</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_0c7671cb549da59fcfefe6693fd7e67a.setContent(html_503be6ff762ccd688a34366b43eefc1f);
+            
+        
+
+        circle_marker_f78a3dbd914b7f38dcd78bf91357aa4c.bindPopup(popup_0c7671cb549da59fcfefe6693fd7e67a)
+        ;
+
+        
+    
+    
+            circle_marker_f78a3dbd914b7f38dcd78bf91357aa4c.bindTooltip(
+                `<div>
+                     朱景素 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_56d4df4ff3923bd0bac3aea0e3d7baaf = L.circleMarker(
+                [30.746, 120.7555],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.96, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_9939ab9c083c1c30af30c7f810529acd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f66f2b67c3dec77282127ad20a4e966b = $(`<div id="html_f66f2b67c3dec77282127ad20a4e966b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkred; margin-bottom: 10px; border-bottom: 2px solid darkred; padding-bottom: 5px;">             钱斐仲         </h4>         <p><b>📅 生卒:</b> 1741-1791 (享年91岁)</p>         <p><b>📍 出生地:</b> 出生地41</p>         <p><b>🎯 活动地:</b> 活动地41</p>         <p><b>📚 文学流派:</b> 江南词派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_9939ab9c083c1c30af30c7f810529acd.setContent(html_f66f2b67c3dec77282127ad20a4e966b);
+            
+        
+
+        circle_marker_56d4df4ff3923bd0bac3aea0e3d7baaf.bindPopup(popup_9939ab9c083c1c30af30c7f810529acd)
+        ;
+
+        
+    
+    
+            circle_marker_56d4df4ff3923bd0bac3aea0e3d7baaf.bindTooltip(
+                `<div>
+                     钱斐仲 (江南词派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_55e8e5cb5b59889ae0d3fadfb9841706 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.94, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_ee7ba05fcb627df54a36924f49a2df3f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_db73739ebd6ad982f0f84e560ea529c0 = $(`<div id="html_db73739ebd6ad982f0f84e560ea529c0" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkred; margin-bottom: 10px; border-bottom: 2px solid darkred; padding-bottom: 5px;">             关锐         </h4>         <p><b>📅 生卒:</b> 1742-1792 (享年92岁)</p>         <p><b>📍 出生地:</b> 出生地42</p>         <p><b>🎯 活动地:</b> 活动地42</p>         <p><b>📚 文学流派:</b> 江南词派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_ee7ba05fcb627df54a36924f49a2df3f.setContent(html_db73739ebd6ad982f0f84e560ea529c0);
+            
+        
+
+        circle_marker_55e8e5cb5b59889ae0d3fadfb9841706.bindPopup(popup_ee7ba05fcb627df54a36924f49a2df3f)
+        ;
+
+        
+    
+    
+            circle_marker_55e8e5cb5b59889ae0d3fadfb9841706.bindTooltip(
+                `<div>
+                     关锐 (江南词派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_194e542f8c1c6d3fdeefeac023dafbe6 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.92, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_298182f54fcce6ac440c1a5158de7d6a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_faab59784573e159519e577815eeee94 = $(`<div id="html_faab59784573e159519e577815eeee94" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             赵英         </h4>         <p><b>📅 生卒:</b> 1743-1793 (享年93岁)</p>         <p><b>📍 出生地:</b> 出生地43</p>         <p><b>🎯 活动地:</b> 活动地43</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_298182f54fcce6ac440c1a5158de7d6a.setContent(html_faab59784573e159519e577815eeee94);
+            
+        
+
+        circle_marker_194e542f8c1c6d3fdeefeac023dafbe6.bindPopup(popup_298182f54fcce6ac440c1a5158de7d6a)
+        ;
+
+        
+    
+    
+            circle_marker_194e542f8c1c6d3fdeefeac023dafbe6.bindTooltip(
+                `<div>
+                     赵英 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23b1e6ea867a6ad5d50f809be6d40837 = L.circleMarker(
+                [30.746, 120.7555],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.9, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_5f8bd69f49acb819821bcffb67a1b4ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_529dad4156b1fac301c972ae10036970 = $(`<div id="html_529dad4156b1fac301c972ae10036970" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             沈蕊         </h4>         <p><b>📅 生卒:</b> 1744-1794 (享年94岁)</p>         <p><b>📍 出生地:</b> 出生地44</p>         <p><b>🎯 活动地:</b> 活动地44</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_5f8bd69f49acb819821bcffb67a1b4ef.setContent(html_529dad4156b1fac301c972ae10036970);
+            
+        
+
+        circle_marker_23b1e6ea867a6ad5d50f809be6d40837.bindPopup(popup_5f8bd69f49acb819821bcffb67a1b4ef)
+        ;
+
+        
+    
+    
+            circle_marker_23b1e6ea867a6ad5d50f809be6d40837.bindTooltip(
+                `<div>
+                     沈蕊 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d8965710995da7ec55d7a7fe31f1ddc = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.88, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_abca56acef72e7c04f0293db6ad1ac01 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a9a0cbbca19342b3a616b8bb1c49522e = $(`<div id="html_a9a0cbbca19342b3a616b8bb1c49522e" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: lightblue; margin-bottom: 10px; border-bottom: 2px solid lightblue; padding-bottom: 5px;">             吴尚素         </h4>         <p><b>📅 生卒:</b> 1745-1795 (享年95岁)</p>         <p><b>📍 出生地:</b> 出生地45</p>         <p><b>🎯 活动地:</b> 活动地45</p>         <p><b>📚 文学流派:</b> 岭南诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_abca56acef72e7c04f0293db6ad1ac01.setContent(html_a9a0cbbca19342b3a616b8bb1c49522e);
+            
+        
+
+        circle_marker_3d8965710995da7ec55d7a7fe31f1ddc.bindPopup(popup_abca56acef72e7c04f0293db6ad1ac01)
+        ;
+
+        
+    
+    
+            circle_marker_3d8965710995da7ec55d7a7fe31f1ddc.bindTooltip(
+                `<div>
+                     吴尚素 (岭南诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69b4f2f4d68dfd6fcc4c1af58859989d = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.86, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_92a187e2afa171948618be2de13a22ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8cedd833e4da0d51bc01c5eac43e4887 = $(`<div id="html_8cedd833e4da0d51bc01c5eac43e4887" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             左锡璇         </h4>         <p><b>📅 生卒:</b> 1746-1796 (享年96岁)</p>         <p><b>📍 出生地:</b> 出生地46</p>         <p><b>🎯 活动地:</b> 活动地46</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_92a187e2afa171948618be2de13a22ef.setContent(html_8cedd833e4da0d51bc01c5eac43e4887);
+            
+        
+
+        circle_marker_69b4f2f4d68dfd6fcc4c1af58859989d.bindPopup(popup_92a187e2afa171948618be2de13a22ef)
+        ;
+
+        
+    
+    
+            circle_marker_69b4f2f4d68dfd6fcc4c1af58859989d.bindTooltip(
+                `<div>
+                     左锡璇 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a44460671ae92ca1fcfb263246e723d3 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.84, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_f2e236b59791dde26cd0e94699ddf444 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a64d5efa09538a35f005562f51798ede = $(`<div id="html_a64d5efa09538a35f005562f51798ede" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             左锡嘉         </h4>         <p><b>📅 生卒:</b> 1747-1797 (享年97岁)</p>         <p><b>📍 出生地:</b> 出生地47</p>         <p><b>🎯 活动地:</b> 活动地47</p>         <p><b>📚 文学流派:</b> 江南闺秀诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_f2e236b59791dde26cd0e94699ddf444.setContent(html_a64d5efa09538a35f005562f51798ede);
+            
+        
+
+        circle_marker_a44460671ae92ca1fcfb263246e723d3.bindPopup(popup_f2e236b59791dde26cd0e94699ddf444)
+        ;
+
+        
+    
+    
+            circle_marker_a44460671ae92ca1fcfb263246e723d3.bindTooltip(
+                `<div>
+                     左锡嘉 (江南闺秀诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b1125deb67bc6c712fcccb07224abdc = L.circleMarker(
+                [27.8297, 112.944],
+                {"bubblingMouseEvents": true, "color": "brown", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "brown", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.82, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_34cffe8be67771f6af87185eda0b8729 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b7584a4e607f7c6615a052d33fca0d3a = $(`<div id="html_b7584a4e607f7c6615a052d33fca0d3a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: brown; margin-bottom: 10px; border-bottom: 2px solid brown; padding-bottom: 5px;">             周伯豪         </h4>         <p><b>📅 生卒:</b> 1748-1798 (享年98岁)</p>         <p><b>📍 出生地:</b> 出生地48</p>         <p><b>🎯 活动地:</b> 活动地48</p>         <p><b>📚 文学流派:</b> 湖湘诗派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_34cffe8be67771f6af87185eda0b8729.setContent(html_b7584a4e607f7c6615a052d33fca0d3a);
+            
+        
+
+        circle_marker_1b1125deb67bc6c712fcccb07224abdc.bindPopup(popup_34cffe8be67771f6af87185eda0b8729)
+        ;
+
+        
+    
+    
+            circle_marker_1b1125deb67bc6c712fcccb07224abdc.bindTooltip(
+                `<div>
+                     周伯豪 (湖湘诗派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_07cca05a4cd04bda9f1689361c40a36f = L.circleMarker(
+                [30.5728, 104.0665],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.8, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_0ff0ca2e4d527ef9354ea505344e594d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_da29333061a6b31c576f9380a478fc5b = $(`<div id="html_da29333061a6b31c576f9380a478fc5b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: gray; margin-bottom: 10px; border-bottom: 2px solid gray; padding-bottom: 5px;">             曾懿         </h4>         <p><b>📅 生卒:</b> 1749-1799 (享年99岁)</p>         <p><b>📍 出生地:</b> 出生地49</p>         <p><b>🎯 活动地:</b> 活动地49</p>         <p><b>📚 文学流派:</b> 综合派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_0ff0ca2e4d527ef9354ea505344e594d.setContent(html_da29333061a6b31c576f9380a478fc5b);
+            
+        
+
+        circle_marker_07cca05a4cd04bda9f1689361c40a36f.bindPopup(popup_0ff0ca2e4d527ef9354ea505344e594d)
+        ;
+
+        
+    
+    
+            circle_marker_07cca05a4cd04bda9f1689361c40a36f.bindTooltip(
+                `<div>
+                     曾懿 (综合派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d8c08841ae35ebaab8b844460e0918d = L.circleMarker(
+                [30.2861, 118.5431],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cadetblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.78, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_781d41c558bd44e621d89d53041a7795 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_48a5d07da705cb7724398d17e463e04d = $(`<div id="html_48a5d07da705cb7724398d17e463e04d" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: cadetblue; margin-bottom: 10px; border-bottom: 2px solid cadetblue; padding-bottom: 5px;">             吕慧城         </h4>         <p><b>📅 生卒:</b> 1750-1800 (享年50岁)</p>         <p><b>📍 出生地:</b> 出生地50</p>         <p><b>🎯 活动地:</b> 活动地50</p>         <p><b>📚 文学流派:</b> 革新派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_781d41c558bd44e621d89d53041a7795.setContent(html_48a5d07da705cb7724398d17e463e04d);
+            
+        
+
+        circle_marker_8d8c08841ae35ebaab8b844460e0918d.bindPopup(popup_781d41c558bd44e621d89d53041a7795)
+        ;
+
+        
+    
+    
+            circle_marker_8d8c08841ae35ebaab8b844460e0918d.bindTooltip(
+                `<div>
+                     吕慧城 (革新派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e309763c33e7df7e229d81f906267947 = L.circleMarker(
+                [26.0753, 119.3062],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.76, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_44bf14e5b73a4355956e9b82dfec074a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_34f85e41c64e7298c1c93f2a5e9259f7 = $(`<div id="html_34f85e41c64e7298c1c93f2a5e9259f7" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: gray; margin-bottom: 10px; border-bottom: 2px solid gray; padding-bottom: 5px;">             薛绍徽         </h4>         <p><b>📅 生卒:</b> 1751-1801 (享年51岁)</p>         <p><b>📍 出生地:</b> 出生地51</p>         <p><b>🎯 活动地:</b> 活动地51</p>         <p><b>📚 文学流派:</b> 综合派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_44bf14e5b73a4355956e9b82dfec074a.setContent(html_34f85e41c64e7298c1c93f2a5e9259f7);
+            
+        
+
+        circle_marker_e309763c33e7df7e229d81f906267947.bindPopup(popup_44bf14e5b73a4355956e9b82dfec074a)
+        ;
+
+        
+    
+    
+            circle_marker_e309763c33e7df7e229d81f906267947.bindTooltip(
+                `<div>
+                     薛绍徽 (综合派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b4d35ddb5a119ad259b8d7d555696c6 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.74, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_aa0d5a37c735bc03c30730901f934ef9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d6783e2caae916252760de3a5942e695 = $(`<div id="html_d6783e2caae916252760de3a5942e695" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: lightgreen; margin-bottom: 10px; border-bottom: 2px solid lightgreen; padding-bottom: 5px;">             单士厘         </h4>         <p><b>📅 生卒:</b> 1752-1802 (享年52岁)</p>         <p><b>📍 出生地:</b> 出生地52</p>         <p><b>🎯 活动地:</b> 活动地52</p>         <p><b>📚 文学流派:</b> 旅行文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_aa0d5a37c735bc03c30730901f934ef9.setContent(html_d6783e2caae916252760de3a5942e695);
+            
+        
+
+        circle_marker_9b4d35ddb5a119ad259b8d7d555696c6.bindPopup(popup_aa0d5a37c735bc03c30730901f934ef9)
+        ;
+
+        
+    
+    
+            circle_marker_9b4d35ddb5a119ad259b8d7d555696c6.bindTooltip(
+                `<div>
+                     单士厘 (旅行文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eca23422778d3e81f2c5a874c560f3da = L.circleMarker(
+                [30.6309, 120.5644],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.72, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_e4946a09414a975ff508de54a01515a5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c25f6dd65178035560f79f9f1ce14eef = $(`<div id="html_c25f6dd65178035560f79f9f1ce14eef" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: black; margin-bottom: 10px; border-bottom: 2px solid black; padding-bottom: 5px;">             徐自华         </h4>         <p><b>📅 生卒:</b> 1753-1803 (享年53岁)</p>         <p><b>📍 出生地:</b> 出生地53</p>         <p><b>🎯 活动地:</b> 活动地53</p>         <p><b>📚 文学流派:</b> 南社诗风</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_e4946a09414a975ff508de54a01515a5.setContent(html_c25f6dd65178035560f79f9f1ce14eef);
+            
+        
+
+        circle_marker_eca23422778d3e81f2c5a874c560f3da.bindPopup(popup_e4946a09414a975ff508de54a01515a5)
+        ;
+
+        
+    
+    
+            circle_marker_eca23422778d3e81f2c5a874c560f3da.bindTooltip(
+                `<div>
+                     徐自华 (南社诗风)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72384022201e6a32659c5581516773d2 = L.circleMarker(
+                [30.6309, 120.5644],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.7, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_654c699db330caadbbde8a381664496a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f301d4b34be3136322a63243582d79e8 = $(`<div id="html_f301d4b34be3136322a63243582d79e8" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: black; margin-bottom: 10px; border-bottom: 2px solid black; padding-bottom: 5px;">             徐蕴华         </h4>         <p><b>📅 生卒:</b> 1754-1804 (享年54岁)</p>         <p><b>📍 出生地:</b> 出生地54</p>         <p><b>🎯 活动地:</b> 活动地54</p>         <p><b>📚 文学流派:</b> 南社诗风</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_654c699db330caadbbde8a381664496a.setContent(html_f301d4b34be3136322a63243582d79e8);
+            
+        
+
+        circle_marker_72384022201e6a32659c5581516773d2.bindPopup(popup_654c699db330caadbbde8a381664496a)
+        ;
+
+        
+    
+    
+            circle_marker_72384022201e6a32659c5581516773d2.bindTooltip(
+                `<div>
+                     徐蕴华 (南社诗风)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_abc45849e9aaf5130caa64be0887fc82 = L.circleMarker(
+                [27.7341, 112.535],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.68, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_53131f5e807eda6d0fff7d5376ba79be = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2c28e09c235d3fa599a1d719b2bbbd65 = $(`<div id="html_2c28e09c235d3fa599a1d719b2bbbd65" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: black; margin-bottom: 10px; border-bottom: 2px solid black; padding-bottom: 5px;">             张昭汉         </h4>         <p><b>📅 生卒:</b> 1755-1805 (享年55岁)</p>         <p><b>📍 出生地:</b> 出生地55</p>         <p><b>🎯 活动地:</b> 活动地55</p>         <p><b>📚 文学流派:</b> 南社诗风</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_53131f5e807eda6d0fff7d5376ba79be.setContent(html_2c28e09c235d3fa599a1d719b2bbbd65);
+            
+        
+
+        circle_marker_abc45849e9aaf5130caa64be0887fc82.bindPopup(popup_53131f5e807eda6d0fff7d5376ba79be)
+        ;
+
+        
+    
+    
+            circle_marker_abc45849e9aaf5130caa64be0887fc82.bindTooltip(
+                `<div>
+                     张昭汉 (南社诗风)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_702a8ac9f2a8d7ad51e84d0e8167589b = L.circleMarker(
+                [27.2305, 112.8693],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkpurple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.66, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_4bbd0356645fecd6bab0c81ae5ff7adb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_49473caf2103131e5f069ed57127436e = $(`<div id="html_49473caf2103131e5f069ed57127436e" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkpurple; margin-bottom: 10px; border-bottom: 2px solid darkpurple; padding-bottom: 5px;">             唐群英         </h4>         <p><b>📅 生卒:</b> 1756-1806 (享年56岁)</p>         <p><b>📍 出生地:</b> 出生地56</p>         <p><b>🎯 活动地:</b> 活动地56</p>         <p><b>📚 文学流派:</b> 革命文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_4bbd0356645fecd6bab0c81ae5ff7adb.setContent(html_49473caf2103131e5f069ed57127436e);
+            
+        
+
+        circle_marker_702a8ac9f2a8d7ad51e84d0e8167589b.bindPopup(popup_4bbd0356645fecd6bab0c81ae5ff7adb)
+        ;
+
+        
+    
+    
+            circle_marker_702a8ac9f2a8d7ad51e84d0e8167589b.bindTooltip(
+                `<div>
+                     唐群英 (革命文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9823b70f25229568afea7e20bf6e3c73 = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.64, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_7d55fec730b50ca6a64d6f79b813186b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4750a3905d8054c65ec128f3ff8df516 = $(`<div id="html_4750a3905d8054c65ec128f3ff8df516" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             康同璧         </h4>         <p><b>📅 生卒:</b> 1757-1807 (享年57岁)</p>         <p><b>📍 出生地:</b> 出生地57</p>         <p><b>🎯 活动地:</b> 活动地57</p>         <p><b>📚 文学流派:</b> 维新派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_7d55fec730b50ca6a64d6f79b813186b.setContent(html_4750a3905d8054c65ec128f3ff8df516);
+            
+        
+
+        circle_marker_9823b70f25229568afea7e20bf6e3c73.bindPopup(popup_7d55fec730b50ca6a64d6f79b813186b)
+        ;
+
+        
+    
+    
+            circle_marker_9823b70f25229568afea7e20bf6e3c73.bindTooltip(
+                `<div>
+                     康同璧 (维新派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb2e697b375b3f94fc1caa8fdf4a9010 = L.circleMarker(
+                [30.0303, 120.5829],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkpurple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.62, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_16e83b9211cd821cc600fb05088cef74 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e0e1e180c44c99e2b43dfa4455c55a9a = $(`<div id="html_e0e1e180c44c99e2b43dfa4455c55a9a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkpurple; margin-bottom: 10px; border-bottom: 2px solid darkpurple; padding-bottom: 5px;">             秋瑾         </h4>         <p><b>📅 生卒:</b> 1758-1808 (享年58岁)</p>         <p><b>📍 出生地:</b> 出生地58</p>         <p><b>🎯 活动地:</b> 活动地58</p>         <p><b>📚 文学流派:</b> 革命文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_16e83b9211cd821cc600fb05088cef74.setContent(html_e0e1e180c44c99e2b43dfa4455c55a9a);
+            
+        
+
+        circle_marker_bb2e697b375b3f94fc1caa8fdf4a9010.bindPopup(popup_16e83b9211cd821cc600fb05088cef74)
+        ;
+
+        
+    
+    
+            circle_marker_bb2e697b375b3f94fc1caa8fdf4a9010.bindTooltip(
+                `<div>
+                     秋瑾 (革命文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec278f915de9738642d79e024de8d8a6 = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "pink", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.6, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_dbe17c1e5d537dca91fa6ce041e5dcf4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_902dd87ffb9743ecb7f47e2d16986baf = $(`<div id="html_902dd87ffb9743ecb7f47e2d16986baf" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: pink; margin-bottom: 10px; border-bottom: 2px solid pink; padding-bottom: 5px;">             何香凝         </h4>         <p><b>📅 生卒:</b> 1759-1809 (享年59岁)</p>         <p><b>📍 出生地:</b> 出生地59</p>         <p><b>🎯 活动地:</b> 活动地59</p>         <p><b>📚 文学流派:</b> 革命艺术</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_dbe17c1e5d537dca91fa6ce041e5dcf4.setContent(html_902dd87ffb9743ecb7f47e2d16986baf);
+            
+        
+
+        circle_marker_ec278f915de9738642d79e024de8d8a6.bindPopup(popup_dbe17c1e5d537dca91fa6ce041e5dcf4)
+        ;
+
+        
+    
+    
+            circle_marker_ec278f915de9738642d79e024de8d8a6.bindTooltip(
+                `<div>
+                     何香凝 (革命艺术)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89ec43f8a2c90c202047470517e16d20 = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.58, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_417ed48eaf60023824bdb489ab86d6ec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fc3e649b403836f2288113d6f5adf22f = $(`<div id="html_fc3e649b403836f2288113d6f5adf22f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: lightgray; margin-bottom: 10px; border-bottom: 2px solid lightgray; padding-bottom: 5px;">             张竹君         </h4>         <p><b>📅 生卒:</b> 1760-1810 (享年60岁)</p>         <p><b>📍 出生地:</b> 出生地60</p>         <p><b>🎯 活动地:</b> 活动地60</p>         <p><b>📚 文学流派:</b> 实践派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_417ed48eaf60023824bdb489ab86d6ec.setContent(html_fc3e649b403836f2288113d6f5adf22f);
+            
+        
+
+        circle_marker_89ec43f8a2c90c202047470517e16d20.bindPopup(popup_417ed48eaf60023824bdb489ab86d6ec)
+        ;
+
+        
+    
+    
+            circle_marker_89ec43f8a2c90c202047470517e16d20.bindTooltip(
+                `<div>
+                     张竹君 (实践派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c95e73dbab77bf8364ef752cda31140 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5600000000000005, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_bc1a4de2c3fb4222f14727ca15e5987b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ca8147a0ed6ab635dd451da644c473e8 = $(`<div id="html_ca8147a0ed6ab635dd451da644c473e8" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkred; margin-bottom: 10px; border-bottom: 2px solid darkred; padding-bottom: 5px;">             吴芝瑛         </h4>         <p><b>📅 生卒:</b> 1761-1811 (享年61岁)</p>         <p><b>📍 出生地:</b> 出生地61</p>         <p><b>🎯 活动地:</b> 活动地61</p>         <p><b>📚 文学流派:</b> 文人书法</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_bc1a4de2c3fb4222f14727ca15e5987b.setContent(html_ca8147a0ed6ab635dd451da644c473e8);
+            
+        
+
+        circle_marker_7c95e73dbab77bf8364ef752cda31140.bindPopup(popup_bc1a4de2c3fb4222f14727ca15e5987b)
+        ;
+
+        
+    
+    
+            circle_marker_7c95e73dbab77bf8364ef752cda31140.bindTooltip(
+                `<div>
+                     吴芝瑛 (文人书法)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d59c8aa531d882a0eea7aa832dc0160 = L.circleMarker(
+                [22.2707, 113.5767],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkpurple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.54, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_53c02d946db49bf6031edf9af1cee5d0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d21c0491517b7e0ff207e0d60796b72b = $(`<div id="html_d21c0491517b7e0ff207e0d60796b72b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkpurple; margin-bottom: 10px; border-bottom: 2px solid darkpurple; padding-bottom: 5px;">             徐宗汉         </h4>         <p><b>📅 生卒:</b> 1762-1812 (享年62岁)</p>         <p><b>📍 出生地:</b> 出生地62</p>         <p><b>🎯 活动地:</b> 活动地62</p>         <p><b>📚 文学流派:</b> 革命文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_53c02d946db49bf6031edf9af1cee5d0.setContent(html_d21c0491517b7e0ff207e0d60796b72b);
+            
+        
+
+        circle_marker_3d59c8aa531d882a0eea7aa832dc0160.bindPopup(popup_53c02d946db49bf6031edf9af1cee5d0)
+        ;
+
+        
+    
+    
+            circle_marker_3d59c8aa531d882a0eea7aa832dc0160.bindTooltip(
+                `<div>
+                     徐宗汉 (革命文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b7a470eea5952d2b58c536a4855e5366 = L.circleMarker(
+                [19.6133, 110.7539],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkpurple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.52, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_848cfb773fd3fedc63f0a9bb2df9e6b4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8e75cd04639fb5ce349cb905956a6e32 = $(`<div id="html_8e75cd04639fb5ce349cb905956a6e32" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkpurple; margin-bottom: 10px; border-bottom: 2px solid darkpurple; padding-bottom: 5px;">             宋庆龄         </h4>         <p><b>📅 生卒:</b> 1763-1813 (享年63岁)</p>         <p><b>📍 出生地:</b> 出生地63</p>         <p><b>🎯 活动地:</b> 活动地63</p>         <p><b>📚 文学流派:</b> 革命文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_848cfb773fd3fedc63f0a9bb2df9e6b4.setContent(html_8e75cd04639fb5ce349cb905956a6e32);
+            
+        
+
+        circle_marker_b7a470eea5952d2b58c536a4855e5366.bindPopup(popup_848cfb773fd3fedc63f0a9bb2df9e6b4)
+        ;
+
+        
+    
+    
+            circle_marker_b7a470eea5952d2b58c536a4855e5366.bindTooltip(
+                `<div>
+                     宋庆龄 (革命文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64be94754f418d178d475be3c5645d6b = L.circleMarker(
+                [19.6133, 110.7539],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_e3756d8ad7abbbb40dd8242bc916e90c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_acf96b85e570384e83f8b702d4b84194 = $(`<div id="html_acf96b85e570384e83f8b702d4b84194" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: blue; margin-bottom: 10px; border-bottom: 2px solid blue; padding-bottom: 5px;">             宋霭龄         </h4>         <p><b>📅 生卒:</b> 1764-1814 (享年64岁)</p>         <p><b>📍 出生地:</b> 出生地64</p>         <p><b>🎯 活动地:</b> 活动地64</p>         <p><b>📚 文学流派:</b> 实用派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_e3756d8ad7abbbb40dd8242bc916e90c.setContent(html_acf96b85e570384e83f8b702d4b84194);
+            
+        
+
+        circle_marker_64be94754f418d178d475be3c5645d6b.bindPopup(popup_e3756d8ad7abbbb40dd8242bc916e90c)
+        ;
+
+        
+    
+    
+            circle_marker_64be94754f418d178d475be3c5645d6b.bindTooltip(
+                `<div>
+                     宋霭龄 (实用派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9768cf0dc8f23e2bdfad59f248be351 = L.circleMarker(
+                [19.6133, 110.7539],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.48, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_2dc19dd04a6776de66d6de97fc07cbe6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_22af9fc89643ee648d00181a5594ecd6 = $(`<div id="html_22af9fc89643ee648d00181a5594ecd6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: red; margin-bottom: 10px; border-bottom: 2px solid red; padding-bottom: 5px;">             宋美龄         </h4>         <p><b>📅 生卒:</b> 1765-1815 (享年65岁)</p>         <p><b>📍 出生地:</b> 出生地65</p>         <p><b>🎯 活动地:</b> 活动地65</p>         <p><b>📚 文学流派:</b> 政治文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_2dc19dd04a6776de66d6de97fc07cbe6.setContent(html_22af9fc89643ee648d00181a5594ecd6);
+            
+        
+
+        circle_marker_b9768cf0dc8f23e2bdfad59f248be351.bindPopup(popup_2dc19dd04a6776de66d6de97fc07cbe6)
+        ;
+
+        
+    
+    
+            circle_marker_b9768cf0dc8f23e2bdfad59f248be351.bindTooltip(
+                `<div>
+                     宋美龄 (政治文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3da3beffce47252d88faed7d1cecad1 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.46, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_1ec6e9acca17ba1d78ebbf5b7b2cc484 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ee715753b5e2aad656758b07c930b2f = $(`<div id="html_5ee715753b5e2aad656758b07c930b2f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             张幼仪         </h4>         <p><b>📅 生卒:</b> 1766-1816 (享年66岁)</p>         <p><b>📍 出生地:</b> 出生地66</p>         <p><b>🎯 活动地:</b> 活动地66</p>         <p><b>📚 文学流派:</b> 现代派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_1ec6e9acca17ba1d78ebbf5b7b2cc484.setContent(html_5ee715753b5e2aad656758b07c930b2f);
+            
+        
+
+        circle_marker_b3da3beffce47252d88faed7d1cecad1.bindPopup(popup_1ec6e9acca17ba1d78ebbf5b7b2cc484)
+        ;
+
+        
+    
+    
+            circle_marker_b3da3beffce47252d88faed7d1cecad1.bindTooltip(
+                `<div>
+                     张幼仪 (现代派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72f1b5bfe633afb04d806ab74a31ff68 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.44, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_8478ba36495f01d4af4b556b5cf0c553 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_19880ab00f7610a94fd54407109f4538 = $(`<div id="html_19880ab00f7610a94fd54407109f4538" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             陆小曼         </h4>         <p><b>📅 生卒:</b> 1767-1817 (享年67岁)</p>         <p><b>📍 出生地:</b> 出生地67</p>         <p><b>🎯 活动地:</b> 活动地67</p>         <p><b>📚 文学流派:</b> 现代派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_8478ba36495f01d4af4b556b5cf0c553.setContent(html_19880ab00f7610a94fd54407109f4538);
+            
+        
+
+        circle_marker_72f1b5bfe633afb04d806ab74a31ff68.bindPopup(popup_8478ba36495f01d4af4b556b5cf0c553)
+        ;
+
+        
+    
+    
+            circle_marker_72f1b5bfe633afb04d806ab74a31ff68.bindTooltip(
+                `<div>
+                     陆小曼 (现代派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a71db68b942ff56e0d6718e8292bcc3c = L.circleMarker(
+                [26.0753, 119.3062],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.42, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_35a78bfb1aba7471f57c4c2262db986a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_69bfdb5f79837b8a476264e2afcd00f6 = $(`<div id="html_69bfdb5f79837b8a476264e2afcd00f6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: purple; margin-bottom: 10px; border-bottom: 2px solid purple; padding-bottom: 5px;">             林徽因         </h4>         <p><b>📅 生卒:</b> 1768-1818 (享年68岁)</p>         <p><b>📍 出生地:</b> 出生地68</p>         <p><b>🎯 活动地:</b> 活动地68</p>         <p><b>📚 文学流派:</b> 新月派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_35a78bfb1aba7471f57c4c2262db986a.setContent(html_69bfdb5f79837b8a476264e2afcd00f6);
+            
+        
+
+        circle_marker_a71db68b942ff56e0d6718e8292bcc3c.bindPopup(popup_35a78bfb1aba7471f57c4c2262db986a)
+        ;
+
+        
+    
+    
+            circle_marker_a71db68b942ff56e0d6718e8292bcc3c.bindTooltip(
+                `<div>
+                     林徽因 (新月派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a17b9139b4c61db22ec6572c9bbd85f2 = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.4, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_4fb7f85f3d894df80d513a4b92a9a60e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d2673c0ef4216505eb0dab3d1bfdb373 = $(`<div id="html_d2673c0ef4216505eb0dab3d1bfdb373" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: purple; margin-bottom: 10px; border-bottom: 2px solid purple; padding-bottom: 5px;">             凌叔华         </h4>         <p><b>📅 生卒:</b> 1769-1819 (享年69岁)</p>         <p><b>📍 出生地:</b> 出生地69</p>         <p><b>🎯 活动地:</b> 活动地69</p>         <p><b>📚 文学流派:</b> 新月派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_4fb7f85f3d894df80d513a4b92a9a60e.setContent(html_d2673c0ef4216505eb0dab3d1bfdb373);
+            
+        
+
+        circle_marker_a17b9139b4c61db22ec6572c9bbd85f2.bindPopup(popup_4fb7f85f3d894df80d513a4b92a9a60e)
+        ;
+
+        
+    
+    
+            circle_marker_a17b9139b4c61db22ec6572c9bbd85f2.bindTooltip(
+                `<div>
+                     凌叔华 (新月派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_29a199291f8fc436b8249de092f17d44 = L.circleMarker(
+                [27.7788, 120.6551],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.38, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_d9a3e30767a124b02070af8d6da88f29 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d90b871810334ad116ec2ac6ed09736c = $(`<div id="html_d90b871810334ad116ec2ac6ed09736c" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             苏雪林         </h4>         <p><b>📅 生卒:</b> 1770-1820 (享年70岁)</p>         <p><b>📍 出生地:</b> 出生地70</p>         <p><b>🎯 活动地:</b> 活动地70</p>         <p><b>📚 文学流派:</b> 学者文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_d9a3e30767a124b02070af8d6da88f29.setContent(html_d90b871810334ad116ec2ac6ed09736c);
+            
+        
+
+        circle_marker_29a199291f8fc436b8249de092f17d44.bindPopup(popup_d9a3e30767a124b02070af8d6da88f29)
+        ;
+
+        
+    
+    
+            circle_marker_29a199291f8fc436b8249de092f17d44.bindTooltip(
+                `<div>
+                     苏雪林 (学者文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_93cac06d7c8042ff72aa15f61b7b74f0 = L.circleMarker(
+                [37.8006, 113.6581],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.36, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_edb8bcd9559a711319cb33c2c26f688e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2d319cf30fe4ca8ab8c0af75016dda86 = $(`<div id="html_2d319cf30fe4ca8ab8c0af75016dda86" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             石评梅         </h4>         <p><b>📅 生卒:</b> 1771-1821 (享年71岁)</p>         <p><b>📍 出生地:</b> 出生地71</p>         <p><b>🎯 活动地:</b> 活动地71</p>         <p><b>📚 文学流派:</b> 现代派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_edb8bcd9559a711319cb33c2c26f688e.setContent(html_2d319cf30fe4ca8ab8c0af75016dda86);
+            
+        
+
+        circle_marker_93cac06d7c8042ff72aa15f61b7b74f0.bindPopup(popup_edb8bcd9559a711319cb33c2c26f688e)
+        ;
+
+        
+    
+    
+            circle_marker_93cac06d7c8042ff72aa15f61b7b74f0.bindTooltip(
+                `<div>
+                     石评梅 (现代派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b72a4fb1bde08eb94c906c84625d6bc9 = L.circleMarker(
+                [26.0753, 119.3062],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.34, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_71f413929b17e0efbe326272f49cfeb0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_73f5ad6a08520d1394c4f1f33a365ae7 = $(`<div id="html_73f5ad6a08520d1394c4f1f33a365ae7" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkred; margin-bottom: 10px; border-bottom: 2px solid darkred; padding-bottom: 5px;">             庐隐         </h4>         <p><b>📅 生卒:</b> 1772-1822 (享年72岁)</p>         <p><b>📍 出生地:</b> 出生地72</p>         <p><b>🎯 活动地:</b> 活动地72</p>         <p><b>📚 文学流派:</b> 文学研究会</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_71f413929b17e0efbe326272f49cfeb0.setContent(html_73f5ad6a08520d1394c4f1f33a365ae7);
+            
+        
+
+        circle_marker_b72a4fb1bde08eb94c906c84625d6bc9.bindPopup(popup_71f413929b17e0efbe326272f49cfeb0)
+        ;
+
+        
+    
+    
+            circle_marker_b72a4fb1bde08eb94c906c84625d6bc9.bindTooltip(
+                `<div>
+                     庐隐 (文学研究会)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf0310690cf35c17a520aa9ba24c47c7 = L.circleMarker(
+                [32.697, 112.8077],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.32, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_af022bed849ae708845e9c24aeb6be8d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0d1697c124e3fedfac3a8982394c4243 = $(`<div id="html_0d1697c124e3fedfac3a8982394c4243" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             冯沅君         </h4>         <p><b>📅 生卒:</b> 1773-1823 (享年73岁)</p>         <p><b>📍 出生地:</b> 出生地73</p>         <p><b>🎯 活动地:</b> 活动地73</p>         <p><b>📚 文学流派:</b> 学者文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_af022bed849ae708845e9c24aeb6be8d.setContent(html_0d1697c124e3fedfac3a8982394c4243);
+            
+        
+
+        circle_marker_bf0310690cf35c17a520aa9ba24c47c7.bindPopup(popup_af022bed849ae708845e9c24aeb6be8d)
+        ;
+
+        
+    
+    
+            circle_marker_bf0310690cf35c17a520aa9ba24c47c7.bindTooltip(
+                `<div>
+                     冯沅君 (学者文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d2036ef2fc20fdbd4cf277a448b7e746 = L.circleMarker(
+                [27.6463, 113.497],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.3, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_d7ee5718c08cc1cc35dd32541f6f0013 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0d63af039d8ecfadeb5ed740e0c226a6 = $(`<div id="html_0d63af039d8ecfadeb5ed740e0c226a6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             袁昌英         </h4>         <p><b>📅 生卒:</b> 1774-1824 (享年74岁)</p>         <p><b>📍 出生地:</b> 出生地74</p>         <p><b>🎯 活动地:</b> 活动地74</p>         <p><b>📚 文学流派:</b> 学者文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_d7ee5718c08cc1cc35dd32541f6f0013.setContent(html_0d63af039d8ecfadeb5ed740e0c226a6);
+            
+        
+
+        circle_marker_d2036ef2fc20fdbd4cf277a448b7e746.bindPopup(popup_d7ee5718c08cc1cc35dd32541f6f0013)
+        ;
+
+        
+    
+    
+            circle_marker_d2036ef2fc20fdbd4cf277a448b7e746.bindTooltip(
+                `<div>
+                     袁昌英 (学者文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66690cd8fcd3b7c13692d8a0c109d22d = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.28, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_0f4a2ec132bfd856e5572501d1511021 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9238fc14eba6de4f2807279e8e50708a = $(`<div id="html_9238fc14eba6de4f2807279e8e50708a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             陈衡哲         </h4>         <p><b>📅 生卒:</b> 1775-1825 (享年75岁)</p>         <p><b>📍 出生地:</b> 出生地75</p>         <p><b>🎯 活动地:</b> 活动地75</p>         <p><b>📚 文学流派:</b> 学者文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_0f4a2ec132bfd856e5572501d1511021.setContent(html_9238fc14eba6de4f2807279e8e50708a);
+            
+        
+
+        circle_marker_66690cd8fcd3b7c13692d8a0c109d22d.bindPopup(popup_0f4a2ec132bfd856e5572501d1511021)
+        ;
+
+        
+    
+    
+            circle_marker_66690cd8fcd3b7c13692d8a0c109d22d.bindTooltip(
+                `<div>
+                     陈衡哲 (学者文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f713f031a3b5d555b1166ad7d16d986 = L.circleMarker(
+                [25.9628, 119.5232],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.26, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_b799eacb2fb8a05a345e0a081a6ca9ee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d5218c99eff733beeef69b7fea7b138 = $(`<div id="html_6d5218c99eff733beeef69b7fea7b138" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkred; margin-bottom: 10px; border-bottom: 2px solid darkred; padding-bottom: 5px;">             冰心         </h4>         <p><b>📅 生卒:</b> 1776-1826 (享年76岁)</p>         <p><b>📍 出生地:</b> 出生地76</p>         <p><b>🎯 活动地:</b> 活动地76</p>         <p><b>📚 文学流派:</b> 文学研究会</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_b799eacb2fb8a05a345e0a081a6ca9ee.setContent(html_6d5218c99eff733beeef69b7fea7b138);
+            
+        
+
+        circle_marker_2f713f031a3b5d555b1166ad7d16d986.bindPopup(popup_b799eacb2fb8a05a345e0a081a6ca9ee)
+        ;
+
+        
+    
+    
+            circle_marker_2f713f031a3b5d555b1166ad7d16d986.bindTooltip(
+                `<div>
+                     冰心 (文学研究会)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9228448c678c0e99db3cea17b166eac = L.circleMarker(
+                [29.4431, 111.6476],
+                {"bubblingMouseEvents": true, "color": "lightred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.24, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_c89d374d7c247e8c25bef49ef1b72335 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2bb58c8f3cd111ec78da1a262e8770a2 = $(`<div id="html_2bb58c8f3cd111ec78da1a262e8770a2" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: lightred; margin-bottom: 10px; border-bottom: 2px solid lightred; padding-bottom: 5px;">             丁玲         </h4>         <p><b>📅 生卒:</b> 1777-1827 (享年77岁)</p>         <p><b>📍 出生地:</b> 出生地77</p>         <p><b>🎯 活动地:</b> 活动地77</p>         <p><b>📚 文学流派:</b> 左翼文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_c89d374d7c247e8c25bef49ef1b72335.setContent(html_2bb58c8f3cd111ec78da1a262e8770a2);
+            
+        
+
+        circle_marker_a9228448c678c0e99db3cea17b166eac.bindPopup(popup_c89d374d7c247e8c25bef49ef1b72335)
+        ;
+
+        
+    
+    
+            circle_marker_a9228448c678c0e99db3cea17b166eac.bindTooltip(
+                `<div>
+                     丁玲 (左翼文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da89d304879a535571349119d123e0ff = L.circleMarker(
+                [45.8038, 126.5369],
+                {"bubblingMouseEvents": true, "color": "beige", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "beige", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.22, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_d8cc97d0b7c69ac9cbed00e2db4ce1ac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_76495b36d3a81f8bc6f07febe84b421d = $(`<div id="html_76495b36d3a81f8bc6f07febe84b421d" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: beige; margin-bottom: 10px; border-bottom: 2px solid beige; padding-bottom: 5px;">             萧红         </h4>         <p><b>📅 生卒:</b> 1778-1828 (享年78岁)</p>         <p><b>📍 出生地:</b> 出生地78</p>         <p><b>🎯 活动地:</b> 活动地78</p>         <p><b>📚 文学流派:</b> 东北作家群</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_d8cc97d0b7c69ac9cbed00e2db4ce1ac.setContent(html_76495b36d3a81f8bc6f07febe84b421d);
+            
+        
+
+        circle_marker_da89d304879a535571349119d123e0ff.bindPopup(popup_d8cc97d0b7c69ac9cbed00e2db4ce1ac)
+        ;
+
+        
+    
+    
+            circle_marker_da89d304879a535571349119d123e0ff.bindTooltip(
+                `<div>
+                     萧红 (东北作家群)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9ab43231a671b357a63e470b43ba80b4 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_a9c78465e894b8178ac3f7dc19935268 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2039d0e40c99ba362b386d939ebb3ac4 = $(`<div id="html_2039d0e40c99ba362b386d939ebb3ac4" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkblue; margin-bottom: 10px; border-bottom: 2px solid darkblue; padding-bottom: 5px;">             张爱玲         </h4>         <p><b>📅 生卒:</b> 1779-1829 (享年79岁)</p>         <p><b>📍 出生地:</b> 出生地79</p>         <p><b>🎯 活动地:</b> 活动地79</p>         <p><b>📚 文学流派:</b> 海派文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_a9c78465e894b8178ac3f7dc19935268.setContent(html_2039d0e40c99ba362b386d939ebb3ac4);
+            
+        
+
+        circle_marker_9ab43231a671b357a63e470b43ba80b4.bindPopup(popup_a9c78465e894b8178ac3f7dc19935268)
+        ;
+
+        
+    
+    
+            circle_marker_9ab43231a671b357a63e470b43ba80b4.bindTooltip(
+                `<div>
+                     张爱玲 (海派文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_39c46bed47c972cfdeea6ee96e7a8e51 = L.circleMarker(
+                [31.491, 120.3193],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.18, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_95cbac636afe914fbc8412880763e780 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e33afc9139eee25ded8d71c1d5636651 = $(`<div id="html_e33afc9139eee25ded8d71c1d5636651" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: orange; margin-bottom: 10px; border-bottom: 2px solid orange; padding-bottom: 5px;">             杨绛         </h4>         <p><b>📅 生卒:</b> 1780-1830 (享年80岁)</p>         <p><b>📍 出生地:</b> 出生地80</p>         <p><b>🎯 活动地:</b> 活动地80</p>         <p><b>📚 文学流派:</b> 学者文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_95cbac636afe914fbc8412880763e780.setContent(html_e33afc9139eee25ded8d71c1d5636651);
+            
+        
+
+        circle_marker_39c46bed47c972cfdeea6ee96e7a8e51.bindPopup(popup_95cbac636afe914fbc8412880763e780)
+        ;
+
+        
+    
+    
+            circle_marker_39c46bed47c972cfdeea6ee96e7a8e51.bindTooltip(
+                `<div>
+                     杨绛 (学者文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b8ad430589da1421a5483d2b74af7116 = L.circleMarker(
+                [29.8744, 121.5498],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.16, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_6249299176dc924079a2a7189e2633a3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_98e71608b6cc2a336998835f3a77fb95 = $(`<div id="html_98e71608b6cc2a336998835f3a77fb95" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkblue; margin-bottom: 10px; border-bottom: 2px solid darkblue; padding-bottom: 5px;">             苏青         </h4>         <p><b>📅 生卒:</b> 1781-1831 (享年81岁)</p>         <p><b>📍 出生地:</b> 出生地81</p>         <p><b>🎯 活动地:</b> 活动地81</p>         <p><b>📚 文学流派:</b> 海派文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_6249299176dc924079a2a7189e2633a3.setContent(html_98e71608b6cc2a336998835f3a77fb95);
+            
+        
+
+        circle_marker_b8ad430589da1421a5483d2b74af7116.bindPopup(popup_6249299176dc924079a2a7189e2633a3)
+        ;
+
+        
+    
+    
+            circle_marker_b8ad430589da1421a5483d2b74af7116.bindTooltip(
+                `<div>
+                     苏青 (海派文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d331ea369624fe622ac04c8413212b9 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkpurple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.14, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_a9ae9aeed9f06f2f77ebfb7c716aa5cc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_05fb4c642420e1a02d6fb58397d1057a = $(`<div id="html_05fb4c642420e1a02d6fb58397d1057a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkpurple; margin-bottom: 10px; border-bottom: 2px solid darkpurple; padding-bottom: 5px;">             关露         </h4>         <p><b>📅 生卒:</b> 1782-1832 (享年82岁)</p>         <p><b>📍 出生地:</b> 出生地82</p>         <p><b>🎯 活动地:</b> 活动地82</p>         <p><b>📚 文学流派:</b> 革命文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_a9ae9aeed9f06f2f77ebfb7c716aa5cc.setContent(html_05fb4c642420e1a02d6fb58397d1057a);
+            
+        
+
+        circle_marker_9d331ea369624fe622ac04c8413212b9.bindPopup(popup_a9ae9aeed9f06f2f77ebfb7c716aa5cc)
+        ;
+
+        
+    
+    
+            circle_marker_9d331ea369624fe622ac04c8413212b9.bindTooltip(
+                `<div>
+                     关露 (革命文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7d88af521cbbd57d6882a4dadcf8d67 = L.circleMarker(
+                [25.9372, 113.2361],
+                {"bubblingMouseEvents": true, "color": "lightred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.12, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_bb56f3e17a1d7d69768a65e84881a7f9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_082374e7074a553701e280140cf20ce9 = $(`<div id="html_082374e7074a553701e280140cf20ce9" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: lightred; margin-bottom: 10px; border-bottom: 2px solid lightred; padding-bottom: 5px;">             白薇         </h4>         <p><b>📅 生卒:</b> 1783-1833 (享年83岁)</p>         <p><b>📍 出生地:</b> 出生地83</p>         <p><b>🎯 活动地:</b> 活动地83</p>         <p><b>📚 文学流派:</b> 左翼文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_bb56f3e17a1d7d69768a65e84881a7f9.setContent(html_082374e7074a553701e280140cf20ce9);
+            
+        
+
+        circle_marker_d7d88af521cbbd57d6882a4dadcf8d67.bindPopup(popup_bb56f3e17a1d7d69768a65e84881a7f9)
+        ;
+
+        
+    
+    
+            circle_marker_d7d88af521cbbd57d6882a4dadcf8d67.bindTooltip(
+                `<div>
+                     白薇 (左翼文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3165e1a18c701e689d7d3f8e192f9b8f = L.circleMarker(
+                [27.7258, 111.3277],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "pink", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.1, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_f68d7a18bb0629c3fc795006838e0e54 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_75058f83ffeb0a56aca9b3efaa16cd90 = $(`<div id="html_75058f83ffeb0a56aca9b3efaa16cd90" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: pink; margin-bottom: 10px; border-bottom: 2px solid pink; padding-bottom: 5px;">             谢冰莹         </h4>         <p><b>📅 生卒:</b> 1784-1834 (享年84岁)</p>         <p><b>📍 出生地:</b> 出生地84</p>         <p><b>🎯 活动地:</b> 活动地84</p>         <p><b>📚 文学流派:</b> 军旅文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_f68d7a18bb0629c3fc795006838e0e54.setContent(html_75058f83ffeb0a56aca9b3efaa16cd90);
+            
+        
+
+        circle_marker_3165e1a18c701e689d7d3f8e192f9b8f.bindPopup(popup_f68d7a18bb0629c3fc795006838e0e54)
+        ;
+
+        
+    
+    
+            circle_marker_3165e1a18c701e689d7d3f8e192f9b8f.bindTooltip(
+                `<div>
+                     谢冰莹 (军旅文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2d52897930dda29e0191a394008fe1d = L.circleMarker(
+                [30.4109, 104.5473],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.08, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_c317a609c3762cf9e8702836a947c385 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7ce512b4964f14289be6d80e29e68949 = $(`<div id="html_7ce512b4964f14289be6d80e29e68949" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkgreen; margin-bottom: 10px; border-bottom: 2px solid darkgreen; padding-bottom: 5px;">             罗淑         </h4>         <p><b>📅 生卒:</b> 1785-1835 (享年85岁)</p>         <p><b>📍 出生地:</b> 出生地85</p>         <p><b>🎯 活动地:</b> 活动地85</p>         <p><b>📚 文学流派:</b> 乡土文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_c317a609c3762cf9e8702836a947c385.setContent(html_7ce512b4964f14289be6d80e29e68949);
+            
+        
+
+        circle_marker_a2d52897930dda29e0191a394008fe1d.bindPopup(popup_c317a609c3762cf9e8702836a947c385)
+        ;
+
+        
+    
+    
+            circle_marker_a2d52897930dda29e0191a394008fe1d.bindTooltip(
+                `<div>
+                     罗淑 (乡土文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f20c5c1dcfc8b3091e98e39c1d22cdd6 = L.circleMarker(
+                [36.7067, 119.1619],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.06, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_47428b2eed19b1ebc83b52276f2d8a72 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f8fbb26c178bd34ce9427fca81fa4d80 = $(`<div id="html_f8fbb26c178bd34ce9427fca81fa4d80" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             沉樱         </h4>         <p><b>📅 生卒:</b> 1786-1836 (享年86岁)</p>         <p><b>📍 出生地:</b> 出生地86</p>         <p><b>🎯 活动地:</b> 活动地86</p>         <p><b>📚 文学流派:</b> 现代派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_47428b2eed19b1ebc83b52276f2d8a72.setContent(html_f8fbb26c178bd34ce9427fca81fa4d80);
+            
+        
+
+        circle_marker_f20c5c1dcfc8b3091e98e39c1d22cdd6.bindPopup(popup_47428b2eed19b1ebc83b52276f2d8a72)
+        ;
+
+        
+    
+    
+            circle_marker_f20c5c1dcfc8b3091e98e39c1d22cdd6.bindTooltip(
+                `<div>
+                     沉樱 (现代派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_73432a74fd03c78c7d8e968c63d0f743 = L.circleMarker(
+                [32.147, 114.091],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.04, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_6141a2e1a35f274fb7145b51d2f7186e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e22370b1eb4c71a0bab632270e7f2fcd = $(`<div id="html_e22370b1eb4c71a0bab632270e7f2fcd" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: green; margin-bottom: 10px; border-bottom: 2px solid green; padding-bottom: 5px;">             赵清阁         </h4>         <p><b>📅 生卒:</b> 1787-1837 (享年87岁)</p>         <p><b>📍 出生地:</b> 出生地87</p>         <p><b>🎯 活动地:</b> 活动地87</p>         <p><b>📚 文学流派:</b> 现代派</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_6141a2e1a35f274fb7145b51d2f7186e.setContent(html_e22370b1eb4c71a0bab632270e7f2fcd);
+            
+        
+
+        circle_marker_73432a74fd03c78c7d8e968c63d0f743.bindPopup(popup_6141a2e1a35f274fb7145b51d2f7186e)
+        ;
+
+        
+    
+    
+            circle_marker_73432a74fd03c78c7d8e968c63d0f743.bindTooltip(
+                `<div>
+                     赵清阁 (现代派)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d85491a7a7398336affe3a56a0108cd = L.circleMarker(
+                [22.8578, 110.5581],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.02, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_5f2f452fb3512dc1b6b1b5d0d3bc493f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_90b2ec7a87c0ac7a58ee305313a423db = $(`<div id="html_90b2ec7a87c0ac7a58ee305313a423db" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: lightblue; margin-bottom: 10px; border-bottom: 2px solid lightblue; padding-bottom: 5px;">             凤子         </h4>         <p><b>📅 生卒:</b> 1788-1838 (享年88岁)</p>         <p><b>📍 出生地:</b> 出生地88</p>         <p><b>🎯 活动地:</b> 活动地88</p>         <p><b>📚 文学流派:</b> 戏剧文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_5f2f452fb3512dc1b6b1b5d0d3bc493f.setContent(html_90b2ec7a87c0ac7a58ee305313a423db);
+            
+        
+
+        circle_marker_7d85491a7a7398336affe3a56a0108cd.bindPopup(popup_5f2f452fb3512dc1b6b1b5d0d3bc493f)
+        ;
+
+        
+    
+    
+            circle_marker_7d85491a7a7398336affe3a56a0108cd.bindTooltip(
+                `<div>
+                     凤子 (戏剧文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3bbf77a22942cc1ba22f67fd10ab35c1 = L.circleMarker(
+                [28.2282, 112.9388],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkpurple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 1.5}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+    
+        var popup_7ffb23eea8759a0a39fbd5f4f751fbe5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c561fb60771a3ce3f88a41cb6d46fafe = $(`<div id="html_c561fb60771a3ce3f88a41cb6d46fafe" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: darkpurple; margin-bottom: 10px; border-bottom: 2px solid darkpurple; padding-bottom: 5px;">             彭慧         </h4>         <p><b>📅 生卒:</b> 1789-1839 (享年89岁)</p>         <p><b>📍 出生地:</b> 出生地89</p>         <p><b>🎯 活动地:</b> 活动地89</p>         <p><b>📚 文学流派:</b> 革命文学</p>         <p><b>🏛️ 朝代:</b> 清</p>         <p><b>👥 民族:</b> 汉族</p>     </div>     </div>`)[0];
+                popup_7ffb23eea8759a0a39fbd5f4f751fbe5.setContent(html_c561fb60771a3ce3f88a41cb6d46fafe);
+            
+        
+
+        circle_marker_3bbf77a22942cc1ba22f67fd10ab35c1.bindPopup(popup_7ffb23eea8759a0a39fbd5f4f751fbe5)
+        ;
+
+        
+    
+    
+            circle_marker_3bbf77a22942cc1ba22f67fd10ab35c1.bindTooltip(
+                `<div>
+                     彭慧 (革命文学)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var measure_control_01dcfc7df1da6837c7c39b815ded62c6 = new L.Control.Measure(
+                {
+  "position": "bottomleft",
+  "primaryLengthUnit": "meters",
+  "secondaryLengthUnit": "miles",
+  "primaryAreaUnit": "sqmeters",
+  "secondaryAreaUnit": "acres",
+});
+            map_7e354531419fa8046715d950f3bb3f7a.addControl(measure_control_01dcfc7df1da6837c7c39b815ded62c6);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topright",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_7e354531419fa8046715d950f3bb3f7a);
+        
+</script>
+</html>
