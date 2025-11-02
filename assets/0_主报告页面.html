@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清代女性文人数字人文分析报告</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .chart-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .chart-section h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+        .nav-link {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav-link:hover {
+            background: #2980b9;
+        }
+        .conclusion {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        .conclusion h2 {
+            color: #ecf0f1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 清代女性文人数字人文分析报告</h1>
+            <p>基于数据挖掘与可视化的文学史重新发现</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">100</div>
+                <div class="stat-label">女性文人总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">13736</div>
+                <div class="stat-label">作品总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">335</div>
+                <div class="stat-label">时间跨度（年）</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">34</div>
+                <div class="stat-label">文学流派</div>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="1_时空分布.html" class="nav-link" target="_blank">🕰️ 时空分布</a>
+            <a href="2_文学流派分布.html" class="nav-link" target="_blank">🎭 文学流派</a>
+            <a href="3_地域分布地图.html" class="nav-link" target="_blank">🗺️ 地域分布</a>
+            <a href="4_作品数量排行榜.html" class="nav-link" target="_blank">🏆 作品排行</a>
+            <a href="5_时间趋势分析.html" class="nav-link" target="_blank">📈 时间趋势</a>
+            <a href="6_社会阶层分析.html" class="nav-link" target="_blank">🏛️ 社会阶层</a>
+            <a href="7_综合仪表板.html" class="nav-link" target="_blank">📋 综合仪表板</a>
+        </div>
+
+        <div class="chart-section">
+            <h2>📊 综合仪表板</h2>
+            <div class="chart-container">
+                <iframe src="7_综合仪表板.html" class="iframe-container"></iframe>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h2>🕰️ 时空分布分析</h2>
+            <div class="chart-container">
+                <iframe src="1_时空分布.html" class="iframe-container"></iframe>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h2>🗺️ 地域分布特征</h2>
+            <div class="chart-container">
+                <iframe src="3_地域分布地图.html" class="iframe-container"></iframe>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <h2>🎯 研究发现总结</h2>
+            <p><strong>规模证实：</strong>通过数字方法确认了100位清代女性文人的系统性创作活动，作品总量达13736件。</p>
+            <p><strong>时空特征：</strong>时间跨度335年，地域高度集中在江南地区。</p>
+            <p><strong>文学成就：</strong>涵盖34个文学流派，形成了完整的创作谱系。</p>
+            <p><strong>重新发现：</strong>数字人文方法为被边缘化的女性文学史提供了新的研究视角和价值重估。</p>
+        </div>
+    </div>
+</body>
+</html>

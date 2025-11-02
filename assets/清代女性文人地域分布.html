@@ -1,0 +1,3433 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8dc85c5589d26704e84cc99ce7378ecc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8dc85c5589d26704e84cc99ce7378ecc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8dc85c5589d26704e84cc99ce7378ecc = L.map(
+                "map_8dc85c5589d26704e84cc99ce7378ecc",
+                {
+                    center: [35.0, 110.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1c991691876d3f3a1fe3c148412846cb = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1c991691876d3f3a1fe3c148412846cb.addTo(map_8dc85c5589d26704e84cc99ce7378ecc);
+        
+    
+            var marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_10ed1457df4cb83893a8da64e1de871c = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_bf928a76419bd7c8e273386208a98422 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a85788a0ab5ba03a057636d7334e6f99 = $(`<div id="html_a85788a0ab5ba03a057636d7334e6f99" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">顾太清</h4>         <p><b>生卒:</b> 1799-1877</p>         <p><b>籍贯:</b> 满洲镶蓝旗</p>         <p><b>社会阶层:</b> 宗室妃嫔</p>         <p><b>代表作品:</b> 《东海渔歌》</p>         <p><b>作品风格:</b> 婉约清丽</p>         <p><b>文学成就:</b> 清代满族女词人之冠，与纳兰性德并称</p>     </div>     </div>`)[0];
+                popup_bf928a76419bd7c8e273386208a98422.setContent(html_a85788a0ab5ba03a057636d7334e6f99);
+            
+        
+
+        circle_marker_10ed1457df4cb83893a8da64e1de871c.bindPopup(popup_bf928a76419bd7c8e273386208a98422)
+        ;
+
+        
+    
+    
+            circle_marker_10ed1457df4cb83893a8da64e1de871c.bindTooltip(
+                `<div>
+                     顾太清 (1799-1877)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5912b763155cf422f792b5b4c1320898 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_79646f93682b0b973d31947635caaaa5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cfff5aa451496ec519131c1c58b0f26b = $(`<div id="html_cfff5aa451496ec519131c1c58b0f26b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">汪端</h4>         <p><b>生卒:</b> 1793-1839</p>         <p><b>籍贯:</b> 浙江钱塘</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《自然好学斋诗钞》</p>         <p><b>作品风格:</b> 清丽婉转</p>         <p><b>文学成就:</b> 清代重要女诗人，诗作广为传诵</p>     </div>     </div>`)[0];
+                popup_79646f93682b0b973d31947635caaaa5.setContent(html_cfff5aa451496ec519131c1c58b0f26b);
+            
+        
+
+        circle_marker_5912b763155cf422f792b5b4c1320898.bindPopup(popup_79646f93682b0b973d31947635caaaa5)
+        ;
+
+        
+    
+    
+            circle_marker_5912b763155cf422f792b5b4c1320898.bindTooltip(
+                `<div>
+                     汪端 (1793-1839)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_381b84e94c29743e552a9df59a4b3579 = L.circleMarker(
+                [32.0603, 118.7969],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_4d7a12f20b1b389e08d321905e60e4fa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7404b2e1f81d028da825b701ab9017a5 = $(`<div id="html_7404b2e1f81d028da825b701ab9017a5" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">骆绮兰</h4>         <p><b>生卒:</b> 1756-1815</p>         <p><b>籍贯:</b> 江苏句容</p>         <p><b>社会阶层:</b> 文人闺秀</p>         <p><b>代表作品:</b> 《听秋轩诗集》</p>         <p><b>作品风格:</b> 性灵洒脱</p>         <p><b>文学成就:</b> 性灵派重要女诗人，袁枚高度评价</p>     </div>     </div>`)[0];
+                popup_4d7a12f20b1b389e08d321905e60e4fa.setContent(html_7404b2e1f81d028da825b701ab9017a5);
+            
+        
+
+        circle_marker_381b84e94c29743e552a9df59a4b3579.bindPopup(popup_4d7a12f20b1b389e08d321905e60e4fa)
+        ;
+
+        
+    
+    
+            circle_marker_381b84e94c29743e552a9df59a4b3579.bindTooltip(
+                `<div>
+                     骆绮兰 (1756-1815)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eb1d48196e6646c827023431d98ec6ad = L.circleMarker(
+                [31.6461, 120.7523],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_fd0292d84acdf215c424023bbf98492a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f003e575bafbdeb0c1b994f506f77d46 = $(`<div id="html_f003e575bafbdeb0c1b994f506f77d46" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">归懋仪</h4>         <p><b>生卒:</b> 1762-1832</p>         <p><b>籍贯:</b> 江苏常熟</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《绣余续草》</p>         <p><b>作品风格:</b> 婉约细腻</p>         <p><b>文学成就:</b> 诗词成就突出，与多位名家唱和</p>     </div>     </div>`)[0];
+                popup_fd0292d84acdf215c424023bbf98492a.setContent(html_f003e575bafbdeb0c1b994f506f77d46);
+            
+        
+
+        circle_marker_eb1d48196e6646c827023431d98ec6ad.bindPopup(popup_fd0292d84acdf215c424023bbf98492a)
+        ;
+
+        
+    
+    
+            circle_marker_eb1d48196e6646c827023431d98ec6ad.bindTooltip(
+                `<div>
+                     归懋仪 (1762-1832)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ce4606961b892f7035e4099b68ffcca = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_367ded2667f19af68d6ba9d6e1dd5d69 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_476d0d153cfc28c6648d784e8be9f5ec = $(`<div id="html_476d0d153cfc28c6648d784e8be9f5ec" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">沈善宝</h4>         <p><b>生卒:</b> 1808-1862</p>         <p><b>籍贯:</b> 浙江钱塘</p>         <p><b>社会阶层:</b> 文人闺秀</p>         <p><b>代表作品:</b> 《鸿雪楼诗集》</p>         <p><b>作品风格:</b> 豪放洒脱</p>         <p><b>文学成就:</b> 编纂《名媛诗话》保存大量女性作品</p>     </div>     </div>`)[0];
+                popup_367ded2667f19af68d6ba9d6e1dd5d69.setContent(html_476d0d153cfc28c6648d784e8be9f5ec);
+            
+        
+
+        circle_marker_6ce4606961b892f7035e4099b68ffcca.bindPopup(popup_367ded2667f19af68d6ba9d6e1dd5d69)
+        ;
+
+        
+    
+    
+            circle_marker_6ce4606961b892f7035e4099b68ffcca.bindTooltip(
+                `<div>
+                     沈善宝 (1808-1862)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_06d8a1bea6a923591f2c1436192b1719 = L.circleMarker(
+                [30.0303, 120.5829],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_34dc1f8abbcbcb8ed31fe9e28128c187 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a2c41b76f0e8a091264bb1fe8e012a1c = $(`<div id="html_a2c41b76f0e8a091264bb1fe8e012a1c" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">王端淑</h4>         <p><b>生卒:</b> 1621-1706</p>         <p><b>籍贯:</b> 浙江山阴</p>         <p><b>社会阶层:</b> 文人闺秀</p>         <p><b>代表作品:</b> 《吟红集》</p>         <p><b>作品风格:</b> 沉郁苍凉</p>         <p><b>文学成就:</b> 明末清初重要女作家</p>     </div>     </div>`)[0];
+                popup_34dc1f8abbcbcb8ed31fe9e28128c187.setContent(html_a2c41b76f0e8a091264bb1fe8e012a1c);
+            
+        
+
+        circle_marker_06d8a1bea6a923591f2c1436192b1719.bindPopup(popup_34dc1f8abbcbcb8ed31fe9e28128c187)
+        ;
+
+        
+    
+    
+            circle_marker_06d8a1bea6a923591f2c1436192b1719.bindTooltip(
+                `<div>
+                     王端淑 (1621-1706)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7341c04696647ff18846d21c6376969 = L.circleMarker(
+                [31.299, 120.5853],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_704d920c2deaf58d9228e59ac5f44bb2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c952ea65a518fb307daf5c106cda10c2 = $(`<div id="html_c952ea65a518fb307daf5c106cda10c2" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">徐灿</h4>         <p><b>生卒:</b> 1610-1698</p>         <p><b>籍贯:</b> 江苏吴县</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《拙政园诗余》</p>         <p><b>作品风格:</b> 婉约深沉</p>         <p><b>文学成就:</b> 清初重要女词人，成就突出</p>     </div>     </div>`)[0];
+                popup_704d920c2deaf58d9228e59ac5f44bb2.setContent(html_c952ea65a518fb307daf5c106cda10c2);
+            
+        
+
+        circle_marker_f7341c04696647ff18846d21c6376969.bindPopup(popup_704d920c2deaf58d9228e59ac5f44bb2)
+        ;
+
+        
+    
+    
+            circle_marker_f7341c04696647ff18846d21c6376969.bindTooltip(
+                `<div>
+                     徐灿 (1610-1698)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_614e3805b80e3cbbe0bd5edeb29fd266 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_f8c6c13a15d67fd973fa301fa5197d8f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5832c5024e5886e1af73d9846a848af3 = $(`<div id="html_5832c5024e5886e1af73d9846a848af3" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">吴藻</h4>         <p><b>生卒:</b> 1799-1862</p>         <p><b>籍贯:</b> 浙江仁和</p>         <p><b>社会阶层:</b> 商人家庭</p>         <p><b>代表作品:</b> 《花帘词》</p>         <p><b>作品风格:</b> 豪放洒脱</p>         <p><b>文学成就:</b> 清代重要女词人，风格独特</p>     </div>     </div>`)[0];
+                popup_f8c6c13a15d67fd973fa301fa5197d8f.setContent(html_5832c5024e5886e1af73d9846a848af3);
+            
+        
+
+        circle_marker_614e3805b80e3cbbe0bd5edeb29fd266.bindPopup(popup_f8c6c13a15d67fd973fa301fa5197d8f)
+        ;
+
+        
+    
+    
+            circle_marker_614e3805b80e3cbbe0bd5edeb29fd266.bindTooltip(
+                `<div>
+                     吴藻 (1799-1862)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9c697974ef7a5dfa9c23058f78f21205 = L.circleMarker(
+                [32.0101, 119.6067],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_a5c13341811fee41d8c3fc2d70a7e9dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6229ac7c0155f40199aaef14c56bc066 = $(`<div id="html_6229ac7c0155f40199aaef14c56bc066" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">贺双卿</h4>         <p><b>生卒:</b> 1715-1735</p>         <p><b>籍贯:</b> 江苏丹阳</p>         <p><b>社会阶层:</b> 农家女</p>         <p><b>代表作品:</b> 《雪压轩词》</p>         <p><b>作品风格:</b> 凄婉动人</p>         <p><b>文学成就:</b> 清代重要民间女词人</p>     </div>     </div>`)[0];
+                popup_a5c13341811fee41d8c3fc2d70a7e9dc.setContent(html_6229ac7c0155f40199aaef14c56bc066);
+            
+        
+
+        circle_marker_9c697974ef7a5dfa9c23058f78f21205.bindPopup(popup_a5c13341811fee41d8c3fc2d70a7e9dc)
+        ;
+
+        
+    
+    
+            circle_marker_9c697974ef7a5dfa9c23058f78f21205.bindTooltip(
+                `<div>
+                     贺双卿 (1715-1735)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7760487a336f72afcd3be7821ccea588 = L.circleMarker(
+                [31.6461, 120.7523],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_7c592b70e038c6ca52534d1b990440a7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_218ed068aa3fed1353c721fd3070b202 = $(`<div id="html_218ed068aa3fed1353c721fd3070b202" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">席佩兰</h4>         <p><b>生卒:</b> 1760-1825</p>         <p><b>籍贯:</b> 江苏常熟</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《长真阁集》</p>         <p><b>作品风格:</b> 清丽自然</p>         <p><b>文学成就:</b> 袁枚重要女弟子</p>     </div>     </div>`)[0];
+                popup_7c592b70e038c6ca52534d1b990440a7.setContent(html_218ed068aa3fed1353c721fd3070b202);
+            
+        
+
+        circle_marker_7760487a336f72afcd3be7821ccea588.bindPopup(popup_7c592b70e038c6ca52534d1b990440a7)
+        ;
+
+        
+    
+    
+            circle_marker_7760487a336f72afcd3be7821ccea588.bindTooltip(
+                `<div>
+                     席佩兰 (1760-1825)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d04dd3a97ecb1aec027839fb73b5354 = L.circleMarker(
+                [30.0303, 120.5829],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_79753510a8d1a4cbd216cd6c433b9c18 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_139df7d9d4f2a732d6e87c13789ade09 = $(`<div id="html_139df7d9d4f2a732d6e87c13789ade09" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">商景兰</h4>         <p><b>生卒:</b> 1604-1680</p>         <p><b>籍贯:</b> 浙江会稽</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《锦囊集》</p>         <p><b>作品风格:</b> 悲壮沉郁</p>         <p><b>文学成就:</b> 明末清初重要女诗人</p>     </div>     </div>`)[0];
+                popup_79753510a8d1a4cbd216cd6c433b9c18.setContent(html_139df7d9d4f2a732d6e87c13789ade09);
+            
+        
+
+        circle_marker_4d04dd3a97ecb1aec027839fb73b5354.bindPopup(popup_79753510a8d1a4cbd216cd6c433b9c18)
+        ;
+
+        
+    
+    
+            circle_marker_4d04dd3a97ecb1aec027839fb73b5354.bindTooltip(
+                `<div>
+                     商景兰 (1604-1680)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6266521931ef774ea75277a07684a039 = L.circleMarker(
+                [30.746, 120.7555],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_522fc07c57fe85df5feaeedf60b2a988 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e7893b3ebcf36479e7fa677a4886b2a = $(`<div id="html_0e7893b3ebcf36479e7fa677a4886b2a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">黄媛介</h4>         <p><b>生卒:</b> 1620-1669</p>         <p><b>籍贯:</b> 浙江秀水</p>         <p><b>社会阶层:</b> 文人闺秀</p>         <p><b>代表作品:</b> 《离隐词》</p>         <p><b>作品风格:</b> 清丽脱俗</p>         <p><b>文学成就:</b> 诗书画三绝</p>     </div>     </div>`)[0];
+                popup_522fc07c57fe85df5feaeedf60b2a988.setContent(html_0e7893b3ebcf36479e7fa677a4886b2a);
+            
+        
+
+        circle_marker_6266521931ef774ea75277a07684a039.bindPopup(popup_522fc07c57fe85df5feaeedf60b2a988)
+        ;
+
+        
+    
+    
+            circle_marker_6266521931ef774ea75277a07684a039.bindTooltip(
+                `<div>
+                     黄媛介 (1620-1669)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af642cfaa451fbf64ee6a1c1e8c4a79a = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_d806a625c9e2679e51f4b9118152815a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_482a9b26a45a29b9c5491f9793af8146 = $(`<div id="html_482a9b26a45a29b9c5491f9793af8146" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方维仪</h4>         <p><b>生卒:</b> 1585-1668</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《清芬阁集》</p>         <p><b>作品风格:</b> 沉郁悲凉</p>         <p><b>文学成就:</b> 明末清初重要女诗人</p>     </div>     </div>`)[0];
+                popup_d806a625c9e2679e51f4b9118152815a.setContent(html_482a9b26a45a29b9c5491f9793af8146);
+            
+        
+
+        circle_marker_af642cfaa451fbf64ee6a1c1e8c4a79a.bindPopup(popup_d806a625c9e2679e51f4b9118152815a)
+        ;
+
+        
+    
+    
+            circle_marker_af642cfaa451fbf64ee6a1c1e8c4a79a.bindTooltip(
+                `<div>
+                     方维仪 (1585-1668)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a3411ff568d87aa8227d6508badc09f = L.circleMarker(
+                [29.8608, 118.4325],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_d0de78b734eb4c7d77ce40c4bf9098a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d5fa14a854c4541609a3ab7c9a35b6c9 = $(`<div id="html_d5fa14a854c4541609a3ab7c9a35b6c9" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方婉仪</h4>         <p><b>生卒:</b> 1732-1779</p>         <p><b>籍贯:</b> 安徽歙县</p>         <p><b>社会阶层:</b> 文人家庭</p>         <p><b>代表作品:</b> 《白莲半格诗》</p>         <p><b>作品风格:</b> 清新淡雅</p>         <p><b>文学成就:</b> 扬州八怪中唯一女性</p>     </div>     </div>`)[0];
+                popup_d0de78b734eb4c7d77ce40c4bf9098a4.setContent(html_d5fa14a854c4541609a3ab7c9a35b6c9);
+            
+        
+
+        circle_marker_1a3411ff568d87aa8227d6508badc09f.bindPopup(popup_d0de78b734eb4c7d77ce40c4bf9098a4)
+        ;
+
+        
+    
+    
+            circle_marker_1a3411ff568d87aa8227d6508badc09f.bindTooltip(
+                `<div>
+                     方婉仪 (1732-1779)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a12ad9013af9250b84359bc67e81fcbc = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_9bd6379b68d96a057b079af801b066ac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d6a5543fc4e066919959f2e61167f648 = $(`<div id="html_d6a5543fc4e066919959f2e61167f648" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">陈端生</h4>         <p><b>生卒:</b> 1751-1796</p>         <p><b>籍贯:</b> 浙江钱塘</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《再生缘》</p>         <p><b>作品风格:</b> 浪漫传奇</p>         <p><b>文学成就:</b> 弹词文学代表作</p>     </div>     </div>`)[0];
+                popup_9bd6379b68d96a057b079af801b066ac.setContent(html_d6a5543fc4e066919959f2e61167f648);
+            
+        
+
+        circle_marker_a12ad9013af9250b84359bc67e81fcbc.bindPopup(popup_9bd6379b68d96a057b079af801b066ac)
+        ;
+
+        
+    
+    
+            circle_marker_a12ad9013af9250b84359bc67e81fcbc.bindTooltip(
+                `<div>
+                     陈端生 (1751-1796)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_28b67c2b40b3e07d887793a41f3e610e = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_9d724b45f489f0abf3f9538ec9683352 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5c48f1b61232b8954cc72273d560fba6 = $(`<div id="html_5c48f1b61232b8954cc72273d560fba6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">梁德绳</h4>         <p><b>生卒:</b> 1771-1847</p>         <p><b>籍贯:</b> 浙江钱塘</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《古春轩诗钞》</p>         <p><b>作品风格:</b> 温婉典雅</p>         <p><b>文学成就:</b> 续写《再生缘》</p>     </div>     </div>`)[0];
+                popup_9d724b45f489f0abf3f9538ec9683352.setContent(html_5c48f1b61232b8954cc72273d560fba6);
+            
+        
+
+        circle_marker_28b67c2b40b3e07d887793a41f3e610e.bindPopup(popup_9d724b45f489f0abf3f9538ec9683352)
+        ;
+
+        
+    
+    
+            circle_marker_28b67c2b40b3e07d887793a41f3e610e.bindTooltip(
+                `<div>
+                     梁德绳 (1771-1847)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_10d2e78778c475c9fc89ceb734f9a9d5 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_3282643af4eec40506ad5d62983cadb1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_48682247470ecd7ebba514e20d7e512e = $(`<div id="html_48682247470ecd7ebba514e20d7e512e" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">孙云凤</h4>         <p><b>生卒:</b> 1764-1814</p>         <p><b>籍贯:</b> 浙江仁和</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《湘筠馆诗》</p>         <p><b>作品风格:</b> 清丽婉约</p>         <p><b>文学成就:</b> 袁枚重要女弟子</p>     </div>     </div>`)[0];
+                popup_3282643af4eec40506ad5d62983cadb1.setContent(html_48682247470ecd7ebba514e20d7e512e);
+            
+        
+
+        circle_marker_10d2e78778c475c9fc89ceb734f9a9d5.bindPopup(popup_3282643af4eec40506ad5d62983cadb1)
+        ;
+
+        
+    
+    
+            circle_marker_10d2e78778c475c9fc89ceb734f9a9d5.bindTooltip(
+                `<div>
+                     孙云凤 (1764-1814)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f60216c73839c4c155859b1bc9554d9 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_c3f17362e8a66f842fa1fe7a56dc850b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa614f88e29e5ebc5430f18f1ac804a6 = $(`<div id="html_aa614f88e29e5ebc5430f18f1ac804a6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">孙云鹤</h4>         <p><b>生卒:</b> 1765-1815</p>         <p><b>籍贯:</b> 浙江仁和</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《听雨楼词》</p>         <p><b>作品风格:</b> 婉约细腻</p>         <p><b>文学成就:</b> 袁枚重要女弟子</p>     </div>     </div>`)[0];
+                popup_c3f17362e8a66f842fa1fe7a56dc850b.setContent(html_aa614f88e29e5ebc5430f18f1ac804a6);
+            
+        
+
+        circle_marker_1f60216c73839c4c155859b1bc9554d9.bindPopup(popup_c3f17362e8a66f842fa1fe7a56dc850b)
+        ;
+
+        
+    
+    
+            circle_marker_1f60216c73839c4c155859b1bc9554d9.bindTooltip(
+                `<div>
+                     孙云鹤 (1765-1815)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67d52b8916a5f7c5eb19db276b0f89f7 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_56f9ab3f4d9d9337f66bff4f10b6c716 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8cc74e68dc9b8bb9df0abcc8f0411fec = $(`<div id="html_8cc74e68dc9b8bb9df0abcc8f0411fec" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">钱孟钿</h4>         <p><b>生卒:</b> 1739-1806</p>         <p><b>籍贯:</b> 江苏武进</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《浣青诗草》</p>         <p><b>作品风格:</b> 清雅脱俗</p>         <p><b>文学成就:</b> 清代重要女诗人</p>     </div>     </div>`)[0];
+                popup_56f9ab3f4d9d9337f66bff4f10b6c716.setContent(html_8cc74e68dc9b8bb9df0abcc8f0411fec);
+            
+        
+
+        circle_marker_67d52b8916a5f7c5eb19db276b0f89f7.bindPopup(popup_56f9ab3f4d9d9337f66bff4f10b6c716)
+        ;
+
+        
+    
+    
+            circle_marker_67d52b8916a5f7c5eb19db276b0f89f7.bindTooltip(
+                `<div>
+                     钱孟钿 (1739-1806)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_90894fd6dbfc2f70fcfdd729e5971965 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_63c4b26b2dcd39562891fec373b7d92f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_519cda8b6ab06f3e9ec96d8a744ecd7c = $(`<div id="html_519cda8b6ab06f3e9ec96d8a744ecd7c" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">袁绶</h4>         <p><b>生卒:</b> 1795-1861</p>         <p><b>籍贯:</b> 浙江钱塘</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《瑶华阁诗草》</p>         <p><b>作品风格:</b> 清新自然</p>         <p><b>文学成就:</b> 袁枚文学传人</p>     </div>     </div>`)[0];
+                popup_63c4b26b2dcd39562891fec373b7d92f.setContent(html_519cda8b6ab06f3e9ec96d8a744ecd7c);
+            
+        
+
+        circle_marker_90894fd6dbfc2f70fcfdd729e5971965.bindPopup(popup_63c4b26b2dcd39562891fec373b7d92f)
+        ;
+
+        
+    
+    
+            circle_marker_90894fd6dbfc2f70fcfdd729e5971965.bindTooltip(
+                `<div>
+                     袁绶 (1795-1861)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aec728e0cbf8d7f1cb6cf8ab0fb6e2a8 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_0534c948c613f7312d15b852cf430b8e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7770678a425d34633dab239f2b9b5658 = $(`<div id="html_7770678a425d34633dab239f2b9b5658" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">袁机</h4>         <p><b>生卒:</b> 1720-1759</p>         <p><b>籍贯:</b> 浙江钱塘</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《素文女子遗稿》</p>         <p><b>作品风格:</b> 悲苦凄婉</p>         <p><b>文学成就:</b> 袁枚之妹，才女</p>     </div>     </div>`)[0];
+                popup_0534c948c613f7312d15b852cf430b8e.setContent(html_7770678a425d34633dab239f2b9b5658);
+            
+        
+
+        circle_marker_aec728e0cbf8d7f1cb6cf8ab0fb6e2a8.bindPopup(popup_0534c948c613f7312d15b852cf430b8e)
+        ;
+
+        
+    
+    
+            circle_marker_aec728e0cbf8d7f1cb6cf8ab0fb6e2a8.bindTooltip(
+                `<div>
+                     袁机 (1720-1759)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eaec78d33a82e006f18c066fb82955c7 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_bad2970b7e586a3ff5d80c02d60ae879 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aed5a935ea2e4556aeec542dddecbb80 = $(`<div id="html_aed5a935ea2e4556aeec542dddecbb80" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">袁杼</h4>         <p><b>生卒:</b> 1722-1765</p>         <p><b>籍贯:</b> 浙江钱塘</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《楼居小草》</p>         <p><b>作品风格:</b> 婉约细腻</p>         <p><b>文学成就:</b> 袁枚之妹，才女</p>     </div>     </div>`)[0];
+                popup_bad2970b7e586a3ff5d80c02d60ae879.setContent(html_aed5a935ea2e4556aeec542dddecbb80);
+            
+        
+
+        circle_marker_eaec78d33a82e006f18c066fb82955c7.bindPopup(popup_bad2970b7e586a3ff5d80c02d60ae879)
+        ;
+
+        
+    
+    
+            circle_marker_eaec78d33a82e006f18c066fb82955c7.bindTooltip(
+                `<div>
+                     袁杼 (1722-1765)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8eb5274c270a0b5e5fa9fbd282dc7287 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_d6e16421c9b9fe813c605bcbe9f3c48e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_33003c4a1757c12da8389216fbdde2cb = $(`<div id="html_33003c4a1757c12da8389216fbdde2cb" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">张纶英</h4>         <p><b>生卒:</b> 1798-1874</p>         <p><b>籍贯:</b> 江苏阳湖</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《绿槐书屋诗》</p>         <p><b>作品风格:</b> 清丽婉约</p>         <p><b>文学成就:</b> 常州词派女诗人</p>     </div>     </div>`)[0];
+                popup_d6e16421c9b9fe813c605bcbe9f3c48e.setContent(html_33003c4a1757c12da8389216fbdde2cb);
+            
+        
+
+        circle_marker_8eb5274c270a0b5e5fa9fbd282dc7287.bindPopup(popup_d6e16421c9b9fe813c605bcbe9f3c48e)
+        ;
+
+        
+    
+    
+            circle_marker_8eb5274c270a0b5e5fa9fbd282dc7287.bindTooltip(
+                `<div>
+                     张纶英 (1798-1874)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60cdb8130dc6276ba55d87a6020575bf = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_3be853fb04e6420b784796a75f4e8ed6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fda0b0ab08aab92397386abdf34efe55 = $(`<div id="html_fda0b0ab08aab92397386abdf34efe55" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">张纨英</h4>         <p><b>生卒:</b> 1795-1864</p>         <p><b>籍贯:</b> 江苏阳湖</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《邻云友月之居诗》</p>         <p><b>作品风格:</b> 婉约典雅</p>         <p><b>文学成就:</b> 常州词派女诗人</p>     </div>     </div>`)[0];
+                popup_3be853fb04e6420b784796a75f4e8ed6.setContent(html_fda0b0ab08aab92397386abdf34efe55);
+            
+        
+
+        circle_marker_60cdb8130dc6276ba55d87a6020575bf.bindPopup(popup_3be853fb04e6420b784796a75f4e8ed6)
+        ;
+
+        
+    
+    
+            circle_marker_60cdb8130dc6276ba55d87a6020575bf.bindTooltip(
+                `<div>
+                     张纨英 (1795-1864)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_764d7613bbaf30e9f959c0839e441580 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_4ac6a6ebb9f26990ab3e70f63711c1b3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_282716071784baf62985970c1d2f3ea1 = $(`<div id="html_282716071784baf62985970c1d2f3ea1" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">王采薇</h4>         <p><b>生卒:</b> 1753-1776</p>         <p><b>籍贯:</b> 江苏武进</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《长离阁集》</p>         <p><b>作品风格:</b> 凄婉动人</p>         <p><b>文学成就:</b> 才女早逝，诗作感人</p>     </div>     </div>`)[0];
+                popup_4ac6a6ebb9f26990ab3e70f63711c1b3.setContent(html_282716071784baf62985970c1d2f3ea1);
+            
+        
+
+        circle_marker_764d7613bbaf30e9f959c0839e441580.bindPopup(popup_4ac6a6ebb9f26990ab3e70f63711c1b3)
+        ;
+
+        
+    
+    
+            circle_marker_764d7613bbaf30e9f959c0839e441580.bindTooltip(
+                `<div>
+                     王采薇 (1753-1776)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c3cf7d76011c2e3aad23d521df66b67f = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_1f64c3de612b70dd304800111b8d01fb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0ab8a4a27af057a85aceec7c2cdbb3f1 = $(`<div id="html_0ab8a4a27af057a85aceec7c2cdbb3f1" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">庄盘珠</h4>         <p><b>生卒:</b> 1795-1820</p>         <p><b>籍贯:</b> 江苏阳湖</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《秋水轩词》</p>         <p><b>作品风格:</b> 凄婉动人</p>         <p><b>文学成就:</b> 才女早逝，词作优秀</p>     </div>     </div>`)[0];
+                popup_1f64c3de612b70dd304800111b8d01fb.setContent(html_0ab8a4a27af057a85aceec7c2cdbb3f1);
+            
+        
+
+        circle_marker_c3cf7d76011c2e3aad23d521df66b67f.bindPopup(popup_1f64c3de612b70dd304800111b8d01fb)
+        ;
+
+        
+    
+    
+            circle_marker_c3cf7d76011c2e3aad23d521df66b67f.bindTooltip(
+                `<div>
+                     庄盘珠 (1795-1820)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a3928d77a9bc29a32b60587952806f0b = L.circleMarker(
+                [31.299, 120.5853],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_c5eb9620d79f5f5a8e17ac391a3af7c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b4ebb9933b6341a7410729c5bd2652e1 = $(`<div id="html_b4ebb9933b6341a7410729c5bd2652e1" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">吴规臣</h4>         <p><b>生卒:</b> 1785-1845</p>         <p><b>籍贯:</b> 江苏吴县</p>         <p><b>社会阶层:</b> 文人家庭</p>         <p><b>代表作品:</b> 《晓仙楼诗》</p>         <p><b>作品风格:</b> 清新淡雅</p>         <p><b>文学成就:</b> 诗画双绝</p>     </div>     </div>`)[0];
+                popup_c5eb9620d79f5f5a8e17ac391a3af7c2.setContent(html_b4ebb9933b6341a7410729c5bd2652e1);
+            
+        
+
+        circle_marker_a3928d77a9bc29a32b60587952806f0b.bindPopup(popup_c5eb9620d79f5f5a8e17ac391a3af7c2)
+        ;
+
+        
+    
+    
+            circle_marker_a3928d77a9bc29a32b60587952806f0b.bindTooltip(
+                `<div>
+                     吴规臣 (1785-1845)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b657a989264bf712010dc88a596b1805 = L.circleMarker(
+                [32.3942, 119.4128],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_82d29b82cfc74ee6549eec401eb69b53 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8981c779410413db525ac78469184d6d = $(`<div id="html_8981c779410413db525ac78469184d6d" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">张因</h4>         <p><b>生卒:</b> 1741-1807</p>         <p><b>籍贯:</b> 江苏甘泉</p>         <p><b>社会阶层:</b> 文人家庭</p>         <p><b>代表作品:</b> 《绿秋书屋诗》</p>         <p><b>作品风格:</b> 清丽自然</p>         <p><b>文学成就:</b> 夫妇诗人</p>     </div>     </div>`)[0];
+                popup_82d29b82cfc74ee6549eec401eb69b53.setContent(html_8981c779410413db525ac78469184d6d);
+            
+        
+
+        circle_marker_b657a989264bf712010dc88a596b1805.bindPopup(popup_82d29b82cfc74ee6549eec401eb69b53)
+        ;
+
+        
+    
+    
+            circle_marker_b657a989264bf712010dc88a596b1805.bindTooltip(
+                `<div>
+                     张因 (1741-1807)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1fa09fce39896221a729e3a04bc4146b = L.circleMarker(
+                [31.6461, 120.7523],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_74bc7a796e8c27dc945a2ec64f5de8a0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_458f39e85d24cfd82cc6acacdd4bcda6 = $(`<div id="html_458f39e85d24cfd82cc6acacdd4bcda6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">屈秉筠</h4>         <p><b>生卒:</b> 1767-1810</p>         <p><b>籍贯:</b> 江苏常熟</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《蕴玉楼诗》</p>         <p><b>作品风格:</b> 婉约细腻</p>         <p><b>文学成就:</b> 夫妇诗人</p>     </div>     </div>`)[0];
+                popup_74bc7a796e8c27dc945a2ec64f5de8a0.setContent(html_458f39e85d24cfd82cc6acacdd4bcda6);
+            
+        
+
+        circle_marker_1fa09fce39896221a729e3a04bc4146b.bindPopup(popup_74bc7a796e8c27dc945a2ec64f5de8a0)
+        ;
+
+        
+    
+    
+            circle_marker_1fa09fce39896221a729e3a04bc4146b.bindTooltip(
+                `<div>
+                     屈秉筠 (1767-1810)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7840e33cd2627886c52067d5cf304c9 = L.circleMarker(
+                [32.1878, 119.425],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_e73d2b696c4976c1459cd511b9e2d18c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6ca7fa0bfb82698b19111fd70506083a = $(`<div id="html_6ca7fa0bfb82698b19111fd70506083a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">鲍之蕙</h4>         <p><b>生卒:</b> 1757-1810</p>         <p><b>籍贯:</b> 江苏丹徒</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《清娱阁诗》</p>         <p><b>作品风格:</b> 清丽婉约</p>         <p><b>文学成就:</b> 夫妇诗人</p>     </div>     </div>`)[0];
+                popup_e73d2b696c4976c1459cd511b9e2d18c.setContent(html_6ca7fa0bfb82698b19111fd70506083a);
+            
+        
+
+        circle_marker_f7840e33cd2627886c52067d5cf304c9.bindPopup(popup_e73d2b696c4976c1459cd511b9e2d18c)
+        ;
+
+        
+    
+    
+            circle_marker_f7840e33cd2627886c52067d5cf304c9.bindTooltip(
+                `<div>
+                     鲍之蕙 (1757-1810)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3fbd5ec2a238428dc535088aea10f96f = L.circleMarker(
+                [30.0303, 120.5829],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_e7ed548267d64999d6ef815d103519c6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f862e6c7770eb455137e0aae606da792 = $(`<div id="html_f862e6c7770eb455137e0aae606da792" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">潘素心</h4>         <p><b>生卒:</b> 1764-1840</p>         <p><b>籍贯:</b> 浙江会稽</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《不栉吟》</p>         <p><b>作品风格:</b> 清新自然</p>         <p><b>文学成就:</b> 清代重要女诗人</p>     </div>     </div>`)[0];
+                popup_e7ed548267d64999d6ef815d103519c6.setContent(html_f862e6c7770eb455137e0aae606da792);
+            
+        
+
+        circle_marker_3fbd5ec2a238428dc535088aea10f96f.bindPopup(popup_e7ed548267d64999d6ef815d103519c6)
+        ;
+
+        
+    
+    
+            circle_marker_3fbd5ec2a238428dc535088aea10f96f.bindTooltip(
+                `<div>
+                     潘素心 (1764-1840)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_35eea00e134a41a07ee53e3e3ff353b9 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_b86d4fe9fb2368be77a8606632b8ee47 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac445ae3031d3cc16a56126fa2386800 = $(`<div id="html_ac445ae3031d3cc16a56126fa2386800" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">陈长生</h4>         <p><b>生卒:</b> 1755-1820</p>         <p><b>籍贯:</b> 浙江钱塘</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《绘声阁诗》</p>         <p><b>作品风格:</b> 婉约典雅</p>         <p><b>文学成就:</b> 叶绍楏之妻，才女</p>     </div>     </div>`)[0];
+                popup_b86d4fe9fb2368be77a8606632b8ee47.setContent(html_ac445ae3031d3cc16a56126fa2386800);
+            
+        
+
+        circle_marker_35eea00e134a41a07ee53e3e3ff353b9.bindPopup(popup_b86d4fe9fb2368be77a8606632b8ee47)
+        ;
+
+        
+    
+    
+            circle_marker_35eea00e134a41a07ee53e3e3ff353b9.bindTooltip(
+                `<div>
+                     陈长生 (1755-1820)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b1887ba93dafeb67cfce0588b23d6ea9 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_4221ecd4367155d21e666eb17984638f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_899fe5760a86828024744fc47f03adf0 = $(`<div id="html_899fe5760a86828024744fc47f03adf0" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">廖云锦</h4>         <p><b>生卒:</b> 1770-1830</p>         <p><b>籍贯:</b> 江苏华亭</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《仙霞阁诗》</p>         <p><b>作品风格:</b> 清新淡雅</p>         <p><b>文学成就:</b> 诗画双绝</p>     </div>     </div>`)[0];
+                popup_4221ecd4367155d21e666eb17984638f.setContent(html_899fe5760a86828024744fc47f03adf0);
+            
+        
+
+        circle_marker_b1887ba93dafeb67cfce0588b23d6ea9.bindPopup(popup_4221ecd4367155d21e666eb17984638f)
+        ;
+
+        
+    
+    
+            circle_marker_b1887ba93dafeb67cfce0588b23d6ea9.bindTooltip(
+                `<div>
+                     廖云锦 (1770-1830)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0371cb5470795782970cf5aecdeeb663 = L.circleMarker(
+                [31.299, 120.5853],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_46ce1f29a55c6eb8432330a997127fa8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_97ad21960b304d39bd2daa6f2aae6ff0 = $(`<div id="html_97ad21960b304d39bd2daa6f2aae6ff0" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">金逸</h4>         <p><b>生卒:</b> 1770-1794</p>         <p><b>籍贯:</b> 江苏长洲</p>         <p><b>社会阶层:</b> 文人家庭</p>         <p><b>代表作品:</b> 《瘦吟楼诗》</p>         <p><b>作品风格:</b> 凄婉动人</p>         <p><b>文学成就:</b> 才女早逝，诗作感人</p>     </div>     </div>`)[0];
+                popup_46ce1f29a55c6eb8432330a997127fa8.setContent(html_97ad21960b304d39bd2daa6f2aae6ff0);
+            
+        
+
+        circle_marker_0371cb5470795782970cf5aecdeeb663.bindPopup(popup_46ce1f29a55c6eb8432330a997127fa8)
+        ;
+
+        
+    
+    
+            circle_marker_0371cb5470795782970cf5aecdeeb663.bindTooltip(
+                `<div>
+                     金逸 (1770-1794)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e05ec876aa30f311584c619bfbc7010c = L.circleMarker(
+                [30.0303, 120.5829],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_0e19b42c89f3daadcb63e61a5d87118f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b71c0b9d8a5f919ad695b75d6ae2681f = $(`<div id="html_b71c0b9d8a5f919ad695b75d6ae2681f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">王倩</h4>         <p><b>生卒:</b> 1770-1820</p>         <p><b>籍贯:</b> 浙江山阴</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《寄梅馆诗》</p>         <p><b>作品风格:</b> 清丽婉约</p>         <p><b>文学成就:</b> 袁枚女弟子</p>     </div>     </div>`)[0];
+                popup_0e19b42c89f3daadcb63e61a5d87118f.setContent(html_b71c0b9d8a5f919ad695b75d6ae2681f);
+            
+        
+
+        circle_marker_e05ec876aa30f311584c619bfbc7010c.bindPopup(popup_0e19b42c89f3daadcb63e61a5d87118f)
+        ;
+
+        
+    
+    
+            circle_marker_e05ec876aa30f311584c619bfbc7010c.bindTooltip(
+                `<div>
+                     王倩 (1770-1820)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd4f19905251350e8a6eeb0aef1a5e61 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_cad2ffe60cd3c5e2f7e0b1dbd67bd211 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b76a09f111ec0249e81244cbe7a86b9b = $(`<div id="html_b76a09f111ec0249e81244cbe7a86b9b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">钱惠尊</h4>         <p><b>生卒:</b> 1775-1840</p>         <p><b>籍贯:</b> 江苏阳湖</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《青藜阁诗》</p>         <p><b>作品风格:</b> 婉约典雅</p>         <p><b>文学成就:</b> 清代女诗人</p>     </div>     </div>`)[0];
+                popup_cad2ffe60cd3c5e2f7e0b1dbd67bd211.setContent(html_b76a09f111ec0249e81244cbe7a86b9b);
+            
+        
+
+        circle_marker_fd4f19905251350e8a6eeb0aef1a5e61.bindPopup(popup_cad2ffe60cd3c5e2f7e0b1dbd67bd211)
+        ;
+
+        
+    
+    
+            circle_marker_fd4f19905251350e8a6eeb0aef1a5e61.bindTooltip(
+                `<div>
+                     钱惠尊 (1775-1840)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_08f4bc1294f03340afaff05a2e128a88 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_c042a028b99763f1e036fb2d26f7d03c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_301649b2abebb9890bf8f311ca21564a = $(`<div id="html_301649b2abebb9890bf8f311ca21564a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">沈允慎</h4>         <p><b>生卒:</b> 1780-1840</p>         <p><b>籍贯:</b> 浙江钱塘</p>         <p><b>社会阶层:</b> 文人家庭</p>         <p><b>代表作品:</b> 《静香楼诗》</p>         <p><b>作品风格:</b> 清丽自然</p>         <p><b>文学成就:</b> 清代女诗人</p>     </div>     </div>`)[0];
+                popup_c042a028b99763f1e036fb2d26f7d03c.setContent(html_301649b2abebb9890bf8f311ca21564a);
+            
+        
+
+        circle_marker_08f4bc1294f03340afaff05a2e128a88.bindPopup(popup_c042a028b99763f1e036fb2d26f7d03c)
+        ;
+
+        
+    
+    
+            circle_marker_08f4bc1294f03340afaff05a2e128a88.bindTooltip(
+                `<div>
+                     沈允慎 (1780-1840)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3a36160ba01bbeb413db4da6a8311f3 = L.circleMarker(
+                [28.8925, 120.0361],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_adf5c3aeb9b91c6165235c829de94b54 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ae6e1253c03dbd7ba31297ff72921fcc = $(`<div id="html_ae6e1253c03dbd7ba31297ff72921fcc" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">吴宗爱</h4>         <p><b>生卒:</b> 1650-1674</p>         <p><b>籍贯:</b> 浙江永康</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《六宜楼诗》</p>         <p><b>作品风格:</b> 凄婉动人</p>         <p><b>文学成就:</b> 才女早逝，诗作感人</p>     </div>     </div>`)[0];
+                popup_adf5c3aeb9b91c6165235c829de94b54.setContent(html_ae6e1253c03dbd7ba31297ff72921fcc);
+            
+        
+
+        circle_marker_f3a36160ba01bbeb413db4da6a8311f3.bindPopup(popup_adf5c3aeb9b91c6165235c829de94b54)
+        ;
+
+        
+    
+    
+            circle_marker_f3a36160ba01bbeb413db4da6a8311f3.bindTooltip(
+                `<div>
+                     吴宗爱 (1650-1674)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ecd0b4f087ffeff59108c7fd026b375a = L.circleMarker(
+                [32.0603, 118.7969],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_a616bb4ca5acbcb28b0b88de1bc8fada = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_38668642ad1371f66be9e16a6a53d501 = $(`<div id="html_38668642ad1371f66be9e16a6a53d501" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">纪映淮</h4>         <p><b>生卒:</b> 1615-1691</p>         <p><b>籍贯:</b> 江苏上元</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《真冷堂诗》</p>         <p><b>作品风格:</b> 悲壮沉郁</p>         <p><b>文学成就:</b> 明末清初女诗人</p>     </div>     </div>`)[0];
+                popup_a616bb4ca5acbcb28b0b88de1bc8fada.setContent(html_38668642ad1371f66be9e16a6a53d501);
+            
+        
+
+        circle_marker_ecd0b4f087ffeff59108c7fd026b375a.bindPopup(popup_a616bb4ca5acbcb28b0b88de1bc8fada)
+        ;
+
+        
+    
+    
+            circle_marker_ecd0b4f087ffeff59108c7fd026b375a.bindTooltip(
+                `<div>
+                     纪映淮 (1615-1691)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_835d50a099c225d44f6ddeb64fe0469e = L.circleMarker(
+                [33.963, 118.2752],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_b8c2c1036c6d0a53cb93890bcacd6f8c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_67f631e503f2e72af8364a05274af56a = $(`<div id="html_67f631e503f2e72af8364a05274af56a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">倪瑞璇</h4>         <p><b>生卒:</b> 1702-1732</p>         <p><b>籍贯:</b> 江苏宿迁</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《箧存诗稿》</p>         <p><b>作品风格:</b> 凄婉动人</p>         <p><b>文学成就:</b> 才女早逝，诗作优秀</p>     </div>     </div>`)[0];
+                popup_b8c2c1036c6d0a53cb93890bcacd6f8c.setContent(html_67f631e503f2e72af8364a05274af56a);
+            
+        
+
+        circle_marker_835d50a099c225d44f6ddeb64fe0469e.bindPopup(popup_b8c2c1036c6d0a53cb93890bcacd6f8c)
+        ;
+
+        
+    
+    
+            circle_marker_835d50a099c225d44f6ddeb64fe0469e.bindTooltip(
+                `<div>
+                     倪瑞璇 (1702-1732)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89a968a424ba8d548ebdeeb149a987d0 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_fa22796d6341c3bf0230de032562f00f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6ce5057056edefc8a71b17ddf1bba96f = $(`<div id="html_6ce5057056edefc8a71b17ddf1bba96f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方曜</h4>         <p><b>生卒:</b> 1730-1790</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《红蕉阁诗》</p>         <p><b>作品风格:</b> 清丽婉约</p>         <p><b>文学成就:</b> 桐城派女诗人</p>     </div>     </div>`)[0];
+                popup_fa22796d6341c3bf0230de032562f00f.setContent(html_6ce5057056edefc8a71b17ddf1bba96f);
+            
+        
+
+        circle_marker_89a968a424ba8d548ebdeeb149a987d0.bindPopup(popup_fa22796d6341c3bf0230de032562f00f)
+        ;
+
+        
+    
+    
+            circle_marker_89a968a424ba8d548ebdeeb149a987d0.bindTooltip(
+                `<div>
+                     方曜 (1730-1790)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1f891e16ff476b8220611cdab6da503 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_2c8d1b051c066d23a223446b98d96896 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_41d28679333d95b5d17dd526945d9e87 = $(`<div id="html_41d28679333d95b5d17dd526945d9e87" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方静</h4>         <p><b>生卒:</b> 1735-1795</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《绿窗诗草》</p>         <p><b>作品风格:</b> 婉约典雅</p>         <p><b>文学成就:</b> 桐城派女诗人</p>     </div>     </div>`)[0];
+                popup_2c8d1b051c066d23a223446b98d96896.setContent(html_41d28679333d95b5d17dd526945d9e87);
+            
+        
+
+        circle_marker_d1f891e16ff476b8220611cdab6da503.bindPopup(popup_2c8d1b051c066d23a223446b98d96896)
+        ;
+
+        
+    
+    
+            circle_marker_d1f891e16ff476b8220611cdab6da503.bindTooltip(
+                `<div>
+                     方静 (1735-1795)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e20fb434445287d9cf42f6ea742a3f4 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_66c810ee045c1be2e56b76f248cc1c83 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7c6c22940d65631787602110353f27f1 = $(`<div id="html_7c6c22940d65631787602110353f27f1" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方婉</h4>         <p><b>生卒:</b> 1740-1800</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《芸窗诗稿》</p>         <p><b>作品风格:</b> 清新自然</p>         <p><b>文学成就:</b> 桐城派女诗人</p>     </div>     </div>`)[0];
+                popup_66c810ee045c1be2e56b76f248cc1c83.setContent(html_7c6c22940d65631787602110353f27f1);
+            
+        
+
+        circle_marker_7e20fb434445287d9cf42f6ea742a3f4.bindPopup(popup_66c810ee045c1be2e56b76f248cc1c83)
+        ;
+
+        
+    
+    
+            circle_marker_7e20fb434445287d9cf42f6ea742a3f4.bindTooltip(
+                `<div>
+                     方婉 (1740-1800)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5b8f336c8cd7e6274eb96d9dcb8620c = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_0964e7e1b88ab9e3a5a11a9ad47c23a6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1192794c0a5eb8e26a23d578c8a1911b = $(`<div id="html_1192794c0a5eb8e26a23d578c8a1911b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方照</h4>         <p><b>生卒:</b> 1745-1805</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《兰闺诗草》</p>         <p><b>作品风格:</b> 婉约细腻</p>         <p><b>文学成就:</b> 桐城派女诗人</p>     </div>     </div>`)[0];
+                popup_0964e7e1b88ab9e3a5a11a9ad47c23a6.setContent(html_1192794c0a5eb8e26a23d578c8a1911b);
+            
+        
+
+        circle_marker_c5b8f336c8cd7e6274eb96d9dcb8620c.bindPopup(popup_0964e7e1b88ab9e3a5a11a9ad47c23a6)
+        ;
+
+        
+    
+    
+            circle_marker_c5b8f336c8cd7e6274eb96d9dcb8620c.bindTooltip(
+                `<div>
+                     方照 (1745-1805)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_65d7430bdeabdf1ebc651fb9689670ba = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_a85b1c03f5269b440f080db26765c3d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60730c8fe5baafaf86753bf99c440e6d = $(`<div id="html_60730c8fe5baafaf86753bf99c440e6d" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方灿</h4>         <p><b>生卒:</b> 1750-1810</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《绣余吟稿》</p>         <p><b>作品风格:</b> 清丽自然</p>         <p><b>文学成就:</b> 桐城派女诗人</p>     </div>     </div>`)[0];
+                popup_a85b1c03f5269b440f080db26765c3d9.setContent(html_60730c8fe5baafaf86753bf99c440e6d);
+            
+        
+
+        circle_marker_65d7430bdeabdf1ebc651fb9689670ba.bindPopup(popup_a85b1c03f5269b440f080db26765c3d9)
+        ;
+
+        
+    
+    
+            circle_marker_65d7430bdeabdf1ebc651fb9689670ba.bindTooltip(
+                `<div>
+                     方灿 (1750-1810)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f13c7aea00c99b8accd29e0100dbbc3 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_fefbdd921291a99f06253673edbb8217 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d2b2c2901c33d6a4b2b3e8627c39ad3 = $(`<div id="html_6d2b2c2901c33d6a4b2b3e8627c39ad3" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方炯</h4>         <p><b>生卒:</b> 1755-1815</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《筠窗诗草》</p>         <p><b>作品风格:</b> 婉约典雅</p>         <p><b>文学成就:</b> 桐城派女诗人</p>     </div>     </div>`)[0];
+                popup_fefbdd921291a99f06253673edbb8217.setContent(html_6d2b2c2901c33d6a4b2b3e8627c39ad3);
+            
+        
+
+        circle_marker_8f13c7aea00c99b8accd29e0100dbbc3.bindPopup(popup_fefbdd921291a99f06253673edbb8217)
+        ;
+
+        
+    
+    
+            circle_marker_8f13c7aea00c99b8accd29e0100dbbc3.bindTooltip(
+                `<div>
+                     方炯 (1755-1815)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_909b184f2cc6414329753feb4d3977e5 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_d3774ce399235c3306e7100f43f0dfb2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6bd7f7ebe01c0054487efde201b9f309 = $(`<div id="html_6bd7f7ebe01c0054487efde201b9f309" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方焰</h4>         <p><b>生卒:</b> 1760-1820</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《红蕖阁诗》</p>         <p><b>作品风格:</b> 清新淡雅</p>         <p><b>文学成就:</b> 桐城派女诗人</p>     </div>     </div>`)[0];
+                popup_d3774ce399235c3306e7100f43f0dfb2.setContent(html_6bd7f7ebe01c0054487efde201b9f309);
+            
+        
+
+        circle_marker_909b184f2cc6414329753feb4d3977e5.bindPopup(popup_d3774ce399235c3306e7100f43f0dfb2)
+        ;
+
+        
+    
+    
+            circle_marker_909b184f2cc6414329753feb4d3977e5.bindTooltip(
+                `<div>
+                     方焰 (1760-1820)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d32fd32954f8db4d4936f9fd4468307 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_ec3a7ebc863dac1ccdabe0459eb6416c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_399adbe3445982f5a6c8ad5625fa7e05 = $(`<div id="html_399adbe3445982f5a6c8ad5625fa7e05" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方烨</h4>         <p><b>生卒:</b> 1765-1825</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《绿绮轩诗》</p>         <p><b>作品风格:</b> 婉约细腻</p>         <p><b>文学成就:</b> 桐城派女诗人</p>     </div>     </div>`)[0];
+                popup_ec3a7ebc863dac1ccdabe0459eb6416c.setContent(html_399adbe3445982f5a6c8ad5625fa7e05);
+            
+        
+
+        circle_marker_9d32fd32954f8db4d4936f9fd4468307.bindPopup(popup_ec3a7ebc863dac1ccdabe0459eb6416c)
+        ;
+
+        
+    
+    
+            circle_marker_9d32fd32954f8db4d4936f9fd4468307.bindTooltip(
+                `<div>
+                     方烨 (1765-1825)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_39c790b39f9055acd403651ae1ff482f = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_bac9509afed6dcaae8f2ea0236b39d4d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_623d7351fd217a6d924f14e267ea3ebf = $(`<div id="html_623d7351fd217a6d924f14e267ea3ebf" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方煊</h4>         <p><b>生卒:</b> 1770-1830</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《芸香阁诗》</p>         <p><b>作品风格:</b> 清丽自然</p>         <p><b>文学成就:</b> 桐城派女诗人</p>     </div>     </div>`)[0];
+                popup_bac9509afed6dcaae8f2ea0236b39d4d.setContent(html_623d7351fd217a6d924f14e267ea3ebf);
+            
+        
+
+        circle_marker_39c790b39f9055acd403651ae1ff482f.bindPopup(popup_bac9509afed6dcaae8f2ea0236b39d4d)
+        ;
+
+        
+    
+    
+            circle_marker_39c790b39f9055acd403651ae1ff482f.bindTooltip(
+                `<div>
+                     方煊 (1770-1830)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9cd013e8af20fe36c199cfad2387472b = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_78e7e8ded63c2d6d003032776a79d898 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6f6cff5ab0f6fe7f20b14a949185a8b6 = $(`<div id="html_6f6cff5ab0f6fe7f20b14a949185a8b6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">方熔</h4>         <p><b>生卒:</b> 1775-1835</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《兰心阁诗》</p>         <p><b>作品风格:</b> 婉约典雅</p>         <p><b>文学成就:</b> 桐城派女诗人</p>     </div>     </div>`)[0];
+                popup_78e7e8ded63c2d6d003032776a79d898.setContent(html_6f6cff5ab0f6fe7f20b14a949185a8b6);
+            
+        
+
+        circle_marker_9cd013e8af20fe36c199cfad2387472b.bindPopup(popup_78e7e8ded63c2d6d003032776a79d898)
+        ;
+
+        
+    
+    
+            circle_marker_9cd013e8af20fe36c199cfad2387472b.bindTooltip(
+                `<div>
+                     方熔 (1775-1835)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d165b24e4503fb48cd7cd1b0ddb12dd6 = L.circleMarker(
+                [30.5254, 120.9458],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_50de033e4a15b3bd5e7892c5f28962e6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_47320382b32ab94cb52511f8b2b87b81 = $(`<div id="html_47320382b32ab94cb52511f8b2b87b81" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">朱景素</h4>         <p><b>生卒:</b> 1780-1840</p>         <p><b>籍贯:</b> 浙江海盐</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《絮雪吟》</p>         <p><b>作品风格:</b> 清丽婉约</p>         <p><b>文学成就:</b> 清代女诗人</p>     </div>     </div>`)[0];
+                popup_50de033e4a15b3bd5e7892c5f28962e6.setContent(html_47320382b32ab94cb52511f8b2b87b81);
+            
+        
+
+        circle_marker_d165b24e4503fb48cd7cd1b0ddb12dd6.bindPopup(popup_50de033e4a15b3bd5e7892c5f28962e6)
+        ;
+
+        
+    
+    
+            circle_marker_d165b24e4503fb48cd7cd1b0ddb12dd6.bindTooltip(
+                `<div>
+                     朱景素 (1780-1840)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd867561db6a31b334052aabf29dbf21 = L.circleMarker(
+                [30.746, 120.7555],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_c41ce4e15ba1f227229f8ff1df8edcef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50defc41d75cb9f45abf597d1f4c7871 = $(`<div id="html_50defc41d75cb9f45abf597d1f4c7871" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">钱斐仲</h4>         <p><b>生卒:</b> 1785-1845</p>         <p><b>籍贯:</b> 浙江秀水</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《雨花庵词》</p>         <p><b>作品风格:</b> 婉约深沉</p>         <p><b>文学成就:</b> 清代女词人</p>     </div>     </div>`)[0];
+                popup_c41ce4e15ba1f227229f8ff1df8edcef.setContent(html_50defc41d75cb9f45abf597d1f4c7871);
+            
+        
+
+        circle_marker_dd867561db6a31b334052aabf29dbf21.bindPopup(popup_c41ce4e15ba1f227229f8ff1df8edcef)
+        ;
+
+        
+    
+    
+            circle_marker_dd867561db6a31b334052aabf29dbf21.bindTooltip(
+                `<div>
+                     钱斐仲 (1785-1845)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e89f27bc002a91a039bbaa28693c415 = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_119a67524afae6265bb3041a54faeffe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac2eb7c60cbca33a17ae668d52d29ba8 = $(`<div id="html_ac2eb7c60cbca33a17ae668d52d29ba8" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">关锳</h4>         <p><b>生卒:</b> 1790-1850</p>         <p><b>籍贯:</b> 浙江钱塘</p>         <p><b>社会阶层:</b> 文人家庭</p>         <p><b>代表作品:</b> 《梦影楼词》</p>         <p><b>作品风格:</b> 凄婉动人</p>         <p><b>文学成就:</b> 清代女词人</p>     </div>     </div>`)[0];
+                popup_119a67524afae6265bb3041a54faeffe.setContent(html_ac2eb7c60cbca33a17ae668d52d29ba8);
+            
+        
+
+        circle_marker_0e89f27bc002a91a039bbaa28693c415.bindPopup(popup_119a67524afae6265bb3041a54faeffe)
+        ;
+
+        
+    
+    
+            circle_marker_0e89f27bc002a91a039bbaa28693c415.bindTooltip(
+                `<div>
+                     关锳 (1790-1850)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4011b9285f19606323468c1164418bb1 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_c175287671a347de17607f239b26b947 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f8adc03aa4e4890816615277cbd38f18 = $(`<div id="html_f8adc03aa4e4890816615277cbd38f18" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">赵棻</h4>         <p><b>生卒:</b> 1795-1855</p>         <p><b>籍贯:</b> 江苏上海</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《滤月轩诗》</p>         <p><b>作品风格:</b> 清丽自然</p>         <p><b>文学成就:</b> 清代女诗人</p>     </div>     </div>`)[0];
+                popup_c175287671a347de17607f239b26b947.setContent(html_f8adc03aa4e4890816615277cbd38f18);
+            
+        
+
+        circle_marker_4011b9285f19606323468c1164418bb1.bindPopup(popup_c175287671a347de17607f239b26b947)
+        ;
+
+        
+    
+    
+            circle_marker_4011b9285f19606323468c1164418bb1.bindTooltip(
+                `<div>
+                     赵棻 (1795-1855)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_454234f339d94eb63cd7bf79cfd26308 = L.circleMarker(
+                [30.746, 120.7555],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_a6f1878175c1267f8472b4c9e848ac34 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c2789fdfc369761b68e1840d2505725d = $(`<div id="html_c2789fdfc369761b68e1840d2505725d" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">沈蕊</h4>         <p><b>生卒:</b> 1800-1860</p>         <p><b>籍贯:</b> 浙江秀水</p>         <p><b>社会阶层:</b> 文人家庭</p>         <p><b>代表作品:</b> 《白云洞天诗》</p>         <p><b>作品风格:</b> 婉约典雅</p>         <p><b>文学成就:</b> 清代女诗人</p>     </div>     </div>`)[0];
+                popup_a6f1878175c1267f8472b4c9e848ac34.setContent(html_c2789fdfc369761b68e1840d2505725d);
+            
+        
+
+        circle_marker_454234f339d94eb63cd7bf79cfd26308.bindPopup(popup_a6f1878175c1267f8472b4c9e848ac34)
+        ;
+
+        
+    
+    
+            circle_marker_454234f339d94eb63cd7bf79cfd26308.bindTooltip(
+                `<div>
+                     沈蕊 (1800-1860)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5caabc87f4c53486adae4e19b0e20558 = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_17a4ca7ead53968ad66f6a96948db682 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_157df169bf55b50be0aaba680e6ff15b = $(`<div id="html_157df169bf55b50be0aaba680e6ff15b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">吴尚熹</h4>         <p><b>生卒:</b> 1805-1865</p>         <p><b>籍贯:</b> 广东南海</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《写韵楼诗》</p>         <p><b>作品风格:</b> 清新淡雅</p>         <p><b>文学成就:</b> 岭南女诗人</p>     </div>     </div>`)[0];
+                popup_17a4ca7ead53968ad66f6a96948db682.setContent(html_157df169bf55b50be0aaba680e6ff15b);
+            
+        
+
+        circle_marker_5caabc87f4c53486adae4e19b0e20558.bindPopup(popup_17a4ca7ead53968ad66f6a96948db682)
+        ;
+
+        
+    
+    
+            circle_marker_5caabc87f4c53486adae4e19b0e20558.bindTooltip(
+                `<div>
+                     吴尚熹 (1805-1865)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bee9ba3ef4d8e14d322a3d64e4fd3da4 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_1c16d96b4589b81ac4f28e349d4e61ee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1e996395b5597ec7941d245b7e07ed90 = $(`<div id="html_1e996395b5597ec7941d245b7e07ed90" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">左锡璇</h4>         <p><b>生卒:</b> 1810-1870</p>         <p><b>籍贯:</b> 江苏阳湖</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《碧梧红蕉馆诗》</p>         <p><b>作品风格:</b> 婉约细腻</p>         <p><b>文学成就:</b> 清代女诗人</p>     </div>     </div>`)[0];
+                popup_1c16d96b4589b81ac4f28e349d4e61ee.setContent(html_1e996395b5597ec7941d245b7e07ed90);
+            
+        
+
+        circle_marker_bee9ba3ef4d8e14d322a3d64e4fd3da4.bindPopup(popup_1c16d96b4589b81ac4f28e349d4e61ee)
+        ;
+
+        
+    
+    
+            circle_marker_bee9ba3ef4d8e14d322a3d64e4fd3da4.bindTooltip(
+                `<div>
+                     左锡璇 (1810-1870)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2a0ec920ee46c5f6fdaa7af689866b1e = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_3ee416edaae2109daca8943a6fd142a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_54781f435601d357856f7a8bd8ad786c = $(`<div id="html_54781f435601d357856f7a8bd8ad786c" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">左锡嘉</h4>         <p><b>生卒:</b> 1815-1875</p>         <p><b>籍贯:</b> 江苏阳湖</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《冷吟仙馆诗》</p>         <p><b>作品风格:</b> 清丽自然</p>         <p><b>文学成就:</b> 姊妹诗人</p>     </div>     </div>`)[0];
+                popup_3ee416edaae2109daca8943a6fd142a4.setContent(html_54781f435601d357856f7a8bd8ad786c);
+            
+        
+
+        circle_marker_2a0ec920ee46c5f6fdaa7af689866b1e.bindPopup(popup_3ee416edaae2109daca8943a6fd142a4)
+        ;
+
+        
+    
+    
+            circle_marker_2a0ec920ee46c5f6fdaa7af689866b1e.bindTooltip(
+                `<div>
+                     左锡嘉 (1815-1875)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb0468bab3b67b39f4869e5048ba4166 = L.circleMarker(
+                [27.8297, 112.944],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_95b01ea98b52c91b460abfcbe87fb4b6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd8c1f8a1a323d2b3dc203021b7bca70 = $(`<div id="html_fd8c1f8a1a323d2b3dc203021b7bca70" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">周诒蘩</h4>         <p><b>生卒:</b> 1820-1880</p>         <p><b>籍贯:</b> 湖南湘潭</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《静一斋诗》</p>         <p><b>作品风格:</b> 婉约典雅</p>         <p><b>文学成就:</b> 湖湘女诗人</p>     </div>     </div>`)[0];
+                popup_95b01ea98b52c91b460abfcbe87fb4b6.setContent(html_fd8c1f8a1a323d2b3dc203021b7bca70);
+            
+        
+
+        circle_marker_cb0468bab3b67b39f4869e5048ba4166.bindPopup(popup_95b01ea98b52c91b460abfcbe87fb4b6)
+        ;
+
+        
+    
+    
+            circle_marker_cb0468bab3b67b39f4869e5048ba4166.bindTooltip(
+                `<div>
+                     周诒蘩 (1820-1880)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_47eb8737e4e343fbd8efdeec521351dc = L.circleMarker(
+                [30.5728, 104.0665],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_3ab3fb1497d915abbcd1e45223a77c82 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_da4343634b0c883a2ca59d6dc44fe6eb = $(`<div id="html_da4343634b0c883a2ca59d6dc44fe6eb" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">曾懿</h4>         <p><b>生卒:</b> 1852-1927</p>         <p><b>籍贯:</b> 四川华阳</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《古欢室诗》</p>         <p><b>作品风格:</b> 清新实用</p>         <p><b>文学成就:</b> 清末著名女学者</p>     </div>     </div>`)[0];
+                popup_3ab3fb1497d915abbcd1e45223a77c82.setContent(html_da4343634b0c883a2ca59d6dc44fe6eb);
+            
+        
+
+        circle_marker_47eb8737e4e343fbd8efdeec521351dc.bindPopup(popup_3ab3fb1497d915abbcd1e45223a77c82)
+        ;
+
+        
+    
+    
+            circle_marker_47eb8737e4e343fbd8efdeec521351dc.bindTooltip(
+                `<div>
+                     曾懿 (1852-1927)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9a764030efb7f2a4af329f2d49b78c8 = L.circleMarker(
+                [30.2861, 118.5431],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_1dfdc57728cd08f8bf0184b929679fe4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e905a7b6beb31498e752ab375a6e3681 = $(`<div id="html_e905a7b6beb31498e752ab375a6e3681" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">吕碧城</h4>         <p><b>生卒:</b> 1883-1943</p>         <p><b>籍贯:</b> 安徽旌德</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《晓珠词》</p>         <p><b>作品风格:</b> 豪放现代</p>         <p><b>文学成就:</b> 近代女词人代表</p>     </div>     </div>`)[0];
+                popup_1dfdc57728cd08f8bf0184b929679fe4.setContent(html_e905a7b6beb31498e752ab375a6e3681);
+            
+        
+
+        circle_marker_e9a764030efb7f2a4af329f2d49b78c8.bindPopup(popup_1dfdc57728cd08f8bf0184b929679fe4)
+        ;
+
+        
+    
+    
+            circle_marker_e9a764030efb7f2a4af329f2d49b78c8.bindTooltip(
+                `<div>
+                     吕碧城 (1883-1943)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4634da906f0a8bbb7f94494d45e862f8 = L.circleMarker(
+                [26.0753, 119.3062],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_c60d1b75b29a0e7caa7890bdcb3266bc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d71e83ad99dbc36e39dc880d09b42a97 = $(`<div id="html_d71e83ad99dbc36e39dc880d09b42a97" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">薛绍徽</h4>         <p><b>生卒:</b> 1866-1911</p>         <p><b>籍贯:</b> 福建侯官</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《黛韵楼诗》</p>         <p><b>作品风格:</b> 典雅革新</p>         <p><b>文学成就:</b> 清末女学者</p>     </div>     </div>`)[0];
+                popup_c60d1b75b29a0e7caa7890bdcb3266bc.setContent(html_d71e83ad99dbc36e39dc880d09b42a97);
+            
+        
+
+        circle_marker_4634da906f0a8bbb7f94494d45e862f8.bindPopup(popup_c60d1b75b29a0e7caa7890bdcb3266bc)
+        ;
+
+        
+    
+    
+            circle_marker_4634da906f0a8bbb7f94494d45e862f8.bindTooltip(
+                `<div>
+                     薛绍徽 (1866-1911)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_253dc1321e5f57bcc0444f4d56a7040a = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_9c091f87878339d58d0248cfe37a7bea = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c61765427c2756dd4fe892e080189f1b = $(`<div id="html_c61765427c2756dd4fe892e080189f1b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">单士厘</h4>         <p><b>生卒:</b> 1856-1943</p>         <p><b>籍贯:</b> 浙江萧山</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《受兹室诗》</p>         <p><b>作品风格:</b> 开阔创新</p>         <p><b>文学成就:</b> 近代女旅行家</p>     </div>     </div>`)[0];
+                popup_9c091f87878339d58d0248cfe37a7bea.setContent(html_c61765427c2756dd4fe892e080189f1b);
+            
+        
+
+        circle_marker_253dc1321e5f57bcc0444f4d56a7040a.bindPopup(popup_9c091f87878339d58d0248cfe37a7bea)
+        ;
+
+        
+    
+    
+            circle_marker_253dc1321e5f57bcc0444f4d56a7040a.bindTooltip(
+                `<div>
+                     单士厘 (1856-1943)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18aea13244e2bf6ac5ed210f5facb2cc = L.circleMarker(
+                [30.6309, 120.5644],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_d8a1838b25481bedc6384785c80e4c3e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_25fcb8b81731c78979cedaaffe4de3d2 = $(`<div id="html_25fcb8b81731c78979cedaaffe4de3d2" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">徐自华</h4>         <p><b>生卒:</b> 1873-1935</p>         <p><b>籍贯:</b> 浙江石门</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《听竹楼诗》</p>         <p><b>作品风格:</b> 悲壮激昂</p>         <p><b>文学成就:</b> 南社女诗人</p>     </div>     </div>`)[0];
+                popup_d8a1838b25481bedc6384785c80e4c3e.setContent(html_25fcb8b81731c78979cedaaffe4de3d2);
+            
+        
+
+        circle_marker_18aea13244e2bf6ac5ed210f5facb2cc.bindPopup(popup_d8a1838b25481bedc6384785c80e4c3e)
+        ;
+
+        
+    
+    
+            circle_marker_18aea13244e2bf6ac5ed210f5facb2cc.bindTooltip(
+                `<div>
+                     徐自华 (1873-1935)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bda8043c44fdbdae0a9cd79b4c9796cc = L.circleMarker(
+                [30.6309, 120.5644],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_fdb8232797ef152e2dd91d914c0704ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b76188ea6d4b29691b78f8df36447f51 = $(`<div id="html_b76188ea6d4b29691b78f8df36447f51" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">徐蕴华</h4>         <p><b>生卒:</b> 1884-1962</p>         <p><b>籍贯:</b> 浙江石门</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《双韵轩诗》</p>         <p><b>作品风格:</b> 清丽婉约</p>         <p><b>文学成就:</b> 南社女诗人</p>     </div>     </div>`)[0];
+                popup_fdb8232797ef152e2dd91d914c0704ed.setContent(html_b76188ea6d4b29691b78f8df36447f51);
+            
+        
+
+        circle_marker_bda8043c44fdbdae0a9cd79b4c9796cc.bindPopup(popup_fdb8232797ef152e2dd91d914c0704ed)
+        ;
+
+        
+    
+    
+            circle_marker_bda8043c44fdbdae0a9cd79b4c9796cc.bindTooltip(
+                `<div>
+                     徐蕴华 (1884-1962)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6e64923cf83f2c5d6086b9ecf422192 = L.circleMarker(
+                [27.7341, 112.535],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_7d37bc5bd9d63189e178ce61232b389d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fb8c51487783f3f7de6fc062a3cb3af7 = $(`<div id="html_fb8c51487783f3f7de6fc062a3cb3af7" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">张昭汉</h4>         <p><b>生卒:</b> 1884-1965</p>         <p><b>籍贯:</b> 湖南湘乡</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《白华草堂诗》</p>         <p><b>作品风格:</b> 豪放进步</p>         <p><b>文学成就:</b> 南社女诗人</p>     </div>     </div>`)[0];
+                popup_7d37bc5bd9d63189e178ce61232b389d.setContent(html_fb8c51487783f3f7de6fc062a3cb3af7);
+            
+        
+
+        circle_marker_d6e64923cf83f2c5d6086b9ecf422192.bindPopup(popup_7d37bc5bd9d63189e178ce61232b389d)
+        ;
+
+        
+    
+    
+            circle_marker_d6e64923cf83f2c5d6086b9ecf422192.bindTooltip(
+                `<div>
+                     张昭汉 (1884-1965)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e62c4be9711bdbe78f679aeeac05c7f1 = L.circleMarker(
+                [27.2305, 112.8693],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_c885311ace5224a8cebea4f227bb3fc0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1f39aeba4751f486efa604f7cfd11bb6 = $(`<div id="html_1f39aeba4751f486efa604f7cfd11bb6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">唐群英</h4>         <p><b>生卒:</b> 1871-1937</p>         <p><b>籍贯:</b> 湖南衡山</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《吟香阁诗》</p>         <p><b>作品风格:</b> 豪放革命</p>         <p><b>文学成就:</b> 女权运动领袖</p>     </div>     </div>`)[0];
+                popup_c885311ace5224a8cebea4f227bb3fc0.setContent(html_1f39aeba4751f486efa604f7cfd11bb6);
+            
+        
+
+        circle_marker_e62c4be9711bdbe78f679aeeac05c7f1.bindPopup(popup_c885311ace5224a8cebea4f227bb3fc0)
+        ;
+
+        
+    
+    
+            circle_marker_e62c4be9711bdbe78f679aeeac05c7f1.bindTooltip(
+                `<div>
+                     唐群英 (1871-1937)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c15f6cb517a7b16e1db1747bd10405fe = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "pink", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_7d996249c8bb9a088caf5be21b86e315 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ae4280d91afdc3a25a1fc6528653205d = $(`<div id="html_ae4280d91afdc3a25a1fc6528653205d" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">康同璧</h4>         <p><b>生卒:</b> 1883-1969</p>         <p><b>籍贯:</b> 广东南海</p>         <p><b>社会阶层:</b> 维新家庭</p>         <p><b>代表作品:</b> 《康同璧诗》</p>         <p><b>作品风格:</b> 开放进步</p>         <p><b>文学成就:</b> 康有为女公子</p>     </div>     </div>`)[0];
+                popup_7d996249c8bb9a088caf5be21b86e315.setContent(html_ae4280d91afdc3a25a1fc6528653205d);
+            
+        
+
+        circle_marker_c15f6cb517a7b16e1db1747bd10405fe.bindPopup(popup_7d996249c8bb9a088caf5be21b86e315)
+        ;
+
+        
+    
+    
+            circle_marker_c15f6cb517a7b16e1db1747bd10405fe.bindTooltip(
+                `<div>
+                     康同璧 (1883-1969)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_027610865be6a9996ee0b5a1ef09c2a5 = L.circleMarker(
+                [30.0303, 120.5829],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_964075c09937ef09a9a05b02a90ef349 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a9b5d4002e1385725e8a9f46c7670161 = $(`<div id="html_a9b5d4002e1385725e8a9f46c7670161" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">狄瑾</h4>         <p><b>生卒:</b> 1875-1907</p>         <p><b>籍贯:</b> 浙江山阴</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《秋瑾诗》</p>         <p><b>作品风格:</b> 豪放悲壮</p>         <p><b>文学成就:</b> 女革命家诗人</p>     </div>     </div>`)[0];
+                popup_964075c09937ef09a9a05b02a90ef349.setContent(html_a9b5d4002e1385725e8a9f46c7670161);
+            
+        
+
+        circle_marker_027610865be6a9996ee0b5a1ef09c2a5.bindPopup(popup_964075c09937ef09a9a05b02a90ef349)
+        ;
+
+        
+    
+    
+            circle_marker_027610865be6a9996ee0b5a1ef09c2a5.bindTooltip(
+                `<div>
+                     狄瑾 (1875-1907)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7f3b705d8dabbdea4f189006cbb1427 = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_4f80d9ef9fc13fd8f59d0acfe0b1d6ce = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f0bce90f7283d075d35ac29aaa719b6a = $(`<div id="html_f0bce90f7283d075d35ac29aaa719b6a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">何香凝</h4>         <p><b>生卒:</b> 1878-1972</p>         <p><b>籍贯:</b> 广东南海</p>         <p><b>社会阶层:</b> 商人家庭</p>         <p><b>代表作品:</b> 《何香凝诗》</p>         <p><b>作品风格:</b> 豪放革命</p>         <p><b>文学成就:</b> 女革命家艺术家</p>     </div>     </div>`)[0];
+                popup_4f80d9ef9fc13fd8f59d0acfe0b1d6ce.setContent(html_f0bce90f7283d075d35ac29aaa719b6a);
+            
+        
+
+        circle_marker_a7f3b705d8dabbdea4f189006cbb1427.bindPopup(popup_4f80d9ef9fc13fd8f59d0acfe0b1d6ce)
+        ;
+
+        
+    
+    
+            circle_marker_a7f3b705d8dabbdea4f189006cbb1427.bindTooltip(
+                `<div>
+                     何香凝 (1878-1972)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fda39fa3c75c81b1b5115ae17b94967e = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_24020d1f04d0ee49a03cebb05b0c4af7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7cf542d70444bca3f7ec21d038bf321f = $(`<div id="html_7cf542d70444bca3f7ec21d038bf321f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">张竹君</h4>         <p><b>生卒:</b> 1876-1964</p>         <p><b>籍贯:</b> 广东番禺</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《张竹君诗》</p>         <p><b>作品风格:</b> 务实进步</p>         <p><b>文学成就:</b> 女医学教育家</p>     </div>     </div>`)[0];
+                popup_24020d1f04d0ee49a03cebb05b0c4af7.setContent(html_7cf542d70444bca3f7ec21d038bf321f);
+            
+        
+
+        circle_marker_fda39fa3c75c81b1b5115ae17b94967e.bindPopup(popup_24020d1f04d0ee49a03cebb05b0c4af7)
+        ;
+
+        
+    
+    
+            circle_marker_fda39fa3c75c81b1b5115ae17b94967e.bindTooltip(
+                `<div>
+                     张竹君 (1876-1964)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1f9d5281ba41b3f5c350abd155eb0f2 = L.circleMarker(
+                [31.0359, 116.9597],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_a909204079dadbc89fc57a080db2d7fc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b5a34348f6bc2dd25043e10139d64c6c = $(`<div id="html_b5a34348f6bc2dd25043e10139d64c6c" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">吴芝瑛</h4>         <p><b>生卒:</b> 1868-1934</p>         <p><b>籍贯:</b> 安徽桐城</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《吴芝瑛诗》</p>         <p><b>作品风格:</b> 清丽典雅</p>         <p><b>文学成就:</b> 女书法家诗人</p>     </div>     </div>`)[0];
+                popup_a909204079dadbc89fc57a080db2d7fc.setContent(html_b5a34348f6bc2dd25043e10139d64c6c);
+            
+        
+
+        circle_marker_a1f9d5281ba41b3f5c350abd155eb0f2.bindPopup(popup_a909204079dadbc89fc57a080db2d7fc)
+        ;
+
+        
+    
+    
+            circle_marker_a1f9d5281ba41b3f5c350abd155eb0f2.bindTooltip(
+                `<div>
+                     吴芝瑛 (1868-1934)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9024f54099ca366dfa47d163b9b0db2 = L.circleMarker(
+                [22.2707, 113.5767],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_0fd533352005216f114da45ddfb12e72 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_62054b2e6ab419746ae8bcf62363e71a = $(`<div id="html_62054b2e6ab419746ae8bcf62363e71a" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">徐宗汉</h4>         <p><b>生卒:</b> 1876-1944</p>         <p><b>籍贯:</b> 广东香山</p>         <p><b>社会阶层:</b> 商人家庭</p>         <p><b>代表作品:</b> 《徐宗汉诗》</p>         <p><b>作品风格:</b> 豪放革命</p>         <p><b>文学成就:</b> 女革命家</p>     </div>     </div>`)[0];
+                popup_0fd533352005216f114da45ddfb12e72.setContent(html_62054b2e6ab419746ae8bcf62363e71a);
+            
+        
+
+        circle_marker_b9024f54099ca366dfa47d163b9b0db2.bindPopup(popup_0fd533352005216f114da45ddfb12e72)
+        ;
+
+        
+    
+    
+            circle_marker_b9024f54099ca366dfa47d163b9b0db2.bindTooltip(
+                `<div>
+                     徐宗汉 (1876-1944)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f98c7cc522fc0c357e94126d90cdb96 = L.circleMarker(
+                [19.6133, 110.7539],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_8fed7c7f35198a601ecda28fa6a02c21 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e2f70586412fb2cf77ffca7f27e38c17 = $(`<div id="html_e2f70586412fb2cf77ffca7f27e38c17" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">宋庆龄</h4>         <p><b>生卒:</b> 1893-1981</p>         <p><b>籍贯:</b> 广东文昌</p>         <p><b>社会阶层:</b> 商人家庭</p>         <p><b>代表作品:</b> 《宋庆龄诗》</p>         <p><b>作品风格:</b> 庄重进步</p>         <p><b>文学成就:</b> 国母诗人</p>     </div>     </div>`)[0];
+                popup_8fed7c7f35198a601ecda28fa6a02c21.setContent(html_e2f70586412fb2cf77ffca7f27e38c17);
+            
+        
+
+        circle_marker_6f98c7cc522fc0c357e94126d90cdb96.bindPopup(popup_8fed7c7f35198a601ecda28fa6a02c21)
+        ;
+
+        
+    
+    
+            circle_marker_6f98c7cc522fc0c357e94126d90cdb96.bindTooltip(
+                `<div>
+                     宋庆龄 (1893-1981)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e4c1fc5866fd9c8c27110736a8107544 = L.circleMarker(
+                [19.6133, 110.7539],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_47b626a727bf63dc0fbbe6fe00e3aa39 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3215f1d731afad8fcc1a343dc48a757e = $(`<div id="html_3215f1d731afad8fcc1a343dc48a757e" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">宋蔼龄</h4>         <p><b>生卒:</b> 1889-1973</p>         <p><b>籍贯:</b> 广东文昌</p>         <p><b>社会阶层:</b> 商人家庭</p>         <p><b>代表作品:</b> 《宋蔼龄诗》</p>         <p><b>作品风格:</b> 务实典雅</p>         <p><b>文学成就:</b> 宋氏姐妹</p>     </div>     </div>`)[0];
+                popup_47b626a727bf63dc0fbbe6fe00e3aa39.setContent(html_3215f1d731afad8fcc1a343dc48a757e);
+            
+        
+
+        circle_marker_e4c1fc5866fd9c8c27110736a8107544.bindPopup(popup_47b626a727bf63dc0fbbe6fe00e3aa39)
+        ;
+
+        
+    
+    
+            circle_marker_e4c1fc5866fd9c8c27110736a8107544.bindTooltip(
+                `<div>
+                     宋蔼龄 (1889-1973)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_39f0bb82cafa893fafc646dcaf80035a = L.circleMarker(
+                [19.6133, 110.7539],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_fe0b2ea45d9e755aa4e7bfc71bf4c996 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7027e4c92bc58ec33d1d71bf581f6050 = $(`<div id="html_7027e4c92bc58ec33d1d71bf581f6050" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">宋美龄</h4>         <p><b>生卒:</b> 1897-2003</p>         <p><b>籍贯:</b> 广东文昌</p>         <p><b>社会阶层:</b> 商人家庭</p>         <p><b>代表作品:</b> 《宋美龄诗》</p>         <p><b>作品风格:</b> 典雅外交</p>         <p><b>文学成就:</b> 第一夫人诗人</p>     </div>     </div>`)[0];
+                popup_fe0b2ea45d9e755aa4e7bfc71bf4c996.setContent(html_7027e4c92bc58ec33d1d71bf581f6050);
+            
+        
+
+        circle_marker_39f0bb82cafa893fafc646dcaf80035a.bindPopup(popup_fe0b2ea45d9e755aa4e7bfc71bf4c996)
+        ;
+
+        
+    
+    
+            circle_marker_39f0bb82cafa893fafc646dcaf80035a.bindTooltip(
+                `<div>
+                     宋美龄 (1897-2003)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d86c4bc96f96caa088b633d29f76fe8 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_15f66661bd3e1f7142dea36948f17d30 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4664ce7c61e682f1551ef6c556d933ca = $(`<div id="html_4664ce7c61e682f1551ef6c556d933ca" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">张幼仪</h4>         <p><b>生卒:</b> 1900-1988</p>         <p><b>籍贯:</b> 江苏宝山</p>         <p><b>社会阶层:</b> 商人家庭</p>         <p><b>代表作品:</b> 《张幼仪诗》</p>         <p><b>作品风格:</b> 坚韧务实</p>         <p><b>文学成就:</b> 现代女性</p>     </div>     </div>`)[0];
+                popup_15f66661bd3e1f7142dea36948f17d30.setContent(html_4664ce7c61e682f1551ef6c556d933ca);
+            
+        
+
+        circle_marker_8d86c4bc96f96caa088b633d29f76fe8.bindPopup(popup_15f66661bd3e1f7142dea36948f17d30)
+        ;
+
+        
+    
+    
+            circle_marker_8d86c4bc96f96caa088b633d29f76fe8.bindTooltip(
+                `<div>
+                     张幼仪 (1900-1988)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_63a0d19d4a5faeab88c153b6f0ca8cbd = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_c53754bab40f329958c00c7b0992b646 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1941821baec6683e7729f69408e2de6d = $(`<div id="html_1941821baec6683e7729f69408e2de6d" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">陆小曼</h4>         <p><b>生卒:</b> 1903-1965</p>         <p><b>籍贯:</b> 江苏武进</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《陆小曼诗》</p>         <p><b>作品风格:</b> 浪漫感伤</p>         <p><b>文学成就:</b> 现代女艺术家</p>     </div>     </div>`)[0];
+                popup_c53754bab40f329958c00c7b0992b646.setContent(html_1941821baec6683e7729f69408e2de6d);
+            
+        
+
+        circle_marker_63a0d19d4a5faeab88c153b6f0ca8cbd.bindPopup(popup_c53754bab40f329958c00c7b0992b646)
+        ;
+
+        
+    
+    
+            circle_marker_63a0d19d4a5faeab88c153b6f0ca8cbd.bindTooltip(
+                `<div>
+                     陆小曼 (1903-1965)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d8b4492f7634b5f40a96e0d628877be9 = L.circleMarker(
+                [26.0753, 119.3062],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_197ce717c74d9a97511cebcc526f770d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2d579036c07e1a36963d1d2601d8db2f = $(`<div id="html_2d579036c07e1a36963d1d2601d8db2f" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">林徽因</h4>         <p><b>生卒:</b> 1904-1955</p>         <p><b>籍贯:</b> 福建闽县</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《林徽因诗》</p>         <p><b>作品风格:</b> 清新典雅</p>         <p><b>文学成就:</b> 才女典范</p>     </div>     </div>`)[0];
+                popup_197ce717c74d9a97511cebcc526f770d.setContent(html_2d579036c07e1a36963d1d2601d8db2f);
+            
+        
+
+        circle_marker_d8b4492f7634b5f40a96e0d628877be9.bindPopup(popup_197ce717c74d9a97511cebcc526f770d)
+        ;
+
+        
+    
+    
+            circle_marker_d8b4492f7634b5f40a96e0d628877be9.bindTooltip(
+                `<div>
+                     林徽因 (1904-1955)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c0fc64bedac0138100861280fc48ab5e = L.circleMarker(
+                [23.1291, 113.2644],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_9cc7b920114c62ce50a894ce1bf2f88d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_995472ee1235d3c035b47308912592f4 = $(`<div id="html_995472ee1235d3c035b47308912592f4" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">凌叔华</h4>         <p><b>生卒:</b> 1900-1990</p>         <p><b>籍贯:</b> 广东番禺</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《凌叔华小说》</p>         <p><b>作品风格:</b> 细腻典雅</p>         <p><b>文学成就:</b> 现代女作家</p>     </div>     </div>`)[0];
+                popup_9cc7b920114c62ce50a894ce1bf2f88d.setContent(html_995472ee1235d3c035b47308912592f4);
+            
+        
+
+        circle_marker_c0fc64bedac0138100861280fc48ab5e.bindPopup(popup_9cc7b920114c62ce50a894ce1bf2f88d)
+        ;
+
+        
+    
+    
+            circle_marker_c0fc64bedac0138100861280fc48ab5e.bindTooltip(
+                `<div>
+                     凌叔华 (1900-1990)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_31b36528f01e9440f45035822a5ddb6e = L.circleMarker(
+                [27.7788, 120.6551],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_ad29d589c85873eec707326beb32126b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2340c893708707792cea13db3e0848ce = $(`<div id="html_2340c893708707792cea13db3e0848ce" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">苏雪林</h4>         <p><b>生卒:</b> 1897-1999</p>         <p><b>籍贯:</b> 浙江瑞安</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《绿天》</p>         <p><b>作品风格:</b> 博学严谨</p>         <p><b>文学成就:</b> 女学者作家</p>     </div>     </div>`)[0];
+                popup_ad29d589c85873eec707326beb32126b.setContent(html_2340c893708707792cea13db3e0848ce);
+            
+        
+
+        circle_marker_31b36528f01e9440f45035822a5ddb6e.bindPopup(popup_ad29d589c85873eec707326beb32126b)
+        ;
+
+        
+    
+    
+            circle_marker_31b36528f01e9440f45035822a5ddb6e.bindTooltip(
+                `<div>
+                     苏雪林 (1897-1999)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8dd9a207fa981659bae6a288bac5995d = L.circleMarker(
+                [37.8006, 113.6581],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_9c47e5a3c18c56afb85cf8f633e8d69a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ad7db83c32b3d3d32f06046b82fe0e6 = $(`<div id="html_5ad7db83c32b3d3d32f06046b82fe0e6" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">石评梅</h4>         <p><b>生卒:</b> 1902-1928</p>         <p><b>籍贯:</b> 山西平定</p>         <p><b>社会阶层:</b> 文人家庭</p>         <p><b>代表作品:</b> 《石评梅作品集》</p>         <p><b>作品风格:</b> 凄婉动人</p>         <p><b>文学成就:</b> 才女早逝</p>     </div>     </div>`)[0];
+                popup_9c47e5a3c18c56afb85cf8f633e8d69a.setContent(html_5ad7db83c32b3d3d32f06046b82fe0e6);
+            
+        
+
+        circle_marker_8dd9a207fa981659bae6a288bac5995d.bindPopup(popup_9c47e5a3c18c56afb85cf8f633e8d69a)
+        ;
+
+        
+    
+    
+            circle_marker_8dd9a207fa981659bae6a288bac5995d.bindTooltip(
+                `<div>
+                     石评梅 (1902-1928)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dfe2d8a2b60b01d988c82246bea1dc95 = L.circleMarker(
+                [26.0753, 119.3062],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_ab8fae986590f3b0fd55dcb601b013ad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6f8857598bf01796e3e44c6dc733511c = $(`<div id="html_6f8857598bf01796e3e44c6dc733511c" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">庐隐</h4>         <p><b>生卒:</b> 1898-1934</p>         <p><b>籍贯:</b> 福建闽侯</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《象牙戒指》</p>         <p><b>作品风格:</b> 感伤现代</p>         <p><b>文学成就:</b> 现代女作家</p>     </div>     </div>`)[0];
+                popup_ab8fae986590f3b0fd55dcb601b013ad.setContent(html_6f8857598bf01796e3e44c6dc733511c);
+            
+        
+
+        circle_marker_dfe2d8a2b60b01d988c82246bea1dc95.bindPopup(popup_ab8fae986590f3b0fd55dcb601b013ad)
+        ;
+
+        
+    
+    
+            circle_marker_dfe2d8a2b60b01d988c82246bea1dc95.bindTooltip(
+                `<div>
+                     庐隐 (1898-1934)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9ddbb376fdf20d1d14890e988f6cf8c8 = L.circleMarker(
+                [32.697, 112.8077],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_2df6323e7d96fc90597ef4944a731149 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bf05002a08bd38d37bf1c43387b93edd = $(`<div id="html_bf05002a08bd38d37bf1c43387b93edd" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">冯沅君</h4>         <p><b>生卒:</b> 1900-1974</p>         <p><b>籍贯:</b> 河南唐河</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《中国诗史》</p>         <p><b>作品风格:</b> 学术严谨</p>         <p><b>文学成就:</b> 女学者</p>     </div>     </div>`)[0];
+                popup_2df6323e7d96fc90597ef4944a731149.setContent(html_bf05002a08bd38d37bf1c43387b93edd);
+            
+        
+
+        circle_marker_9ddbb376fdf20d1d14890e988f6cf8c8.bindPopup(popup_2df6323e7d96fc90597ef4944a731149)
+        ;
+
+        
+    
+    
+            circle_marker_9ddbb376fdf20d1d14890e988f6cf8c8.bindTooltip(
+                `<div>
+                     冯沅君 (1900-1974)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_121e7544a0f4d1c9c6efb560416822d3 = L.circleMarker(
+                [27.6463, 113.497],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_d9edf831f8db5020c423629ff4ffcd81 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a8c6c14ffa1ff032ffa7b25f898729ff = $(`<div id="html_a8c6c14ffa1ff032ffa7b25f898729ff" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">袁昌英</h4>         <p><b>生卒:</b> 1894-1973</p>         <p><b>籍贯:</b> 湖南醴陵</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《法国文学》</p>         <p><b>作品风格:</b> 博学国际</p>         <p><b>文学成就:</b> 女学者</p>     </div>     </div>`)[0];
+                popup_d9edf831f8db5020c423629ff4ffcd81.setContent(html_a8c6c14ffa1ff032ffa7b25f898729ff);
+            
+        
+
+        circle_marker_121e7544a0f4d1c9c6efb560416822d3.bindPopup(popup_d9edf831f8db5020c423629ff4ffcd81)
+        ;
+
+        
+    
+    
+            circle_marker_121e7544a0f4d1c9c6efb560416822d3.bindTooltip(
+                `<div>
+                     袁昌英 (1894-1973)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ed51c8c8d52fff875ad4849f44de6c05 = L.circleMarker(
+                [31.7728, 119.9465],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_493b25651850518cfc1ee59bcdb3334b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c84100d7d0ce32ae21487520446bca1 = $(`<div id="html_9c84100d7d0ce32ae21487520446bca1" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">陈衡哲</h4>         <p><b>生卒:</b> 1890-1976</p>         <p><b>籍贯:</b> 江苏武进</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《西洋史》</p>         <p><b>作品风格:</b> 理性开放</p>         <p><b>文学成就:</b> 女学者先驱</p>     </div>     </div>`)[0];
+                popup_493b25651850518cfc1ee59bcdb3334b.setContent(html_9c84100d7d0ce32ae21487520446bca1);
+            
+        
+
+        circle_marker_ed51c8c8d52fff875ad4849f44de6c05.bindPopup(popup_493b25651850518cfc1ee59bcdb3334b)
+        ;
+
+        
+    
+    
+            circle_marker_ed51c8c8d52fff875ad4849f44de6c05.bindTooltip(
+                `<div>
+                     陈衡哲 (1890-1976)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_41f65d19ec8c881c05ebc1cb5dbd7330 = L.circleMarker(
+                [25.9628, 119.5232],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_aecfa1db6e32b5a5c2fded727e8bbddf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c073776bb082dbf2739cfe725eff8f0d = $(`<div id="html_c073776bb082dbf2739cfe725eff8f0d" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">冰心</h4>         <p><b>生卒:</b> 1900-1999</p>         <p><b>籍贯:</b> 福建长乐</p>         <p><b>社会阶层:</b> 海军家庭</p>         <p><b>代表作品:</b> 《寄小读者》</p>         <p><b>作品风格:</b> 温馨典雅</p>         <p><b>文学成就:</b> 文学大师</p>     </div>     </div>`)[0];
+                popup_aecfa1db6e32b5a5c2fded727e8bbddf.setContent(html_c073776bb082dbf2739cfe725eff8f0d);
+            
+        
+
+        circle_marker_41f65d19ec8c881c05ebc1cb5dbd7330.bindPopup(popup_aecfa1db6e32b5a5c2fded727e8bbddf)
+        ;
+
+        
+    
+    
+            circle_marker_41f65d19ec8c881c05ebc1cb5dbd7330.bindTooltip(
+                `<div>
+                     冰心 (1900-1999)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6bbd39865eeef8103be424835eb93b9 = L.circleMarker(
+                [29.4431, 111.6476],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_bcd583a6c921c7e1e060c1a02f689962 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0748c4ebd51d7642d5fd937af3d9b190 = $(`<div id="html_0748c4ebd51d7642d5fd937af3d9b190" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">丁玲</h4>         <p><b>生卒:</b> 1904-1986</p>         <p><b>籍贯:</b> 湖南临澧</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《太阳照在桑干河上》</p>         <p><b>作品风格:</b> 豪放革命</p>         <p><b>文学成就:</b> 左翼女作家</p>     </div>     </div>`)[0];
+                popup_bcd583a6c921c7e1e060c1a02f689962.setContent(html_0748c4ebd51d7642d5fd937af3d9b190);
+            
+        
+
+        circle_marker_f6bbd39865eeef8103be424835eb93b9.bindPopup(popup_bcd583a6c921c7e1e060c1a02f689962)
+        ;
+
+        
+    
+    
+            circle_marker_f6bbd39865eeef8103be424835eb93b9.bindTooltip(
+                `<div>
+                     丁玲 (1904-1986)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f0d2bac382fa0c58d64b5273555bdfe5 = L.circleMarker(
+                [45.8038, 126.5369],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_22753a25851c0f5492fa9c0898389a04 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_862475ffdf902883e44cd8b815173621 = $(`<div id="html_862475ffdf902883e44cd8b815173621" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">萧红</h4>         <p><b>生卒:</b> 1911-1942</p>         <p><b>籍贯:</b> 黑龙江呼兰</p>         <p><b>社会阶层:</b> 地主家庭</p>         <p><b>代表作品:</b> 《呼兰河传》</p>         <p><b>作品风格:</b> 凄婉深刻</p>         <p><b>文学成就:</b> 文学天才</p>     </div>     </div>`)[0];
+                popup_22753a25851c0f5492fa9c0898389a04.setContent(html_862475ffdf902883e44cd8b815173621);
+            
+        
+
+        circle_marker_f0d2bac382fa0c58d64b5273555bdfe5.bindPopup(popup_22753a25851c0f5492fa9c0898389a04)
+        ;
+
+        
+    
+    
+            circle_marker_f0d2bac382fa0c58d64b5273555bdfe5.bindTooltip(
+                `<div>
+                     萧红 (1911-1942)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_75b97f19042db2341aae4b922957f719 = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_4769d853d4fdf76c5ff57d484c72b749 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_79942d5e07907ac6a6a6fe5f8c716a48 = $(`<div id="html_79942d5e07907ac6a6a6fe5f8c716a48" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">张爱玲</h4>         <p><b>生卒:</b> 1920-1995</p>         <p><b>籍贯:</b> 河北丰润</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《倾城之恋》</p>         <p><b>作品风格:</b> 冷峻深刻</p>         <p><b>文学成就:</b> 文学天才</p>     </div>     </div>`)[0];
+                popup_4769d853d4fdf76c5ff57d484c72b749.setContent(html_79942d5e07907ac6a6a6fe5f8c716a48);
+            
+        
+
+        circle_marker_75b97f19042db2341aae4b922957f719.bindPopup(popup_4769d853d4fdf76c5ff57d484c72b749)
+        ;
+
+        
+    
+    
+            circle_marker_75b97f19042db2341aae4b922957f719.bindTooltip(
+                `<div>
+                     张爱玲 (1920-1995)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1fdfcbfb057367783672498fac32defa = L.circleMarker(
+                [31.491, 120.3119],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_69ba9c8b28c5d581d0c62b02d39149f3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c72a2ae1090e2463b6006f1710deac34 = $(`<div id="html_c72a2ae1090e2463b6006f1710deac34" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">杨绛</h4>         <p><b>生卒:</b> 1911-2016</p>         <p><b>籍贯:</b> 江苏无锡</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《洗澡》</p>         <p><b>作品风格:</b> 睿智典雅</p>         <p><b>文学成就:</b> 文学大家</p>     </div>     </div>`)[0];
+                popup_69ba9c8b28c5d581d0c62b02d39149f3.setContent(html_c72a2ae1090e2463b6006f1710deac34);
+            
+        
+
+        circle_marker_1fdfcbfb057367783672498fac32defa.bindPopup(popup_69ba9c8b28c5d581d0c62b02d39149f3)
+        ;
+
+        
+    
+    
+            circle_marker_1fdfcbfb057367783672498fac32defa.bindTooltip(
+                `<div>
+                     杨绛 (1911-2016)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18bf4bd4c468c60b803fa143c7c88e29 = L.circleMarker(
+                [29.8744, 121.5498],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_43f0a1ab7c64db54870d1cb15a7314fc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5e0f75370e5327c3d2a3614a857b3bb0 = $(`<div id="html_5e0f75370e5327c3d2a3614a857b3bb0" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">苏青</h4>         <p><b>生卒:</b> 1914-1982</p>         <p><b>籍贯:</b> 浙江鄞县</p>         <p><b>社会阶层:</b> 商人家庭</p>         <p><b>代表作品:</b> 《结婚十年》</p>         <p><b>作品风格:</b> 直白大胆</p>         <p><b>文学成就:</b> 海派女作家</p>     </div>     </div>`)[0];
+                popup_43f0a1ab7c64db54870d1cb15a7314fc.setContent(html_5e0f75370e5327c3d2a3614a857b3bb0);
+            
+        
+
+        circle_marker_18bf4bd4c468c60b803fa143c7c88e29.bindPopup(popup_43f0a1ab7c64db54870d1cb15a7314fc)
+        ;
+
+        
+    
+    
+            circle_marker_18bf4bd4c468c60b803fa143c7c88e29.bindTooltip(
+                `<div>
+                     苏青 (1914-1982)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c98bcedbf2a3eae30325a44668e6378 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_4852e217fe1e0d502fd58bfd179db4d2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d46318684bb92beb8b945aea72b3f902 = $(`<div id="html_d46318684bb92beb8b945aea72b3f902" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">关露</h4>         <p><b>生卒:</b> 1907-1982</p>         <p><b>籍贯:</b> 河北延庆</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《新旧时代》</p>         <p><b>作品风格:</b> 复杂深刻</p>         <p><b>文学成就:</b> 传奇女作家</p>     </div>     </div>`)[0];
+                popup_4852e217fe1e0d502fd58bfd179db4d2.setContent(html_d46318684bb92beb8b945aea72b3f902);
+            
+        
+
+        circle_marker_3c98bcedbf2a3eae30325a44668e6378.bindPopup(popup_4852e217fe1e0d502fd58bfd179db4d2)
+        ;
+
+        
+    
+    
+            circle_marker_3c98bcedbf2a3eae30325a44668e6378.bindTooltip(
+                `<div>
+                     关露 (1907-1982)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_559219974b828c3fbd494e9e8a4ca8ac = L.circleMarker(
+                [25.9372, 113.2361],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_edbf7e6df18fbf26f8e1e064364fa1ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2394068443e71946ce0e81e8a5d68ffc = $(`<div id="html_2394068443e71946ce0e81e8a5d68ffc" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">白薇</h4>         <p><b>生卒:</b> 1894-1987</p>         <p><b>籍贯:</b> 湖南资兴</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《打出幽灵塔》</p>         <p><b>作品风格:</b> 激烈反抗</p>         <p><b>文学成就:</b> 左翼女作家</p>     </div>     </div>`)[0];
+                popup_edbf7e6df18fbf26f8e1e064364fa1ed.setContent(html_2394068443e71946ce0e81e8a5d68ffc);
+            
+        
+
+        circle_marker_559219974b828c3fbd494e9e8a4ca8ac.bindPopup(popup_edbf7e6df18fbf26f8e1e064364fa1ed)
+        ;
+
+        
+    
+    
+            circle_marker_559219974b828c3fbd494e9e8a4ca8ac.bindTooltip(
+                `<div>
+                     白薇 (1894-1987)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78bd46a8396bd7e985476cd71eb56683 = L.circleMarker(
+                [27.7258, 111.3277],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_c320974cd56937747debcc49cafe8862 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2629e4484d05324878325f1d6712da5c = $(`<div id="html_2629e4484d05324878325f1d6712da5c" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">谢冰莹</h4>         <p><b>生卒:</b> 1906-2000</p>         <p><b>籍贯:</b> 湖南新化</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《女兵自传》</p>         <p><b>作品风格:</b> 豪放真实</p>         <p><b>文学成就:</b> 女兵作家</p>     </div>     </div>`)[0];
+                popup_c320974cd56937747debcc49cafe8862.setContent(html_2629e4484d05324878325f1d6712da5c);
+            
+        
+
+        circle_marker_78bd46a8396bd7e985476cd71eb56683.bindPopup(popup_c320974cd56937747debcc49cafe8862)
+        ;
+
+        
+    
+    
+            circle_marker_78bd46a8396bd7e985476cd71eb56683.bindTooltip(
+                `<div>
+                     谢冰莹 (1906-2000)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_26b18c67cc53332adfd67f9f131731ba = L.circleMarker(
+                [30.4109, 104.5473],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_7fc9585ac0270755c0b37d46fba77dd2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_25d4a6342e1367a793f7f49c2af8b03b = $(`<div id="html_25d4a6342e1367a793f7f49c2af8b03b" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">罗淑</h4>         <p><b>生卒:</b> 1903-1938</p>         <p><b>籍贯:</b> 四川简阳</p>         <p><b>社会阶层:</b> 商人家庭</p>         <p><b>代表作品:</b> 《生人妻》</p>         <p><b>作品风格:</b> 朴实深刻</p>         <p><b>文学成就:</b> 才女早逝</p>     </div>     </div>`)[0];
+                popup_7fc9585ac0270755c0b37d46fba77dd2.setContent(html_25d4a6342e1367a793f7f49c2af8b03b);
+            
+        
+
+        circle_marker_26b18c67cc53332adfd67f9f131731ba.bindPopup(popup_7fc9585ac0270755c0b37d46fba77dd2)
+        ;
+
+        
+    
+    
+            circle_marker_26b18c67cc53332adfd67f9f131731ba.bindTooltip(
+                `<div>
+                     罗淑 (1903-1938)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb4f0d5da056dfaa5d872a65a3a060ab = L.circleMarker(
+                [36.7067, 119.1619],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_7c79a6deed273301369f841a1521b0b5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ba7a5d1ecf29df872a52449d66a0f3bb = $(`<div id="html_ba7a5d1ecf29df872a52449d66a0f3bb" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">沉樱</h4>         <p><b>生卒:</b> 1907-1988</p>         <p><b>籍贯:</b> 山东潍县</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《女性三部曲》</p>         <p><b>作品风格:</b> 细腻典雅</p>         <p><b>文学成就:</b> 女作家翻译家</p>     </div>     </div>`)[0];
+                popup_7c79a6deed273301369f841a1521b0b5.setContent(html_ba7a5d1ecf29df872a52449d66a0f3bb);
+            
+        
+
+        circle_marker_fb4f0d5da056dfaa5d872a65a3a060ab.bindPopup(popup_7c79a6deed273301369f841a1521b0b5)
+        ;
+
+        
+    
+    
+            circle_marker_fb4f0d5da056dfaa5d872a65a3a060ab.bindTooltip(
+                `<div>
+                     沉樱 (1907-1988)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ab51b88bcb47b0078a5c41923ad602da = L.circleMarker(
+                [32.147, 114.091],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_ecf9c5a45651959b406120373f6bcc71 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_35b241147622048c7c650e446c3b20b9 = $(`<div id="html_35b241147622048c7c650e446c3b20b9" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">赵清阁</h4>         <p><b>生卒:</b> 1914-1999</p>         <p><b>籍贯:</b> 河南信阳</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《落叶无限愁》</p>         <p><b>作品风格:</b> 典雅含蓄</p>         <p><b>文学成就:</b> 女作家编辑</p>     </div>     </div>`)[0];
+                popup_ecf9c5a45651959b406120373f6bcc71.setContent(html_35b241147622048c7c650e446c3b20b9);
+            
+        
+
+        circle_marker_ab51b88bcb47b0078a5c41923ad602da.bindPopup(popup_ecf9c5a45651959b406120373f6bcc71)
+        ;
+
+        
+    
+    
+            circle_marker_ab51b88bcb47b0078a5c41923ad602da.bindTooltip(
+                `<div>
+                     赵清阁 (1914-1999)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b8e83584b888d7a666cf31f68bd549b = L.circleMarker(
+                [22.8578, 110.5581],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_4be69960da33a61b5da7be50ad4040c6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1cd98c21eb92fc3388b5c88d55bba943 = $(`<div id="html_1cd98c21eb92fc3388b5c88d55bba943" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">凤子</h4>         <p><b>生卒:</b> 1912-1996</p>         <p><b>籍贯:</b> 广西容县</p>         <p><b>社会阶层:</b> 官宦闺秀</p>         <p><b>代表作品:</b> 《无声的歌女》</p>         <p><b>作品风格:</b> 戏剧性强</p>         <p><b>文学成就:</b> 女演员作家</p>     </div>     </div>`)[0];
+                popup_4be69960da33a61b5da7be50ad4040c6.setContent(html_1cd98c21eb92fc3388b5c88d55bba943);
+            
+        
+
+        circle_marker_9b8e83584b888d7a666cf31f68bd549b.bindPopup(popup_4be69960da33a61b5da7be50ad4040c6)
+        ;
+
+        
+    
+    
+            circle_marker_9b8e83584b888d7a666cf31f68bd549b.bindTooltip(
+                `<div>
+                     凤子 (1912-1996)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2bcfe9731684c32401e0d69458d4af5e = L.circleMarker(
+                [28.2282, 112.9388],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39);
+        
+    
+        var popup_5370279a34a4301b82d94371822f5494 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d3d3d3894900f0f77a7f23beb08cd1c = $(`<div id="html_6d3d3d3894900f0f77a7f23beb08cd1c" style="width: 100.0%; height: 100.0%;">     <div style="width: 250px;">         <h4 style="color: #2c3e50; margin-bottom: 5px;">彭慧</h4>         <p><b>生卒:</b> 1907-1968</p>         <p><b>籍贯:</b> 湖南长沙</p>         <p><b>社会阶层:</b> 革命家庭</p>         <p><b>代表作品:</b> 《不尽长江滚滚来》</p>         <p><b>作品风格:</b> 革命写实</p>         <p><b>文学成就:</b> 革命女作家</p>     </div>     </div>`)[0];
+                popup_5370279a34a4301b82d94371822f5494.setContent(html_6d3d3d3894900f0f77a7f23beb08cd1c);
+            
+        
+
+        circle_marker_2bcfe9731684c32401e0d69458d4af5e.bindPopup(popup_5370279a34a4301b82d94371822f5494)
+        ;
+
+        
+    
+    
+            circle_marker_2bcfe9731684c32401e0d69458d4af5e.bindTooltip(
+                `<div>
+                     彭慧 (1907-1968)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_d1c1db6626b1bd32d0eabb6fda1a0c39.addTo(map_8dc85c5589d26704e84cc99ce7378ecc);
+        
+    
+            var heat_map_4c50b7bae5ff327f60aaab9e8bfc62e2 = L.heatLayer(
+                [[39.9042, 116.4074], [30.2741, 120.1551], [32.0603, 118.7969], [31.6461, 120.7523], [30.2741, 120.1551], [30.0303, 120.5829], [31.299, 120.5853], [30.2741, 120.1551], [32.0101, 119.6067], [31.6461, 120.7523], [30.0303, 120.5829], [30.746, 120.7555], [31.0359, 116.9597], [29.8608, 118.4325], [30.2741, 120.1551], [30.2741, 120.1551], [30.2741, 120.1551], [30.2741, 120.1551], [31.7728, 119.9465], [30.2741, 120.1551], [30.2741, 120.1551], [30.2741, 120.1551], [31.7728, 119.9465], [31.7728, 119.9465], [31.7728, 119.9465], [31.7728, 119.9465], [31.299, 120.5853], [32.3942, 119.4128], [31.6461, 120.7523], [32.1878, 119.425], [30.0303, 120.5829], [30.2741, 120.1551], [31.2304, 121.4737], [31.299, 120.5853], [30.0303, 120.5829], [31.7728, 119.9465], [30.2741, 120.1551], [28.8925, 120.0361], [32.0603, 118.7969], [33.963, 118.2752], [31.0359, 116.9597], [31.0359, 116.9597], [31.0359, 116.9597], [31.0359, 116.9597], [31.0359, 116.9597], [31.0359, 116.9597], [31.0359, 116.9597], [31.0359, 116.9597], [31.0359, 116.9597], [31.0359, 116.9597], [30.5254, 120.9458], [30.746, 120.7555], [30.2741, 120.1551], [31.2304, 121.4737], [30.746, 120.7555], [23.1291, 113.2644], [31.7728, 119.9465], [31.7728, 119.9465], [27.8297, 112.944], [30.5728, 104.0665], [30.2861, 118.5431], [26.0753, 119.3062], [30.2741, 120.1551], [30.6309, 120.5644], [30.6309, 120.5644], [27.7341, 112.535], [27.2305, 112.8693], [23.1291, 113.2644], [30.0303, 120.5829], [23.1291, 113.2644], [23.1291, 113.2644], [31.0359, 116.9597], [22.2707, 113.5767], [19.6133, 110.7539], [19.6133, 110.7539], [19.6133, 110.7539], [31.2304, 121.4737], [31.7728, 119.9465], [26.0753, 119.3062], [23.1291, 113.2644], [27.7788, 120.6551], [37.8006, 113.6581], [26.0753, 119.3062], [32.697, 112.8077], [27.6463, 113.497], [31.7728, 119.9465], [25.9628, 119.5232], [29.4431, 111.6476], [45.8038, 126.5369], [31.2304, 121.4737], [31.491, 120.3119], [29.8744, 121.5498], [39.9042, 116.4074], [25.9372, 113.2361], [27.7258, 111.3277], [30.4109, 104.5473], [36.7067, 119.1619], [32.147, 114.091], [22.8578, 110.5581], [28.2282, 112.9388]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 15,
+  "blur": 10,
+  "gradient": {
+  0.4: "blue",
+  0.65: "lime",
+  1: "red",
+},
+}
+            );
+        
+    
+            heat_map_4c50b7bae5ff327f60aaab9e8bfc62e2.addTo(map_8dc85c5589d26704e84cc99ce7378ecc);
+        
+</script>
+</html>
