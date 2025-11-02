@@ -1,0 +1,54 @@
+# Creative Groups and Studies of Women's Literature in the Qing Dynasty in Digital Perspective
+# design document
+ name：Xinyu Wang (Yara)
+## 1. Research context and questions 
+### 1.1 Research context 
+Women's literary creation in the Qing Dynasty showed unprecedented prosperity, with the emergence of a large number of female poets and lyricists and their female writers' anthologies. Yet this large creative community has long been marginalised in traditional literary history and historical narratives. The rise of digital history has provided us with new technological perspectives and digital tools for rediscovering, measuring and interpreting this community, allowing us to go beyond individual studies and works to reveal its scale, networks and influence at a more macro level.
+### 1.2 Core research questions
+#### 1.2.1 principal question:
+
+How to use digital tools to quantify and visualise the scale of creation, geographical distribution and social network structure of women's literary communities in the Qing Dynasty, so as to explain the phenomenon of their creative prosperity being "obscured" in the mainstream discourse.
+#### 1.2.2 Sub-questions:
+  What were the evaluative and emotional predispositions of contemporaneous male literary scholars towards women's creativity?
+  What are the core social networks, e.g. family, in-laws, mentors and friends, that support their literary creation and exchange? (can be visualised using maps)
+  How were women writers in the Qing dynasty distributed in the spatial and temporal dimensions? Is there a clear core area and path of spread? (using GIS)
+## 2. Objective and significance
+### 2.1 Research objectives
+Combine quantitative and qualitative analyses to explore the formation mechanism of women's literary groups in the Qing Dynasty and the deep-seated reasons for their marginalisation in history.
+#### 2.1.1 Quantitative Objective:
+To establish a basic database containing at least 100 female writers of the Qing Dynasty, covering their biographies, places of origin, works and social relations. To establish a thematic model of the main emotional inclination words towards women in the works of male contemporaneous writers.
+#### 2.1.2  Visualisation Objective:
+  Draw a GIS map of the geographical distribution of female writers in the Qing Dynasty.Construct and analyse the social network mapping of the core group of writers.
+### 2.2 Research significance
+To promote the study of the history of Chinese women's literature from "case study" to "group portrait", and to provide a digital paradigm for the study of literary history.
+Explore the specific paths and practical implications of social network analyses, GIS, and digital tools in the study of history and literature.
+## 3. Research methodology
+### 3.1 Mapping Groups - Social Network Analysis（Gephi）
+ Visualising the social relationships of Qing dynasty women writers and revealing the hidden networks that underpinned their creativity.
+ ### 3.2 Text Analysis and Word Frequency Statistics(Python)
+ Quantify the thematic preferences, creative volume of women's literature and compare it with mainstream (male) literature to discover its uniqueness and traces of neglect.
+ ### 3.3 Geographic Information System(QGIS)
+ Taking abstract quantities and networks and putting them into concrete spatial distribution to reveal regional cultural centres.
+ ## 4. Literature review and bibliography (initial)
+ ### 4.1 Literature review 
+ Previous studies have focused on case studies of top writers, such as Gu Taiqing and Wang Duan, or on descriptions of women's literary circles in specific geographical areas (e.g., Jiangnan), and have lacked a macroscopic, structural grasp. Recently, scholars have begun to try to establish historical databases, but there has been no systematic study dedicated to the group of female writers in the Qing Dynasty, and a comprehensive study with multi-dimensional numerical analyses is still insufficient. This study aims to fill this gap.
+### 4.2 bibliography
+## 5. Plans
+### 5.1 Literature and Data Preparation(Week 6-7)
+ 
+ -  Read "Examination of Women's Writings through the Ages" carefully, find relevant literature and import it to zotero.
+ - Design database structure and start to enter core data of at least 50 writers.
+
+### 5.2 Data construction and cleaning( Week 8)
+
+ - Complete data entry of 100 writers
+ -  Geocode place names of origin (convert to latitude and longitude)
+ -  Combine and format data on social relationships.
+ ### 5.3 Digital analysis and visualisation( Week 9 )
+
+ - Create distribution maps using QGIS.
+ - Construct social networks and analyse them using Gephi
+ - Use Python for text analysis.
+ ### 5.4 Thesis Writing and Integration( Week 9-11 )
+
+ - Integrate research findings with traditional historical sources to write a research paper.
